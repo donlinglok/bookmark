@@ -1,0 +1,5 @@
+jQuery(function($){
+	$('.job_listings').on('updated_results', function() {
+		window.a2a&&a2a.init_all();
+	});
+});

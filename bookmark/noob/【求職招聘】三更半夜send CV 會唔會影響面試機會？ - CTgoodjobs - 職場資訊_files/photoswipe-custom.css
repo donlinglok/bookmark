@@ -1,0 +1,422 @@
+#at4-share,
+#at-share-dock {
+  z-index: 1000;
+}
+
+/*
+	1. Buttons
+ */
+/* <button> css reset */
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before,
+.pswp--svg .pswp__button--arrow--left:before,
+.pswp--svg .pswp__button--arrow--right:before {
+  background-image: none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.1),
+(-webkit-min-device-pixel-ratio: 1.09375),
+(min-resolution: 105dpi),
+(min-resolution: 1.1dppx) {
+
+  /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
+  .pswp--svg .pswp__button.pswp__button--arrow--left,
+  .pswp--svg .pswp__button.pswp__button--arrow--right {
+    background-image: none;
+  }
+}
+
+/*
+    Arrow buttons hit area
+    (icon is added to :before pseudo-element)
+*/
+.pswp__ui--idle .pswp__button--arrow--left,
+.pswp__ui--idle .pswp__button--arrow--right {
+  opacity: 1;
+}
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  font-size: 80px;
+  background: none;
+  color: #fff;
+  top: 50%;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pswp__button--arrow--left {
+  left: 24px;
+}
+
+.pswp__button--arrow--right {
+  right: 24px;
+}
+
+.pswp__button--arrow--right:before,
+.pswp__button--arrow--left:before,
+.slick-arrow:before {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900;
+  font-size: 0.6em;
+}
+
+.pswp__button--arrow--right:before,
+.slick-next:before {
+  content: "\f054";
+}
+
+.pswp__button--arrow--left:before,
+.slick-prev:before {
+  content: "\f053";
+}
+
+/*
+.pswp__scroll-wrap {
+  max-height: calc(100% - 136px);
+  top: 0;
+  bottom: auto;
+}
+*/
+.pswp__element--disabled {
+  display: none !important;
+}
+
+.pswp__button--share,
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: none;
+}
+
+.pswp--supports-fs .pswp__button--fs {
+  display: none;
+}
+
+.pswp--minimal--dark .pswp__top-bar {
+  background: none;
+}
+
+.pswp__ui--idle .pswp__top-bar {
+  opacity: 1;
+}
+
+.pswp__zoom-wrap {
+  text-align: center;
+}
+
+.pswp__zoom-wrap:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.pswp__caption,
+.pswp__caption.pswp__caption--fake,
+.pswp__ui--fit .pswp__caption {
+  background: none;
+}
+
+.pswp__ui--fit .pswp__top-bar {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.pswp__caption__center {
+  width: 100%;
+  max-width: 1280px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 16px 16px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+	6. Additional styles
+ */
+
+ article p .photo.first-item {
+  margin-bottom: -15px;
+ }
+
+.photoswipe-wrapper {
+  margin-bottom: 2rem;
+}
+
+.photoswipe-wrapper .photo,
+.photoswipe-wrapper .video {
+  padding: 0 5px;
+}
+
+.pswp__counter {
+  font-size: 15px;
+}
+
+.photoswipe-wrapper .row .photo:nth-child(n + 5) {
+  display: none;
+}
+
+.photo:not(.first-item) .photoswipe-item {
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.photo:not(.first-item) .photoswipe-item a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+}
+
+.photo:not(.first-item) .photoswipe-item img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.pswp .pswp__container .pswp__item {
+  pointer-events: none;
+}
+
+.pswp .pswp__container .pswp__item .pswp__zoom-wrap * {
+  pointer-events: auto;
+}
+
+.pswp__area {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+}
+
+.pswp__area.pswp__area-open {
+  display: block;
+}
+
+.pswp__area.pswp__area-open .pswp__area__button.pswp__button--fs {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 44px;
+  z-index: 1501;
+}
+
+/* CT JobList Style */
+.pswp__joblist {
+  line-height: 1.4;
+  left: 0;
+  z-index: 1500;
+}
+
+.pswp__joblist h4 {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 4px 12px;
+  border-left: 3px solid #fccf00;
+  margin-bottom: 16px;
+  margin-block-start: 0;
+}
+
+.pswp__joblist .joblist {
+  position: relative;
+}
+
+.pswp__joblist .joblist-slider .comp {
+  font-size: 13px;
+}
+
+.pswp__joblist .joblist-slider {
+  overflow: hidden;
+}
+
+.pswp__joblist .joblist-slider .job {
+  color: #fff;
+  padding: 12px 36px 12px 15px;
+  background: #3684cb url("/images/resources/gallery_jobad.png") bottom right no-repeat;
+  display: block;
+  position: relative;
+}
+
+.pswp__joblist .joblist-slider .job:hover {
+  top: auto;
+}
+
+/*.pswp__joblist .row .job:hover .job-title {
+color: #69abcb;
+}*/
+
+.pswp__joblist .joblist-slider .slick-dots {
+  bottom: -10px;
+}
+
+.pswp__joblist .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+}
+
+.pswp__joblist .swiper-button-prev:after,
+.pswp__joblist .swiper-button-next:after {
+  content: none;
+}
+
+.pswp__joblist .swiper-button-next:after,
+.pswp__joblist .swiper-button-prev:after {
+  content: none;
+}
+
+.pswp__joblist .joblist-slider .slick-prev,
+.pswp__joblist .joblist-slider .slick-next {
+  top: 40%;
+}
+
+.pswp__joblist .joblist-slider .slick-prev {
+  left: -28px;
+}
+
+.pswp__joblist .joblist-slider .slick-next {
+  right: -28px;
+}
+
+.pswp__joblist .joblist-slider .slick-prev:before,
+.pswp__joblist .joblist-slider .slick-next:before {
+  font-size: 28px;
+}
+
+/* Photoswipe last job list */
+.cus-html.recommend-jobs h3 {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.cus-html.recommend-jobs .job-list li {
+  color: #333;
+  background-color: #fff;
+  border-bottom: 2px solid #3280b3;
+  padding: 10px 15px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cus-html.recommend-jobs .job-list li .job-title {
+  color: #2C8DD3;
+  font-size: 16px;
+  line-height: 1.3;
+  max-height: 40px;
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+
+.cus-html.recommend-jobs .job-list li .job-title:hover {
+  color: #6EB8ED;
+}
+
+.cus-html.recommend-jobs .job-list li .company {
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  line-height: 1.3;
+  max-height: 38px;
+  margin: 4px 0;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+}
+
+.cus-html.recommend-jobs .job-list li .company:hover {
+  color: #888;
+}
+
+.cus-html.recommend-jobs .job-list li .date {
+  font-size: 13px;
+  color: #888;
+}
+
+.cus-html.related-article .article {
+  background-color: #fff;
+}
+
+.cus-html.related-article .article .article__title {
+  height: auto;
+}
+
+.cus-html.related-article .article .article__content {
+  -webkit-line-clamp: 2;
+}
+
+@media only screen and (min-width: 992px) {
+  .pswp__joblist .joblist-slider .slick-arrow {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .pswp__joblist .container {
+    max-width: 750px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .photoswipe-wrapper .photo:nth-child(n + 4) {
+    display: none;
+  }
+
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right {
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.75);
+    margin-top: -18px;
+    width: 32px;
+    height: 36px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+
+  .pswp__button--arrow--left {
+    left: 5px;
+  }
+
+  .pswp__button--arrow--right {
+    right: 5px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .pswp__joblist .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px ) {
+  .pswp__joblist {
+    height: 130px;
+  }
+
+  .pswp__joblist h4 {
+    font-size: 14px;
+  }
+}

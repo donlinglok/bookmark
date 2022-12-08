@@ -1,0 +1,5 @@
+if(avlabs_mobile_menu_clicked){
+	setTimeout(function () {
+		jQuery(".mobile-menu-toggle").trigger("click");
+	}, 1000);
+}

@@ -1,0 +1,2468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0069)http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard" lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="generator" content="Movable Type  5.2.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--link rel="stylesheet" href="http://www.ruanyifeng.com/blog/styles.css" type="text/css" /-->
+<link rel="start" href="https://www.ruanyifeng.com/blog/" title="Home">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="https://feeds.feedburner.com/ruanyifeng">
+<script src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/hm.js.download"></script><script async="" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/analytics.js.download"></script><script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/mt.js.download"></script>
+<script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/advertisements.js.download"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.ruanyifeng.com/blog/2016/01/babel.html">
+<dc:title>Babel 入门教程</dc:title>
+<dc:description>（说明：本文选自我的新书《ES6 标准入门（第二版）》的第一章《ECMAScript 6简介》）...</dc:description>
+<dc:creator>阮一峰</dc:creator>
+<dc:date>2016-01-25T21:33:15+08:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+</License>
+</rdf:RDF>
+-->
+
+<style>
+body {
+  background-color: #f5f5d5;
+}
+
+#container::before {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.1);
+  text-align: center;
+  content: "本站显示不正常，可能因为您使用了广告拦截器。";
+}
+
+</style>
+<script>
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", filename)
+    }
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
+    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
+}
+//loadjscssfile("http://www.ruanyifeng.com/blog/styles.css", "css");
+loadjscssfile('/static/themes/theme_scrapbook/theme_scrapbook.min.css', "css");
+
+
+function checker() {
+  if (/mobile|android/i.test(navigator.userAgent)) return; 
+  window.comments && window.comments.setAttribute("style", "!important");
+  // var img = document.querySelector('img[src^="http://www.ruanyifeng.com/blog/images"]');
+  var img = document.querySelector('a > img[src*="wangbase.com/blogimg/asset/"]');
+  var isAdblocker = (typeof adblock === 'undefined');
+  if (
+    /*isAdblocker || */
+    (img && window.getComputedStyle(img).display === 'none') ||
+    (img && window.getComputedStyle(img.parentElement).display === 'none')
+  ){
+    var sponsor = document.querySelector('#main-content');
+    var prompt = document.createElement('div');
+    prompt.style = 'border: 1px solid #c6c6c6;border-radius: 4px;background-color: #f5f2f0;padding: 15px; font-size: 14px;';
+    prompt.innerHTML = '<p>您使用了广告拦截器，导致本站内容无法显示。</p><p>请将 www.ruanyifeng.com 加入白名单，解除广告屏蔽后，刷新页面。谢谢。</p>';
+    sponsor.parentNode.replaceChild(prompt, sponsor);
+    // document.querySelector('#main-content').innerHTML = '';
+  }
+}
+
+setTimeout(checker, 1000);
+</script><link rel="stylesheet" type="text/css" href="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/theme_scrapbook.min.css">
+
+    
+    <link rel="prev" href="https://www.ruanyifeng.com/blog/2019/10/weekly-issue-79.html" title="科技爱好者周刊：第 79 期">
+    <link rel="next" href="https://www.ruanyifeng.com/blog/2019/11/weekly-issue-80.html" title="科技爱好者周刊：第 80 期">
+    
+    <title>你所不知道的 AI 进展 - 阮一峰的网络日志</title>
+<style>@font-face {
+	font-family: "wticons";
+	src: url("data:font/woff2;charset=utf-8;base64,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") format("woff2");
+}
+
+.wticons {
+	line-height: 1;
+}
+
+.wticons:before {
+	font-family: wticons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.wticon-account:before {
+	content: "\f101";
+}
+.wticon-add:before {
+	content: "\f102";
+}
+.wticon-cardResizeDrag:before {
+	content: "\f103";
+}
+.wticon-casual:before {
+	content: "\f104";
+}
+.wticon-check:before {
+	content: "\f105";
+}
+.wticon-checkSmall:before {
+	content: "\f106";
+}
+.wticon-chevron:before {
+	content: "\f107";
+}
+.wticon-copy:before {
+	content: "\f108";
+}
+.wticon-copySmall:before {
+	content: "\f109";
+}
+.wticon-dismiss:before {
+	content: "\f10a";
+}
+.wticon-downChevron:before {
+	content: "\f10b";
+}
+.wticon-error:before {
+	content: "\f10c";
+}
+.wticon-expand:before {
+	content: "\f10d";
+}
+.wticon-feedback:before {
+	content: "\f10e";
+}
+.wticon-filledDownArrow:before {
+	content: "\f10f";
+}
+.wticon-find:before {
+	content: "\f110";
+}
+.wticon-formal:before {
+	content: "\f111";
+}
+.wticon-gift:before {
+	content: "\f112";
+}
+.wticon-grayLogo:before {
+	content: "\f113";
+}
+.wticon-ignore:before {
+	content: "\f114";
+}
+.wticon-info:before {
+	content: "\f115";
+}
+.wticon-leftChevron:before {
+	content: "\f116";
+}
+.wticon-logo:before {
+	content: "\f117";
+}
+.wticon-love:before {
+	content: "\f118";
+}
+.wticon-noRecommendations:before {
+	content: "\f119";
+}
+.wticon-paragraphRewrite:before {
+	content: "\f11a";
+}
+.wticon-paste:before {
+	content: "\f11b";
+}
+.wticon-pin:before {
+	content: "\f11c";
+}
+.wticon-premium:before {
+	content: "\f11d";
+}
+.wticon-premiumDetail:before {
+	content: "\f11e";
+}
+.wticon-premiumFull:before {
+	content: "\f11f";
+}
+.wticon-recommendationLight:before {
+	content: "\f120";
+}
+.wticon-recommendationLightCard:before {
+	content: "\f121";
+}
+.wticon-recommendationLightNoSuggestions:before {
+	content: "\f122";
+}
+.wticon-refine:before {
+	content: "\f123";
+}
+.wticon-rewrite:before {
+	content: "\f124";
+}
+.wticon-rightChevron:before {
+	content: "\f125";
+}
+.wticon-rocket:before {
+	content: "\f126";
+}
+.wticon-sentenceExamples:before {
+	content: "\f127";
+}
+.wticon-settings:before {
+	content: "\f128";
+}
+.wticon-shorten:before {
+	content: "\f129";
+}
+.wticon-tutorial:before {
+	content: "\f12a";
+}
+.wticon-unlock:before {
+	content: "\f12b";
+}
+.wticon-warn:before {
+	content: "\f12c";
+}
+.wticon-WordtuneButton:before {
+	content: "\f12d";
+}
+.wticon-x:before {
+	content: "\f12e";
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvc2hhcmVkL0ljb25zLmZvbnQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxzQkFBc0I7Q0FDdEIsNjNTQUE2M1M7QUFDOTNTOztBQUVBO0NBQ0MsY0FBYztBQUNmOztBQUVBO0NBQ0MsK0JBQStCO0NBQy9CLGtCQUFrQjtDQUNsQiw4QkFBOEI7Q0FDOUIsbUJBQW1CO0FBQ3BCOztBQUVBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCIiwic291cmNlc0NvbnRlbnQiOlsiQGZvbnQtZmFjZSB7XG5cdGZvbnQtZmFtaWx5OiBcInd0aWNvbnNcIjtcblx0c3JjOiB1cmwoXCJkYXRhOmZvbnQvd29mZjI7Y2hhcnNldD11dGYtODtiYXNlNjQsZDA5R01nQUJBQUFBQUJ2c0FBc0FBQUFBUVdRQUFCdVpBQUVBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUhJa1lCbFlBakJBSzJ3akpKUUUyQWlRRGduQUxnVG9BQkNBRmhBb0hobWtiL3paVkliQnhBSkF3blJKUmxLeE5TUGIvbHdSdFNxZ3NIdEoyTDJqR3JDRGJLWHNSaVRUNlZLUkYwSWQyR2ZrS0hxTjkxVVdhTVRSYVhGdC85UlVxeUYxUHlTL3ZxRy9jVUVwNC9wbXI5d1lHbHBBU25pVERXQ0JXZTc2dUZJQkNWdGxYSUFDdWVaL2k3NHNDcWFaWjRlalI1aW44Z01NMVRUOEFobWliQjArWTBJb05Jb0lWSUFJU0VqWkttY0dpYkZ3YXhTck1yVjJwbTR2V1pUdHhsUzdhaFM2U283VTJ0bnBpZXkvaVJEeFR5Wjh5TVJLYXRrYklIZ0dEODBJZWNSQ0RPVFdwT1pTY1lhQTA0TkNBV1ZDRWpaL2tBK3Z1SjkzOUhLY0VhUnNhTUJ2MmwrcHZPLzE3K25DeFcvZlkyeGpqVEVBUUdwQjRRc1JORVRhMU9hNVRPbGw5S2dpRHpiZldyOTdlVjBOTUxwSEZ2QlRTN054OS9zN083UmZmSGN6dUw3Ym9IU2FXUk93RWMyODhraVdUMXozVElkRXNVZ3FsV0szUWlNQkQzS3VhTWUwSFBNOGVZa2pHbkpaWVd1cUZZZzNXNmlYcWxSWk5JSzBZVjdmYVRkK0JtN2tpcEoreDJlK0IwN3UyR3BreUxFVE01ZjNjRVJRdzdKSkRIYVNMVGNiejE3LzZoR1U2czE4RlNkMUsvdjY3cjVNMC9PZ2x6b3JrV1J3Znc2UjlvYi81S1ZiS0pxNVVJZTNWSHJwSTc5aVZUN3hmTEZERnpWTWxtRXdXbThPbDBYZzhDWlBPaGJyZTg0MFhzWEVHWDM4UlV3S2hTRm9ndzJmSVNocVdGekFWRkpVWWNuTEdETEZVVkVreUxNR2tXK2F6T09LV2FBalpaYVVTWWsyVUdLRno2aXAwZCtJY0ExdDBTSWlicGxpQ0FDemZVbElTY0hnTXJxaFpITEx3dDVLZnRib3N2cWlEbTFmRnJac3d3bExqcUFzVGZWeENoRXNlRHBWd3A5YTl1QlhjK1ZHeDJaMm1MWkw5ak83cXNuaGIxdW83RUFvMDZDY1d1TG02c2dmOXlBeHIzeGRHK1pxUmh6b25nWnIwMFYyQnM0VUhHaUtPd0tXNFNrbkFWWXlwV2RQaW5sUVlIWW1UWXZ4UDB6NU4wakhMbFVreHNPdFJwcW1lSjRhU2lweTA1RnF5TWV4MklXYUZibWEraE1YblVIVkRMWk1zaDJZcXNFTG5hTEJLeEVWTGtpdHMrVlZ0bGl6TElsMmtzVkliVE5wMGJOV0lMTTJWR2Erdkg4aU9ONkwxS3d2RWpidFU5SmF2UEdjbUZVd01XWTlVNU5kVFUyb2krOFpFYXJBa1lpdkp5RU1aSStjY0dxR1REbnVGVTN2TjBNaU9HTlRxQ3V6U1ZGR3JRbmRQNzFoMDZJWVZDa0JtVFRSYlowN0FrMW1mWEV2MTRXcG00SUJPbW93WncvTnp4L243Qzg4cEJ1S0VGYnBINDhUajdtNFNHT3dFYUJDSElqbG43bnZzaVdzZDJyR3NuSXFhaGo0bC9IOFpKQmlMMWQ4QVB3WTNYdmxBTXdoQkZZc3dONk42aU43aUw3cWxQLzhCL2VqdGRXdkJBREdnZ2ROcm1yL2FvWlpUYXFCRjRpbk44TWYrMFFNVm1EVkpvMHNyS212b2VOOW5maWo5Ly8veGRhcWU4T3MrOUVVSmE2NHBLbWF0VzlUbS9ybGt5SU9XZ2JxTW5vNjJycFNpUGtPVHlWdFRLS3NyUkFweVNrUkxoVCtUcG0xbE5VK3EwaFRCM21HT1NVZ2FNbUxVdUFtVHBzeVlOV2ZlZ2lYTFZxeGFzMkhUbG0yNzl1dzdjT1RZcVRQbkxseTZjdTNHclR2M0hqeEJTVEZOdERiMVRLOERNRVFKcEJid1dnenBHR3UrSjIxazgvRFBQeTA1VmdYNEE5Y3VxNTZxQ3FET1VZRDJnS28xNER0VHRFQ0tBUWlvZzVBTWlPaUJOQjFRcEEzSzdTNXZBVWlCUnJ2SVhnRDY0SFVNOEFaTjhDWW1lQXNQdkUwQTNxRUIzaVVMM2lNUDNpY0NIMUlBSDVFREgxTUNuK0NBVDdIQVoxVEFGL2pnUzBMd0ZTNzRHaHQ4UXhsOFN3MTh4eFA0bmlyNEladUdZSU9nUlFBYUJIUUl4Q0FpQWRFaUNURmlDR0xGQ01TSlVZZ1g0NUJJVEVCaU1RbEp4QlFrRlRPUVRNeENjakVIS2NROHBCUUxrRW9zUVlKWWh0UmlCZElRcTVDbVdJTzB4QWFrTFRZaEhiRUY2WXB0U0Uvc1F2cGlEeklRKzVDaE9JQ014QkZrTEk0aEUzRUttWW96eUV5Y1ErYmlBcklRbDVDbHVJS3N4RFZrTFc0Z0czRUwyWW83eUU3Y1EvYmlBWElvcnAwbHZPUjk4Qk4rTTM0RTRlVXptQ01zZ3VLVDZaRVJzZUpZSWd2UlhCQnFLalFuQnBZcHhkUm15QWhiWUNpeE5TbGI0Q3c0YlVXNzVnYnYyMXpVdmNRK2kydVJvV2puMURWYXVWeFFQOWJVV2QzdjhSZHA2cDNuVVQxWStWbFJHV090LzNiemc1UFNGWTBrYnJiYnhucFZPWC9HWGpkZnhIN05qanExbGp3UElSMkdJTlZ4d1RIclhmc0F2YVp3NGZzQ0c5OHU4Y0wzQTN4Q1IxSGxxMjczWVorNDNpZ1NQYXAzM3Z6UTlpRWVJTG9rTmdPRE9vSGlYaUNZKzMrdE5yZm0vb3JicjVmZFhIVTNjdG1GZ3I4NDZDbjZhYk1EREx0SjNQaWlQajB6bm42VW42OXozaUVBQVF3d3hFMEVHd3o2YkQ4OS9XWHJIK0RuQjF4SlBtNnlmLzBiL1BYblgvQnZ2WWtKMkpaRE1oMHdPd0RvNWtPZ0d0ZmU0WW5LODZCd0NVR2NCZWVzYmtHbkowZ0x3b2tGbS9ta25SMmk3VWNtdE00YlRrWW9pZklYZFQvUWlwQlBQR25VWkEwZlBNSis5UVQ2eE9NS3plZlh5YWV3ejA5UDVON2k5Mm56YzBkSWE3ZkpZVTZQc25QeEE5NDhLaGNqMWVEZmVlZXFjVVF1Um1tbnk3a1dueDhhRHZOeDhydjRnZjJzYTUxZmVmTXEyTnBpcGllZG1MVzFwNjVYSGcwT1JNaDQ5YzM0aWpRNkVvODArK0ZaRGtManBBalN1ZlJsaUUva0pkcjhMRkNOREZONWtaTVpJNHVaa2JtZEUzbVZKZmtabmFSY1p5KzRCMlhENEdnVUsrOGd6YXA0U2x3VXNyT3FnRFdBbFV4SGxWTVNDTzRQaGprTmhnK0c1ektPSVlPSWNBUVlBb3QweFBxZXV3aEorMms1UWZMalV3QW1neGdncUFIajJhZUo5dm55UWtUKytlY3pPb1cxVzlxNS9KWFM3cjRROWxNa0hla29EbGlocmxEdXN4c3hlNHFOa3V6Mlc4dXhtbmVuS1Rubkh1MHF2WDUvTGxvNTIvVGNiRVlDbVhKdmJhb3NCWVVWc2hCTXQrQWlKSE93cWxZQmFNMDEveW1nd1VvTWpBeEN2ZzRNbTRHT2NwdDJsblNYOVh2VHVxclJza0loMDJ4RzZaNXltM1E4Wm5GSG9CQUp6c3hPYzIzbWhrSldhTFEwRk1pc21tMEd6UFRvYUM1bm9LdTBxNng3RmkrRDRreHZHU2hrWW4yWkJEVE5rQlh1N3IvU1REaHNVMEZwTXRoWkFscWsvMldDbmNFa0xCdXJ0V1B4Y0todmFwODNyWDloZHpobGNTTnN0T0VEbmtVbzMyTW5BbGtnZU5KbkxPNlpMTHZCUFFiN1NqOHpGeTBEOWgrTi9YL3E0ZHJRYVJEaUFxNUFWYll6cnF3K09sd3N2ZUVwWi9FMVk5RlZXN3BMbmtPLytDNi9HdCtjSCsxa0ZNbEVBWUI4R054WW0xZk4rQ2NFTTZ0dUloYjJPbzlCckpiZml4SngvYjE4ZTNYelM5U0hHODBBN1dXNG8zZ00vS05iQnZhc3Vsc1Y4ZlNHR05Fc1Z2RThQQXNRRkxFY2twRk12V3ZUSGMvUEc4UEtPYTMxZnNMcVE1d1c3T3BxdDFmUytkZkFNK3Y3WEhFUjVmb0d0QTZCOGZEWVJqZWtVZXd2MHFxTHNBODdMYjRDZHJEbHF1Zkg4WFZ4QnFpNm5iVzA4cE96bkp2ZFhsa0thVG5vSzUyV21td2E2dEk4TGMwY3BYbDN4N3RhV296SXZhOFRDV1hhNC9Jck1LN056NjdQSGc2R2Y4U2Z4Sy9jZ09JN2ttOGppUVc1OTBSNEhsYnZvdmtQV0RrT01CS0ZkVlRJSERwMDVIdnM4WUt1TGpQT0VuUVRLMkRoR1VFK294MzIzMlhEL3RmMndocFpoTGJIbXNiL05LNytRaXhUSmdscE1nZEJkcXZPa2lXV0JNMTlaaEp2WDJ3b3lJK21MRUtZWlFZSUlYMG9IYUEzNTlEUmpVSWdMZWRhTFpaNW9oNDE3Qm9mb0JzQzlyTXJFZmR6Z3p6VXQ2VjhVZTNaY21BVlJFMmtsYVJib2VIL1NCVUNtQUUvaEJyd016VVBBd1R4eURzNk44NDFHN1l0WFJlT0k5T2d2cmlIYnpRSUhaSGJJcndUSXYySlpYbkFzSmZaWkpMTGJydFF2UGhDQ0lYSXBWdlYwTjYwM09WUDMxN25xRjRJenVmaHhOM0lvQWt5VjgrN0grRHg2bDZRWnUxSVM4YU90ZVdHZERWYkJkdXQ3cjBLQ1hUYmtrR3E1aWhhVW9WbkhYeWVub1h0K2VFWXMwYlJPSGt6UURwS09rdUNyVmxWWDhSWjhhS2FqU3pHS2c4aHFyL2ZsbnkySHhUUVZ4dlZ2VmlqWTRET0FOT3VoVUpDRDdIVC9EQ3BnYWdTcWhzMytEQ0hkOTF5NkRrUjRIdFhmV1c4U3ZqbWJKL3JqNityMzQrSFY4R3pzeDNVMGpwNmJWMjVLZ1N1ZWJ6ZytZZHlJelc2cVhDT01Dc2RxRkNteTFpNG1tMVhjUE5XZUllcVp5THdkQU5mY25qSDJraHJDejBwVjkxZGwwbDQxTnRhK1NEK1pPRVYrSEdYUTA2T2JuOUNxUGNpUWxGSzVHTVBMUjNiUWhxSlBWeVZtZDBkdjdJeFZvWFhwVDBNM3RudEpEV2FuU1BoSnh0L0FIRmpJRjEzZlBFTzZFWXhUU1lEeEVReXhES3ppV0VpSkswUXV4M0xJNnZuTzlBbHlwaGxoWGtLcXlETnorT3BGTVlxQ1ZxM29vQ1N3OXpiblVTRXB2SUZaRTF1N2dxR3lMSjBaQlZMMFBJT28yUUttYzlYWitjc3A1aXZISXV2cFF2WnRHN1dHNG5oT01yejJsOEhZanhTVDhSaitWQnZNV2ViTWpTYWUzSTAweXpIcjlrRmplZUhoeDYvZmhsb2FVM09TV0kxTHpWdjdMZjB1V3k4K2dIRjVmZDZBd1dOelpEZkJRMGp3bmdsWVpEeWN3ZytuWVVnYVFPOC82VUFKRE5BbldYS1AyQ2Z5TjB2NStrYWlFRVZ3UER4eHp6V25yVG1FQzVya2ZiUnBkQzNESVJDc3JiMVgzNzB2NW1vdytvY1ZZRFN6MDhab0RvdTRGRXIvVlFCeDRrMXIwWk5HUmIvMU8rZThGTThQS1hMUlJjUXp4QW5qb3NaN2JFVzQ0a01jWHlBaTY3c0llMUhUV1FOV29yMlB1c2ZvTlpxdFgyTEZpbFFkM2g5SCsyMloyb0diNGhHQUw1YzBFSHcwZFE3MEhCL09nekt6S1FDY09rYVFzS2tkYXhxczc2NExmUTRmZHoxakpBYUdqMHJLbXBXZEZyK3dvdk8vZjN6SGp5NGtIaVY4OXdLcXE3ZUVZbzBJSk1lUkd0Q3VMZWtUcjFqeDVFM2I4YkdPa0JsK3FKRm53WUdWcXo4RDd5cVJndUwyTTlvUTBPOGRQeEtkalkvdTUzWDdvQy9WaTZoNENraFM5R1lqcjZiN0ljazdSTEFMR05uVS9BTzdieU83QlJlYVJHbm1pUWRPaDl2Tmo5NTh2U0pBYXlmR2tERjMvejBLZGhiZTl5bTU5Y2dnN0dXeVJINGZRcm9GWk5pWXRabXhnMHVscncvM2J4bnI5bGtzdkx1MUhSNGgxcWY5K3o1N09Oa1BocUtBOGFIcFZqRzV2UUIzYU5tSHlld2NTTjR4QksrUTEzak0vNnhHemRoQWIraDB4bHFvSXZSUmJadzRUdWZLVzBEb2tNWDVQSVdqQXp6N2lEekRjbFpRZXBoV29xOXhESi9ZbTl1UDdOY3o1Q0VHRWladlNSQVZ3eWFXd3lFVHd2N0I0N1lSem9vb2l2NFJlRUZlZUY2d2FjaWZqNlhtODhycXFySUxRM1B6K1BwK1laNG8vL2MvbjUzVDhJamIwN2VyVFNmT08vb2FPODRuNzBDOXZhTzN1M2YrN3BINWhmTllhaG1KT3Nha3BOalp5UlZGdWxtNit4VWsrbzlVR2lDRkkyYTQ0TnNTV21kSmFQUmk0RTgrTkpwbTNrVEJtVjA1a1htN1QwNFlhM0xhWTh6QW8vQzNZWDNVajVudjM3bklUampzUldqM3VqcXFDdkJsT0pPNFVveHRpVytvT3R1cmhFQis5WGRJbnNoOEQxdG5pWEZOeWtpMnFKQlIvOTd1UDJaWlA3RTNGbFVVMWxTeEJUTG1Xb0wzY29QQ3dKaHVLT0ZSUlk0UW5DTDg1SVpqU3JzMU4rNUdWYm9ITmxsUEFoYzNQYVJOVUMrU3VaZHc1THZlMWcxdTcrRjBtcldIbUQ1NFR2NnpBWllyZjN1SUxZdnFINWZqbzJ5a1NzS0RuVGZJTWJTQ0RCL0N0OGpCRmVRdXdTT3BzZFphVW5SbDAvRmJWKzFOR3J4MEVlY1kwTFJ0dnJUWjg2MStIN3RBLytEdWZ0TE54WHVidE5NVGZOTmNvQ1FMa21XOFU1b0lvOGhRNmxVQlljZTlReWlXZ0V4bDZhMkt4eVNEVDc3VTM3KzVjbmkwakp0KzdReVN5dWtSWEtDTFFsTEVOaW5WZFNoSElJSHUzdGp2ODJhQU5NYWR4QU9QdTVzdmZlbDFuMVZrVmJIbnBUQWN3cWhFTzNZUjlwb2NhcEZrOWYwYm8xVTc4bGRWckx2N3J6cE81Zk1XZjZla0VDYmI3VU9Sc2crSkNNcHlISEdNbWx4WkdTeHRBd240R3JGa1dWU0hMR0Z4aXlxemsyelVnSEFJOVdydG1XN1BwbW9JZW83dDljbXdwUGdoYUh3eEM5eWJHaGkyRXlGWjJQMVkwOG5jbWRlYXpjZ1NWTFFrL1JQZWFOcDRJbFo2UlJmcHdiMFhrdGRZZWl1eklCN3Y5WTBQVEFzTTdDVk5TTFBzSnl3M1RjYmJ1N080WVF4aGNWS2FEMTF4RGZjenhReDdNL3pHNzcvTlNzOTNoQ3Z6Rkt1TnF6dXIrcXVraDlvQ1dHb2t5ZUIzTGVHNXdFTEp0QThXOTZHVmxOVDF2UDFTMW4xaS8zRTBHMklYbEFRZE5ob3ozTDBVS3RGRFIzZTFINk9USDZueUk4cjBYTjVSZlZqUTNyT3JFTDJvRW1FTXdSNFRFM3NPbXNFekRNKyt0TjZvNUtxL0ttZ1hxTnluUWU2eVJRZnp3V04zTENHUmxGalhLT3dFYmhKN3lzOVhabDF0UW9Zejcrb2FZUFBZL1M4V1RsVnB3am1hZ0R2ZDgyY2Q3OE1FMmtqRFZXZmJiOU9VQVRnZ1Q4cW5rN0hGU1FaNFdSOGpGVVNVWGI0Wkh4TGZiVnM2bzFIV010NGVXdnAzbjFuRzMxR2RzSSswaWhkREkyalVUSWxXaUNtd0JETzJWYkpFT0NScFVtcUE0ZXU5dlFoS21Ed3ZPV2tXREFZMmZmc1hmbkJtN0s4SlRkUHk3ZXdndENhV0dzU0JpYndqQ2s4VzBEQkh6ZDI4c1p0RTJDcXBnNzg1c2Z6bSs2TzFMaVhGMnBsNXdnS2VJN0I5Z1J5NkxaVmJ0R2loWk1YcnQ0U25MOHhhVm5lM292VE05Y3NubE56a1JEalZtL1pDc2RsTlVxSWtjVG8ydW5pS1VMaEZQRjB1SUFyVHhGT0YwUEFrNG42YTBHcW04cFZXUjM1bS84UE5LbVA4R2RQd0tpL1M4K2VKWWNmdnJwOCtkWEQ3ZXYyZExyNGovbzdvcUE5cHlEVTBOU1FRSTAyTUlSNmEyWDlMVnFJSmpCUUUrTEhSMUZPZi9qdzB6VHljMHp0WmFINHFJNkF4LzR1bmZ4VkpPeGZVZzZ0ckk5ZlNBQmYvOEc0Y1RPM1lIdnJYLzh4TThzOFo0Nk56ZWlyYzUybEYyeXR0YVZqaG0xRGJBR21vdzlqNkpnbWpiVnRDQWFRZTkwYVE3Zjk2Q3BCSk1LUWtHV2NIZ2ZCR3d4d0pOeFd1aEVIdFN6V28yZ0Y4Rnc0MXFBVDBNaFFLc29qTlJPT05Da3pZYThCUjJJWnlmMjNNa1Q1MjUza2JwYWF2VnhjaFNhM01EZFRoR3Y3aU93QTNrZ0lJeGp4ZTRJemE1VjhaNlNiU2VqNjFuNk5WZkE2OG00VTVVUmRickNYdU1tS3U0aTBET0hXdlhoMlNEaWpOaFB0TWhHT1JtRG14b3Z3U0dvaWlwcEpRQ0VJMHpVcW1xYzZ1U3VzNis3VUxtd1gwTjhBYkxQT1VVa1A2QXFnSzN1Z05YcWRYOERqRlZRQm1LMklCQUVRR0d1V09JZVVXckk0aWFsaFpjL0k0bVN3UXpNNDJROFRKUGpBM3ZJWjJScFdFck5rTVNuMXJhZGVxZmNFR3JxY1lZcWord3NVOSt6N3VXWFVCSG1rN3drVS92UTRVK3hJSE4waEF2OVp4d2hpWi9nSTQ5YlRFaDNwL0pIWUVUN2RTVWxiTDR6TDhHRUg2UmlmOFJFTzlMZ1JpZnZEakZjWitDYkM4ajdMQUU1YXQzOTNKSmxIa3B4bzJCa09pZlZyTmh1alFQdm10ZnBFRHVETVJqTU5VQTFFV0ZZVVE3TUxuSVQybVF3VlF3N1YwN01JbnI5RFU1RE9PamdLc3AwUUhZSkhVT09Rcm5HM2g3ZCtmTG95RWsrUzMxdkpnZ1hDTFdRd0FNR0pFaGdFTzhvSEVEaXpBQnc4N2g1bHQrMSszMzg4QzQvdDYzcjJ6Y3IrRlAzMEVaMHdzVjUwK1laMlJybkVPSmRnSk5TZ3RmSzVQZm1IU3M2U01wbFNsbHdWN1NlYi9UZXZDTjJHR3ZQK3p2YVRSYXV3TktaVXlwU3pRUEFLZmJteS9GR0Nhek00YU9SZHJscWxWNmxRamlwZmU3dllzOU1UbDR4VDV0ckV6L1RYdWtzazdscC9rWEN5VW83VDR6b1AzbkxscWxIazc2NlZTTFM1eEVHMXMwVERkcXZxYVJZMjkxUzVzZkdKTzZ0cmI5MFNMNW40SUNhL0pqL204d05hRUkrYmx4OWVMdUM5elF1aVBRQmIzNWduTmIrWU9BdW03ODJPUW1YeEEzejZvekFZT3RUcTFXbGROdGlSdk5tS3ZRNWhnM1E0YnR3QStwQ0xyY01YZVN3alU3ZXRPc2E5TUwvbm9sbFZpQm9FWWRtRUpSRmhDdHAzeXI2cEtjNmlNWU1Xd0hDYW4wd2NoZWw5dTEwcnRIaUV6M2pvaVVPSFdydzVWWmdEeHNadWZiNzB2TnZnZVFDeVp6Q1diOEwzdzZUQkNpWkZITFhvSHE0WDcwUHhiUGpKakFxV0JodHgrTXJjY0UwZ1B6a2tocUl4R0ZLY29vTjEvRUJWV0hZRm5JQmZmOGZlN0dkZE5uYXZkNnVnU0piTWl4SkowR3B2NU5uWnlQVHVVb3EzZ2hVSkpRTGl2bzRJUFordmo1REhGOThqWjJMS0xUWE82UW1yTklkZkhrdUxGUlE2WmJucTUwUUk5RVg4MUNyeXQ1U1ZMTUoxKzdlZExzNVpMbnVBcjlmelFlRFFPSTZrakpENmNtSnJZcXlod0V6R2p3K1lmUFIyZEN1NkhmWHF0NzJkeWFBaXJHTmlhemkrVXZpU3FHd1orTEZ0VU8yWjJJNWUwMWlzclV0c1RQaU9aSGVIcEpuVk5wbWh0cGt6SmhVN2JLMDFNZUd4QkJ3eHhsMnRTYUdIcTA0cm9laGZHOE9OeFY5YjV5VmpNbVZxZ2ZCU1IySlppOXVBMERJTklvYk12dzA4OXRqa3U1YzAraXRQT1BOeGg5Yk82cEhFMjlHY2RTcU5Bbi9OV1phanQzbmc2TURBS0dtdkhkWnVjL3F2T2x0ck1sbDdkWHM3L2VNQjZyQmk5ZE1XMVRQa0V0U1NaN0VzS001M3JYbWhwYlZnWVBsQVVYL1JJZ0Z2QVZpZTZKanB3ZC9ud1kwVGM5alVVOUpIdE15UGRxTjJhSEl6Z3NlYmpNWVNnSnUwcFNTWG04M2haSE56UndRTVByRGJQL0o2blozRkdxMUdzLzYzOXZjemVNWU9ibmVFVUJuUGFyV0JyOXVnOEM1MjRZWnRtcW5SRVNvS0hHV2JheG1QZ1RUMm5PYUFiTE81SVMvZlNsWGprSFhiZEZ0cmhCTVpFK0ZKeDJxZXZhNjU2TjQrcXcxcEtOVEs1WW5NV3JUNllIQit0cW1lQnMwUE9NazFGM1dQZXQ1QXMyNE53R0EydjVuaDhBNkd5MU1oZFpDTTJReXlHM3FycEpFcXlBWmNyZUFuQ3NEZDhGa0FQWVRZRUlsR0lZd2Z2QjdVbWk2R3NWK2c1eWdDcXlGcU9Ub0hqd2JYZjlCSU9ia0gzY3IyR3dNMUlnNHBxbnRUWllrTUhZU0tmQVI2aHBWQWxzTy9BL2RXQnJkT2VGYy96dEE1aUNDTjBNSUZxSDZvMi93UGdIU3pEaU9yb0swUWthblF4aHpYUW0vY2FlWG9JUFFBQ1JiUUpSRWk0amgwa0tGUmlja2VxQU81NWtOVEk5cXAwRjIvSG1qT3l0RUZLRERMdEZBcGcvcnRISGlJemxEUy9iL3NOdzA4aWEvTXljRUt2bGxZUTI4QXdIVEw1OGRyQWlpK1haQUtGc0QxOG9BQWlEbkxvYzc4Ny84L1NQK25TSDd1U2h3ZDM4bzQrMzVtTTZnTFhuOUtCWmg0UUZ2ZDRPOFdRYkdzajNoQ1cxK2hxMUNYS0pzZ2g4MW0zRXhUYWlvWWxSRUExRU1BNUtqNUgzOHpUWGhBeUNnQTRxNWtGZGpMVDMvYkozNGd2MmFEWmFyeTk0UFpJQUlBWjloS2dBRU5BUURlS2dYZ0gwcms0UHdjbFVDQVp1YmdmOHBVQ2NVV0dFb3N5TEVWc0FiT3NUVkFBMlpzRDN5QS84b2pRQVJwQUFJd2hDV0FBUXlZZXFEZ0ZyTW95TUpJSVN4YVl5T0JIZGdjR3dVd29EKzJGVWdHRnpmR0duZ1dLUDhHOFpvdzM0QXJRYkhoN2kvc0FUaDd3cWJ2Tm9pVGNRZ0lyQVJNTTU0M2VlWTJSV3hqbVdKelFDZ1FBaldKNlFtMGRCT1J0TFcrYm1sUFhhY3BMZ3ppTldHK0FWZUNZbnB6TXRJSDRJeWhQbWtOUFIwYjVkUWhScGI0bFlEaHgzTlBOOC9jSm1MeHRuRWFaSW9OQjN5UUVRV002QU1udXVZSk5DWWRFdzVOMm1MZGFwOWx4VjNIWE55L2VHVzAwRngreDFsRlJrR0ZHZzFhZFA5NTlXT05NY0VVTTh3QlJKaFF4b1ZVMmxqbmd6Q0trelRMaTdLcW03YnJoM0dhbDNYYmovTzZuL2Y3L1ZRUVJ1bE1OcGN2RkV2bFNyVldielJiN1U2MzF4Kzg5TEp4VmgxYlUwRlpDM2FzN1pmVlk5N3BZSE1EMmIvQUhpdFg2Y2hGaFpIV1lOdXY2Z042K2txVDNFWVZRaDFYblRIaEdxNnY3VmQwcC9tYXF6enA5VHFxc2UxclV6bXE5dnphOUlDN2xWZXdDc1BFRmZ4Sm9SbjVhOVAySTV0Z3hrcFAzOXNLQWN3ZW9PMUtCb1lWVzJncTI5eFlUU3V1ckZRdWpUZmVqWnFma2FQS3YwZ01LLzVhZWgzU1NoZStLK0VFeEhULzFqNzBERDRpM1lDbUdBR05FaytZUHlRMVhLRGxwc2tORE93RlZsTmtnZHFqeDJhaHFiQk9BOUdYK0Rhb2N3OUUrZkE2TStKQkNlR3RQbXpiZitiNkordk11NGw4SjlHdXdqdm1KdzJnUTgxbkF4ZDBXNXlETERSZmNhcWtPTlQ4NGZlRytWU0QxbHR4NnluSWh3d29XbXNOKzg4cXBnQjVsRlBFbzh0MVBzVEZoa2Z5Q2JGWG9TbzNzTjhkSzBNd3ZudHNObElRZG9vSTRZZjBPZFQyaTg4VWpSUklHT3dHeUx3WGU1eGdZdXBXTkpQTURYWlpZOXZPSExpdzc5SE9XZ0FBQUFBPVwiKSBmb3JtYXQoXCJ3b2ZmMlwiKTtcbn1cblxuLnd0aWNvbnMge1xuXHRsaW5lLWhlaWdodDogMTtcbn1cblxuLnd0aWNvbnM6YmVmb3JlIHtcblx0Zm9udC1mYW1pbHk6IHd0aWNvbnMgIWltcG9ydGFudDtcblx0Zm9udC1zdHlsZTogbm9ybWFsO1xuXHRmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XG5cdHZlcnRpY2FsLWFsaWduOiB0b3A7XG59XG5cbi53dGljb24tYWNjb3VudDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwMVwiO1xufVxuLnd0aWNvbi1hZGQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDJcIjtcbn1cbi53dGljb24tY2FyZFJlc2l6ZURyYWc6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDNcIjtcbn1cbi53dGljb24tY2FzdWFsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA0XCI7XG59XG4ud3RpY29uLWNoZWNrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA1XCI7XG59XG4ud3RpY29uLWNoZWNrU21hbGw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDZcIjtcbn1cbi53dGljb24tY2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwN1wiO1xufVxuLnd0aWNvbi1jb3B5OmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA4XCI7XG59XG4ud3RpY29uLWNvcHlTbWFsbDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwOVwiO1xufVxuLnd0aWNvbi1kaXNtaXNzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBhXCI7XG59XG4ud3RpY29uLWRvd25DaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBiXCI7XG59XG4ud3RpY29uLWVycm9yOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBjXCI7XG59XG4ud3RpY29uLWV4cGFuZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZFwiO1xufVxuLnd0aWNvbi1mZWVkYmFjazpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZVwiO1xufVxuLnd0aWNvbi1maWxsZWREb3duQXJyb3c6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMGZcIjtcbn1cbi53dGljb24tZmluZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMFwiO1xufVxuLnd0aWNvbi1mb3JtYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTFcIjtcbn1cbi53dGljb24tZ2lmdDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMlwiO1xufVxuLnd0aWNvbi1ncmF5TG9nbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExM1wiO1xufVxuLnd0aWNvbi1pZ25vcmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTRcIjtcbn1cbi53dGljb24taW5mbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNVwiO1xufVxuLnd0aWNvbi1sZWZ0Q2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNlwiO1xufVxuLnd0aWNvbi1sb2dvOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTE3XCI7XG59XG4ud3RpY29uLWxvdmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMThcIjtcbn1cbi53dGljb24tbm9SZWNvbW1lbmRhdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTlcIjtcbn1cbi53dGljb24tcGFyYWdyYXBoUmV3cml0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYVwiO1xufVxuLnd0aWNvbi1wYXN0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYlwiO1xufVxuLnd0aWNvbi1waW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMWNcIjtcbn1cbi53dGljb24tcHJlbWl1bTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExZFwiO1xufVxuLnd0aWNvbi1wcmVtaXVtRGV0YWlsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFlXCI7XG59XG4ud3RpY29uLXByZW1pdW1GdWxsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFmXCI7XG59XG4ud3RpY29uLXJlY29tbWVuZGF0aW9uTGlnaHQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjBcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodENhcmQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjFcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodE5vU3VnZ2VzdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjJcIjtcbn1cbi53dGljb24tcmVmaW5lOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTIzXCI7XG59XG4ud3RpY29uLXJld3JpdGU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjRcIjtcbn1cbi53dGljb24tcmlnaHRDaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI1XCI7XG59XG4ud3RpY29uLXJvY2tldDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyNlwiO1xufVxuLnd0aWNvbi1zZW50ZW5jZUV4YW1wbGVzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI3XCI7XG59XG4ud3RpY29uLXNldHRpbmdzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI4XCI7XG59XG4ud3RpY29uLXNob3J0ZW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjlcIjtcbn1cbi53dGljb24tdHV0b3JpYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmFcIjtcbn1cbi53dGljb24tdW5sb2NrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTJiXCI7XG59XG4ud3RpY29uLXdhcm46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmNcIjtcbn1cbi53dGljb24tV29yZHR1bmVCdXR0b246YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmRcIjtcbn1cbi53dGljb24teDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyZVwiO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style></head>
+<body id="scrapbook" class="mt-entry-archive one-column" data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
+<script>
+if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
+
+/*
+window.addEventListener('load', function(event) {
+  setTimeout(function () {
+    hab('#sup-post-2');
+    hab('#cre-inner');
+  }, 1000);
+});
+*/
+</script>
+    <div id="container">
+        <div id="container-inner">
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name">阮一峰的网络日志 <span id="site_location"> » <a href="https://www.ruanyifeng.com/blog/" accesskey="1">首页</a></span><span id="site_archive"> » <a href="https://www.ruanyifeng.com/blog/archives.html">档案</a></span>
+</div>
+
+<div id="google_search">
+<!-- SiteSearch Google -->
+<form action="https://www.baidu.com/s" target="_blank" method="get" id="cse-search-box">
+  <div>
+  <input type="text" size="20" name="origin" class="searchbox" id="sbi" value="">
+  <input type="hidden" name="wd" value="">
+  <!--input type="image" src="/static/themes/theme_scrapbook/images/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa" onclick="this.form.wd.value = this.form.origin.value + ' inurl:www.ruanyifeng.com/blog'" /-->
+  <input type="image" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa" onclick="this.form.wd.value = this.form.origin.value + &#39; 阮一峰&#39;">
+</div>
+</form>
+
+<!-- SiteSearch Google -->
+</div>
+<div id="feed_icon">
+<a href="http://www.ruanyifeng.com/feed.html?utm_source=" title="订阅Feed">
+<!--img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUzSURBVHjavFdbbFRVFF3nPjoz7dTWTittaW0jUDRAUqaNojyqREnEQKgfUj9MqqAmhqRt/OCD4CuY+Kckoh+aiGKC+gMJbdHoRysJ8dkhhmJLNdDKtJU+6GMK87j3Hs85d2Z6HzNtMYWb3Dn3NWftvfba+5xNYDl+e6Fkj6yqb/oDRbWq14vlPBLRKCITkxf0ROLt+hNjp1PPSRK4kA3vF1dXNRcWlyA2OQU9eos9opAkAiKxD+XkKO6t15aRWO7J/MgmAZU8MEgexgZHMX518Dh72sYMmVKShnxWuWHdHtxKIDIYTgMuDzgfmSOIQkYMpdUF8OY92Hytt4/jvkg47czzU16iQovM3QFwmNck+Yyduu7D6NA0Z6JR4THntFs9V4tWQg6Ui3s6MwKDncsFTnXKLJhDSeUK3AgPtyhccDzmVs999buRt/1Vm4i0od+hX7+MRG87jPGB/w1u8FPj9xEw7McVrnYuOCvtpjTth3J/nTg99c8LRhKhr6D3dTB5R24bXFwbMXBsyZzeoXaycEpJ95TB09AGX/NpqLVNtw8urnVzLvHjFNxiFqRy2OOHuqUVnue+ACkoWzo4O6lGzTmuHq6nPvY2m9rVqjrIK2rMEKxqyG5NPAKt+wjo0LklgfNxJkZMA3KJvqRUk3z5UFY3QH14P0h+WUY79HPvgv7VuSg4ZRGY1YgZgqXmORccF17sy2ehnf9AeO085K2HQFbtXBScj0LcpgF2cN+WV+DZ/LJQu6gD4R7oV7pBJwbSgtMvfiPoVp56DySwxm7EtkMs1WdAB7qzggsDJKQYsHucSkOudrkiCPWR/fA2nYCn8SNIK4NptSMyAu3sAdDRkIsJdfth0LzSrODUoPNZ4KI9SxJI5UHk7D4GdQfz2us31c7CoHMjRkKuDPHseCMrONVhNcDJwMJpKFVvg9L4OaTiNWm1x789KCqkrXhVBiEz0WYCT2nAzQAD1/vaETv1GrRfP4Vx5cfMNcDPwvP0h0DhanPym7OIf/+O67vcJ1/PCJ4KgdzaUP6Wz+dU+5yIL6fV+PsHGAOdwlPpvvUOyeeAVGyCdqkDNB6DPjsBSrnndfOGevOh3RhGItxvA+fX1CtbGFhgYUFkFMZPR6F1HnClHq8HyubWtJexX06CRmdt33hrd7nA7SFY4qoGpnYuOKcRykPPgDCBcsHx9Iv+fNL2PueBehCWUfYQIIMGLOCcOmXDXsh1+yCt35tUPfvzGFuSvzvoinXOxqa02qOhM6733nVP2MAdaej2XN11DPKjLZCD+yBvahGCo7JfTKAN9UD7s8Oe9zUNIhz8fWI8DG2k38WCFdxugANcXrvTVd1IEbuv3Jour7Hzn7jLMBNfKs7R3i67gRVrbeCOEDhinmWhAatsqdquM2XzHZINhK2cqTjHr/XZdVJUbgN3MWAVXKbSyg9jesRW2xP9di+lwrL5ojM3m2H/kG9hwcIA37c71W6wJdW2J2S5nrjYbq/t1AHAhJsKQeyfPvf6IMJgghPJhFZ4x0KlfLFvt22du45Au/A1SOlGc0P672XXwhLtOcM0kTTEMMd0qkVmMNXxMd/tsedUjInr4SQDgOfeXMSiN0FCL5WHah4L1qqYXPJOJlttd+a5M+YpcG5poLYKQ5f+6JJ4r8bbJYP47hq4r7QAs9PjYNhHJd4o8l5taiwuOpa7AS4XKqI/5NjJbTnaWK92nLdLuhQAJayRNMiygXPBeQN+Qbvu0zDc3y+aUzhbkGR73sI7ljvUnndx2q3t+X8CDAD66FtrIL864AAAAABJRU5ErkJggg==" alt="" style="border: 0pt none;" /-->
+<img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2021072117.png" alt="" style="border: 0pt none;">
+</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-2127" class="entry-asset asset hentry">
+                                <div class="asset-header">
+<div class="asset-nav entry-nav">
+
+<div class="entry-location">
+<ul>
+<li>上一篇：<a href="https://www.ruanyifeng.com/blog/2019/10/weekly-issue-79.html" title="科技爱好者周刊：第 79 期">科技爱好者周刊：第&nbsp;7</a></li>
+<li>下一篇：<a href="https://www.ruanyifeng.com/blog/2019/11/weekly-issue-80.html" title="科技爱好者周刊：第 80 期">科技爱好者周刊：第&nbsp;8</a></li>
+</ul>
+</div>
+
+
+    
+                                    <div class="entry-categories">
+                                        <p>分类<span class="delimiter">：</span></p>
+                                        <ul>
+                                            <li><a href="https://www.ruanyifeng.com/blog/computer/" rel="tag">理解计算机</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                            
+<div class="entry-location-mobile" style="float: right;">
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2019/10/weekly-issue-79.html" title="科技爱好者周刊：第 79 期">⇐&nbsp;</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2019/11/weekly-issue-80.html" title="科技爱好者周刊：第 80 期">&nbsp;⇒</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+                          
+<article class="hentry">
+                                    <h1 id="page-title" class="asset-name entry-title">你所不知道的 AI 进展</h1>
+
+
+
+<div class="asset-meta">
+                                        
+
+                                            <p class="vcard author">作者： <a class="fn url" href="https://www.ruanyifeng.com/">阮一峰</a></p>
+                                    <p>日期： <a href="https://www.ruanyifeng.com/blog/2019/10/"><abbr class="published" title="2019-10-29T08:16:58+08:00">2019年10月29日</abbr></a></p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+                                
+                                <div class="asset-content entry-content" id="main-content">
+
+                                    <!-- div class="asset-body" -->
+                                        <p>人工智能现在是常见词汇，大多数人可能觉得，它是学术话题，跟普通人关系不大。</p>
+
+                                    <!-- /div -->
+
+
+                                    <!-- div id="more" class="asset-more" -->
+                                        <p>但是实际上，AI 突飞猛进，正在脱离实验室，进入日常生活。仅仅是现在的技术水平，就足以模糊现实与虚拟的界限，颠覆一般民众的认知。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102801.jpg" alt="" title=""></p>
+
+<p>（图1：2018年10月，世界第一幅 AI 生成的肖像画，<a href="https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx" target="_blank">拍卖</a>成交价43.25万美元。）</p>
+
+<p>为了让普通人了解 AI 的进展，谷歌的机器学习专家格里高利·萨普诺夫（Grigory Sapunov）写了一篇通俗的<a href="https://blog.inten.to/welcome-to-the-simulation-dd0d8cb6534d" target="_blank">科普文章</a>，介绍目前的技术成果。这盘文章非常精彩，有大量的图片，加上一些简单的解释，信息量很大，对于了解技术动态很有帮助。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102802.jpg" alt="" title=""></p>
+
+<p>（图2：谷歌的机器学习专家格里高利·萨普诺夫）</p>
+
+<p>下面就是那篇文章的翻译，比较长，图片很多，但是值得耐心读完。我保证，有些内容一定会让你感到吃惊。</p>
+
+<p>另外，插播一条活动消息。大家知道，国内最大的在线教育平台之一的<a href="https://ke.qq.com/?utm=ruanyifeng" target="_blank">腾讯课堂</a>，赞助了我的个人网站。他们最近启动了<a href="https://edu.qq.com/a/20190119/005414.htm" target="_blank">"腾讯课堂101计划"</a>，推广优质的技术教育资源。 <strong>大家可以留意一下本文结尾的<a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#support">免费活动信息</a>，帮你掌握开发网页和手机 App，提高技术水平。</strong></p>
+
+<h2>一、图像处理</h2>
+
+<p>人工智能最早是从图像处理开始的。图像处理是一种常见任务，智能要求比较高，需要使用 PhotoShop 之类的软件人工编辑，一般的算法解决不了。</p>
+
+<h3>1.1 对象补全</h3>
+
+<p>2017年，日本科学家提出了一种<a href="https://web.archive.org/web/20191016060740/http://iizuka.cs.tsukuba.ac.jp/projects/completion/en/" target="_blank">图像的对象补全模型</a>。经过训练，模型可以补全图片上缺失的部分。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102803.jpg" alt="" title=""></p>
+
+<p>（图3：图像的对象补全模型）</p>
+
+<p>上图中，左边是原始图片，然后把中间的花盆涂掉，输入模型。模型会自动补全缺失的部分（右图），由于它不知道，那里有一个花盆，所以只会根据没有涂掉的部分，补上地板和扶手。</p>
+
+<p>下面是更多这样的例子。涂掉的部分，模型都会补上，哪怕它根本不知道，那里原来是什么。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102804.jpg" alt="" title=""></p>
+
+<p>（图4：图像的对象补全示例）</p>
+
+<p>Nvidia 公司将这个模型做成了产品，放在网上。你可以到<a href="https://www.nvidia.com/research/inpainting/" target="_blank">它的网站</a>，上传一张图片，然后涂掉一些部分，让网站替你补全。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102805.jpg" alt="" title=""></p>
+
+<p>（图5：涂掉沙发旁边的茶几）</p>
+
+<p>有的<a href="https://www.slashgear.com/adobes-entry-level-photoshop-elements-gets-new-ai-powered-tools-04594215/" target="_blank">图像软件</a>已经应用这项技术，去除人像脸上的斑点。</p>
+
+<h3>1.2 背景处理</h3>
+
+<p>背景处理指的是，将前景物体从图片分离出来，再对背景进行加工。目前，已经有<a href="https://towardsdatascience.com/background-removal-with-deep-learning-c4f2104b3157" target="_blank">很好的智能算法</a>可以去除图片背景。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102806.jpg" alt="" title=""></p>
+
+<p>（图6：图片的背景去除）</p>
+
+<p>在模型内部，图片会转成像素的色块。下图的浅紫色块就是前景物体，然后再把这些像素提取出来。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102807.jpg" alt="" title=""></p>
+
+<p>（图7：背景去除模型）</p>
+
+<p>这个模型也已经做成了<a href="https://www.remove.bg/" target="_blank">线上服务</a>，大家可以上传图片感受一下它的效果。</p>
+
+<p>既然可以去除背景，那当然就可以<a href="https://arxiv.org/abs/1703.03872" target="_blank">更改背景</a>，为图片合成打开方便之门。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102808.jpg" alt="" title=""></p>
+
+<p>（图8：更改图片背景）</p>
+
+<h3>1.3 样式转换</h3>
+
+<p>人工智能还能够<a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf" target="_blank">识别</a>图片的风格样式（即像素的变化规律），将其套用在另一张图片。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102809.jpg" alt="" title=""></p>
+
+<p>（图9：原始图片）</p>
+
+<p>上图是两张原始图片，第一张是梵高的名画《星夜》，第二张是普通的风景照。模型可以提取第一张图片的风格，将其套用在第二张图片。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102810.jpg" alt="" title=""></p>
+
+<p>（图10：套用梵高的《星夜》风格）</p>
+
+<p>其他名画的风格，同样可以套用。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102812.jpg" alt="" title=""></p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102813.jpg" alt="" title=""></p>
+
+<p>（图11：图像的风格转换）</p>
+
+<h3>1.4 图像着色</h3>
+
+<p>一旦识别出图片中的物体，模型就可以统计不同物体的像素颜色规律，然后就能推断黑白照片可能的颜色，从而实现<a href="https://arxiv.org/abs/1603.06668" target="_blank">照片着色</a>。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102814.jpg" alt="" title=""></p>
+
+<p>（图12：黑白照片的着色）</p>
+
+<p>网上也有免费的<a href="https://colorize.cc/" target="_blank">着色服务</a>，大家可以体验。</p>
+
+<h2>二、GAN 方法</h2>
+
+<h3>2.1 简介</h3>
+
+<p>GAN 是"生成对抗网络"（Generative Adversarial Networks）的缩写，它是一种革命性的提升人工智能模型效果、生成虚拟图像的方法。</p>
+
+<p>原理很简单，就是两个神经网络互相对抗。一个神经网络负责生成虚拟图像，另一个神经网络负责鉴定假图像。理论上，如果 GAN 训练成功，那么生成的假图像与真图像将无法区分。2014年，这种方法提出以后，快速发展，目前效果已经可以乱真。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102815.jpg" alt="" title=""></p>
+
+<p>（图13：GAN 的改进速度）</p>
+
+<p>上图是过去几年，GAN 生成的虚拟人像。可以发现，每过一年，图片越来越大，细节越来越丰富，越发接近真实人像。它的工作方法也是如此，第一步生成一张低分辨率图片，然后慢慢放大，依次修改每一个像素，确定该像素怎样才能最大概率通过鉴定器。</p>
+
+<p>GAN 不仅能生成虚拟图像，还能生成音频、文本，甚至是化合物分子。AI 模型可能创造出来的任何东西，都能使用 GAN 提升效果。GitHub 有一个<a href="https://github.com/hindupuravinash/the-gan-zoo" target="_blank">仓库</a>，专门收集不同用途的 GAN，目前已经有500多种模型。</p>
+
+<h3>2.2 StyleGAN</h3>
+
+<p>目前，生成虚拟人像效果最好的模型是 Nvidia 公司的 <a href="https://arxiv.org/abs/1812.04948" target="_blank">StyleGAN</a>。下面两张头像，你能分辨哪张是虚拟的，哪张是真实的吗？</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102816.jpg" alt="" title=""></p>
+
+<p>（图14：GAN 虚拟人像）</p>
+
+<p>这是网站截图，你可以去<a href="http://www.whichfaceisreal.com/" target="_blank">那个网站</a>试试看，能猜对多少张。需要提醒的是，这是2018年底的模型产物，随着模型进化，迟早将无法分辨真假。</p>
+
+<p>GAN 不仅能生成人像，实际上可以生成任何图像。下面是 <a href="https://arxiv.org/abs/1809.11096" target="_blank">BigGAN</a> 模型生成的各种图像，图片里的东西都是不存在的。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102817.jpg" alt="" title=""></p>
+
+<p>（图15：BigGAN 模型生成的虚拟图像）</p>
+
+<h3>2.3 图像翻译</h3>
+
+<p>一种图像通过 GAN 转变为另一种图像，称为图像翻译。空拍照片变成地图、黑白照片变成彩色照片，都是图像翻译的例子。</p>
+
+<p><a href="https://github.com/phillipi/pix2pix" target="_blank">pix2pix</a> 是图像翻译的开源工具，它可以让黑夜变成白天，示意图变成实物图。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102818.jpg" alt="" title=""></p>
+
+<p>（图16：图像翻译）</p>
+
+<p>也可以让春天变成夏天，晴天变成雨天。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102819.jpg" alt="" title=""></p>
+
+<p>（图17：图像翻译）</p>
+
+<p>图像翻译的难点在于，它需要有成对的示例（源图像和相应的目标图像），告诉模型应该怎么翻译，这些示例可能很难创建。但是反过来，只要有配对的示例，就可以翻译图像，不管这种翻译是否合理。下面是两只小猫翻译成对应的豹子、狮子和老虎。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102820.jpg" alt="" title=""></p>
+
+<p>（图18：图像翻译）</p>
+
+<p><a href="https://github.com/junyanz/CycleGAN" target="_blank">CycleGAN</a> 模型还支持跨域翻译，将照片翻译成油画，斑马翻译成马。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102821.jpg" alt="" title=""></p>
+
+<p>（图19：图像翻译）</p>
+
+<p>Nvidia 开发了一个 <a href="http://nvidia-research-mingyuliu.com/gaugan" target="_blank">GauGAN</a> 软件，可以在线试玩。用户只需手绘一个示意图，软件就能生成一张对应的风景照片。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102829.jpg" alt="" title=""></p>
+
+<p>（图20：GauGAN 将示意图变成照片）</p>
+
+<h3>2.4 人像翻译</h3>
+
+<p>图像翻译用于人像，就是人像翻译。<a href="https://github.com/yunjey/StarGAN" target="_blank">StarGAN</a> 模型可以翻译面部属性，比如头发的颜色、性别、肤色等。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102824.jpg" alt="" title=""></p>
+
+<p>（图21：脸部属性的改变）</p>
+
+<p>还可以把其他人的表情移植到你的脸上，下图分别是愤怒、快乐、恐惧的表情翻译。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102825.jpg" alt="" title=""></p>
+
+<p>（图22：表情的改变）</p>
+
+<p><a href="https://github.com/run-youngjoo/SC-FEGAN" target="_blank">SC-FEGAN</a> 是人像翻译的开源软件，可以让你编辑人像，比如加上刘海，去除墨镜等等。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102826.jpg" alt="" title=""></p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102827.jpg" alt="" title=""></p>
+
+<p>（图23：人像编辑软件 SC_FEGAN）</p>
+
+<h3>2.5 文本到图像生成</h3>
+
+<p>GAN 最惊人的成果之一，大概就是<a href="https://arxiv.org/abs/1711.10485" target="_blank">根据文本生成图像</a>。用户提供一个句子，软件生成对应的图像。原始文本"一只红中透白、长着非常短的尖嘴的鸟"，可以得到下面的图像。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102830.jpg" alt="" title=""></p>
+
+<p>（图24：根据文本生成图像）</p>
+
+<p>论文甚至提到，将来存在可能，根据剧本直接生成一部电影。</p>
+
+<h2>三、视频生成</h2>
+
+<p>图像处理逐渐成熟以后，人工智能业界的关注重点就转向了视频。</p>
+
+<p>从一个视频生成另一个视频，这就叫视频翻译。目前比较成熟的两个方向是运动传递和面部交换。</p>
+
+<h3>3.1 运动传递</h3>
+
+<p>运动传递指的是，将一个人的动作（包括身体、眼睛或嘴唇的动作）翻译到另一个人身上，使得另一个人出现一模一样的动作。</p>
+
+<p>2018的论文<a href="https://carolineec.github.io/everybody_dance_now/" target="_blank">《Everybody Dance Now》</a>，给出了一个模型，可以将舞者的动作移植到任何人身上。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102831.jpg" alt="" title=""></p>
+
+<p>（图25：动作传递）</p>
+
+<p>上图中，蓝衣女子的跳舞视频完全是假的，是将左上角舞者的动作套用在她身上，自动生成的。</p>
+
+<p>NVIDIA 公司的开源软件 <a href="https://github.com/NVIDIA/vid2vid" target="_blank">vid2vid</a> 更为强大，可以生成高分辨率的、连贯的逼真视频。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102832.jpg" alt="" title=""></p>
+
+<p>（图26：vidvid 软件）</p>
+
+<h3>3.2 脸部生成</h3>
+
+<p>脸部生成指的是，根据一张脸的表情和动作，重建另一张脸。最著名的例子是虚拟的<a href="https://grail.cs.washington.edu/projects/AudioToObama/" target="_blank">奥巴马演讲</a>。2017年，华盛顿大学的团队发表了一段奥巴马的演讲视频。奥巴马其实从未做过这个演讲，是将别人的表情和口型套在他脸上生成的，语音也是合成的。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102833.jpg" alt="" title=""></p>
+
+<p>（图27：虚拟的奥巴马演讲）</p>
+
+<p>这种伪造的视频被称为 <a href="https://en.wikipedia.org/wiki/Deepfake" target="_blank">Deepfake</a>（深度伪造），具有很大的欺骗性，许多在线平台都禁止上传这一类视频。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102834.jpg" alt="" title=""></p>
+
+<p>（图28：伪造的特朗普演讲，将喜剧演员的表演变成特朗普自己在讲。）</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102837.jpg" alt="" title=""></p>
+
+<p>（图29：深度伪造的普京）</p>
+
+<p>2018年出现的<a href="https://web.stanford.edu/~zollhoef/papers/SG2018_DeepVideo/page.html" target="_blank">《深度视频肖像》</a>更进了一步，生成的视频不局限于虚拟的面部表情，还会头部旋转、眼睛凝视和眨眼，是 3D 的肖像重构。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102835.jpg" alt="" title=""></p>
+
+<p>（图29：深度视频肖像）</p>
+
+<p>这些技术还在<a href="https://www.theverge.com/2019/6/10/18659432/deepfake-ai-fakes-tech-edit-video-by-typing-new-words" target="_blank">继续发展</a>，现在你可以给出任意文本，从任何你指定的对象嘴里说出来。甚至只凭一张照片，就可以生成一段表情变化的视频。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102836.jpg" alt="" title=""></p>
+
+<p>（图30：一张照片生成各种表情）</p>
+
+<h3>3.3 中国的实践</h3>
+
+<p>国内的人工智能视频生成，并不落后于国外。换脸应用 ZAO 只需用户上传一张照片，就能把影视剧主人公的脸换掉，好像你本人在表演电影一样。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102838.jpg" alt="" title=""></p>
+
+<p>（图31：换脸应用 ZAO）</p>
+
+<p>2018年，新华社与搜狗合作推出了虚拟新闻主播，具有真人的形象，带有声音、面部表情和动作，在电视上播报新闻，已经开通了英语、俄语、阿拉伯语的主持人。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102839.jpg" alt="" title=""></p>
+
+<p>（图32：虚拟新闻主播）</p>
+
+<h3>3.4 视频渲染</h3>
+
+<p>除了视频生成，人工智能在视频渲染上也取得了很大进展。</p>
+
+<p>Nvidia 公司2018年展示了实时光线追踪 RTX 技术。这项技术用人工智能预测光线的变化，从而不用耗费大量计算去追踪光线，因此可以实时渲染出高画质的 3D 动画。这对于视频游戏有重大意义。 </p>
+
+<p>下面是使用这项技术的 Unreal Engine 4，实时渲染出的一个女子的<a href="https://venturebeat.com/2018/03/21/epic-games-shows-off-amazing-real-time-digital-human-with-siren-demo/" target="_blank">3D 动画</a>，可以一边计算生成，一边播放，完全没有延迟。</p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102840.jpg" alt="" title=""></p>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102841.jpg" alt="" title=""></p>
+
+<p>（图32：实时渲染的动画）</p>
+
+<p>实时光线追踪技术还可以用于自动驾驶，在白天和黑夜的不同时间，不同的路面和环境下，预测出暴雨、风雪和强烈的眩光导致的光线变化，对驾驶做出调整。</p>
+
+<h2>四、文本和声音处理</h2>
+
+<p>最后，简单提一下，人工智能在文本和声音处理领域的进展。</p>
+
+<p><strong>（1）语音合成</strong></p>
+
+<p>谷歌在2018年推出了智能助手 Google Duplex，它会根据你的日程，自动打电话去餐厅订座位。谷歌 CEO 说，这个机器人的对话能力，使得对方完全没有发现这是机器人。</p>
+
+<p><strong>（2）音乐合成</strong></p>
+
+<p>OpenAI 基金会推出的 <a href="https://openai.com/blog/musenet/" target="_blank">MuseNet</a>，通过学习数十万段 MIDI 音乐，能做到使用10种乐器，生成一段4分钟的音乐。它的官网有这些音乐的下载，相当动听。</p>
+
+<p><strong>（3）自动评论</strong></p>
+
+<p>据报道，使用 Yelp 网站的数据进行训练的模型，可以<a href="https://www.theverge.com/2017/8/31/16232180/ai-fake-reviews-yelp-amazon" target="_blank">自动生成</a>餐厅评论。</p>
+
+<blockquote>
+  <ol start="1">
+<li>我喜欢这个地方，一直来这里已经好多年。它是与朋友和家人相聚的好地点，我喜欢这里的食物和服务，从未有过糟糕的经历。</li>
+<li>我吃了烤蔬菜汉堡配薯条！哦，很好吃！</li>
+<li>我和我的家人都是这个地方的忠实粉丝。工作人员超级好，食物也很棒。鸡肉很好，大蒜酱也很完美。配水果的冰淇淋也很美味。强烈推荐！</li>
+</ol>
+</blockquote>
+
+<p>上面这些都是机器生成的评论。</p>
+
+<p><strong>（4）智能邮件</strong></p>
+
+<p>Gmail 会根据电子邮件的来信内容，自动生成<a href="https://www.blog.google/products/gmail/save-time-with-smart-reply-in-gmail/" target="_blank">三种不同的回复</a>，让用户选择。如果只是简单回应，用户不用自己动手写。</p>
+
+<p>Gmail 的<a href="https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html" target="_blank">另一个功能</a>是，根据用户已经写的内容，预测接下来会写的句子，供用户选择。</p>
+
+<h2>五、小结</h2>
+
+<p>毫无疑问，人工智能是很酷的技术，创造出了神奇的产品，有着难以想象的巨大应用前景。</p>
+
+<p>但是，人工智能也是一把双刃剑，模糊了现实与虚拟之间的界限，把我们带上了一条不可预测的道路。作为个人，了解这些技术的进展和潜力，有助于保持一份清醒，享受技术之福的同时，避免它带来的一些副作用。</p>
+
+<p>（正文完）</p>
+
+<p><a id="support" target="_blank"></a></p>
+
+<h2>前端学习资料免费送</h2>
+
+<p>时间过得很快，2019年接近尾声了。你今年有没有达到年初设定的目标？技术水平提升了多少？是不是感叹时间太少，永远有学不完的东西？</p>
+
+<p>下面是前端开发的10份免费专题资料，既有基础内容，也有进阶内容，都是实战一定会用到的东西。不管你是刚开始学习前端，还是已经从事了0～3年的开发实务，这些资料相信都会让你有所收获。</p>
+
+<blockquote>
+  <ul>
+<li>HTML 专题</li>
+<li>JavaScript 进阶</li>
+<li>ES6 专题</li>
+<li>TypeScript 深入剖析专题</li>
+<li>VUE 入门到进阶实战专题</li>
+<li>React 专题</li>
+<li>底层源码剖析专题</li>
+<li>Node.js 专题</li>
+<li>服务器部署专题</li>
+<li>大型实战项目解析</li>
+</ul>
+</blockquote>
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019102902.jpg" alt="" title=""></p>
+
+<p>这10份专题资料，来自<a href="https://edu.qq.com/a/20190119/005414.htm" target="_blank">《腾讯课堂101计划》</a>重点推广的优质机构"金渡教育"。金渡教育培训人次累计超过了40000，好评度98%，很多学员就职于 BAT 等一线互联网企业，许多薪水超过了 20K。 <strong>只要微信扫描识别下面的二维码，就能免费获取上面这些最新的前端资料。</strong></p>
+
+<!--![](https://www.wangbase.com/blogimg/asset/201910/bg2019102903.jpg)-->
+
+<p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2019103005.jpg" alt="" title=""></p>
+
+<p>金渡教育专注于做前端进阶培训。他们在腾讯课堂这个平台上，有一门精品课程 <strong>《Web 前端进阶班试听课》</strong>。如果你看了上面资料，想了解更多，或者想接受系统的前端培训，还可以 0 成本得到这门课的试听。</p>
+
+<p>目前正值"双十一"，他们提供各种优惠，是腾讯课堂上性价比非常高的一门课程。</p>
+
+<p>（完）</p>
+
+                                    <!-- /div -->
+
+                                </div>
+    <script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/newwindow.js.download"></script>
+                                <div class="asset-footer">
+
+<h3>文档信息</h3>
+<ul>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>）</li>
+<li>发表日期： <abbr class="published" title="2019-10-29T08:16:58+08:00">2019年10月29日</abbr></li>
+
+</ul>
+                                </div>
+</article>
+                            </div>
+
+
+
+  <div style="display: inline-block ! important;width: 100%;">
+ 
+  </div>
+
+
+
+<div id="related_entries">
+<h2>相关文章</h2>
+<ul>
+
+<li><strong>2022.08.02: <a href="https://www.ruanyifeng.com/blog/2022/08/dns-query.html">DNS 查询原理详解</a></strong>
+
+                           <div class="entry-body">
+                              通过 DNS 查询，得到域名的 IP 地址，才能访问网站。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2022.06.03: <a href="https://www.ruanyifeng.com/blog/2022/06/endianness-analysis.html">字节序探析：大端与小端的比较</a></strong>
+
+                           <div class="entry-body">
+                              今天谈谈一个重要的计算机概念，大家可能都听说过它，但是很少深究，那就是字节序（Endianness）。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2022.02.04: <a href="https://www.ruanyifeng.com/blog/2022/02/10g-ethernet.html">万兆家庭网络的时代</a></strong>
+
+                           <div class="entry-body">
+                              最近，我想将家里的网络设备，都升级到千兆。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2021.12.07: <a href="https://www.ruanyifeng.com/blog/2021/12/web3.html">为什么 Web3 与区块链有关</a></strong>
+
+                           <div class="entry-body">
+                              互联网迄今有两个阶段：Web 1.0 和 Web 2.0。
+
+                           </div>
+
+</li>
+
+ 
+</ul>
+</div>
+
+
+
+                    
+
+                    <div id="comments" class="comments" style="!important">
+
+
+    
+    
+        
+    <h2 class="comments-header">留言（46条）</h2>
+
+    <div id="comments-content" class="comments-content" style="clear: left;">
+        
+        <div id="comment-414218" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">muji</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414218">
+            <p>到最后，ai是否可以取代人类？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:03 AM">2019年10月29日 09:03</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414218">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用muji的这条留言" onclick="return CommentQuote(&#39;comment-quote-414218&#39;,&#39;muji&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414219" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">大嘴巴闭嘴</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414219">
+            分享竟然不支持钉钉！
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:07 AM">2019年10月29日 09:07</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414219">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用大嘴巴闭嘴的这条留言" onclick="return CommentQuote(&#39;comment-quote-414219&#39;,&#39;大嘴巴闭嘴&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414220" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">cK</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414220">
+            <p>看完之后，我只想到了一个词，欺骗，完全想不到它好的地方</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:10 AM">2019年10月29日 09:10</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414220">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用cK的这条留言" onclick="return CommentQuote(&#39;comment-quote-414220&#39;,&#39;cK&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414221" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">东</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414221">
+            <p>很好的科普文章！????</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:11 AM">2019年10月29日 09:11</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414221">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用东的这条留言" onclick="return CommentQuote(&#39;comment-quote-414221&#39;,&#39;东&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414222" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Kevin</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414222">
+            <p>人工智能的发展远远超出了我们的想象。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:20 AM">2019年10月29日 09:20</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414222">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用Kevin的这条留言" onclick="return CommentQuote(&#39;comment-quote-414222&#39;,&#39;Kevin&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414223" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">bbb</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414223">
+            <p>很好。。但也很可怕。。越来越真实，可能会让人类混淆什么是客观的真实与虚拟。。这里面也许会产生一种新的经济利益，类似于鸦片，人类可以完全投入到这个虚拟的世界中过另外一种自己的人生。。。越来越近了。。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:42 AM">2019年10月29日 09:42</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414223">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用bbb的这条留言" onclick="return CommentQuote(&#39;comment-quote-414223&#39;,&#39;bbb&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414224" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">wuwao</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414224">
+            <p>感谢介绍这篇论文。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:51 AM">2019年10月29日 09:51</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414224">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用wuwao的这条留言" onclick="return CommentQuote(&#39;comment-quote-414224&#39;,&#39;wuwao&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414225" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">vi da a mou r</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414225">
+            <p>看得如芒在背，想起蜘蛛侠英雄远征，你将分不清你所处的环境是真实还是虚拟。那么最后将是人性善获胜还是人性恶获胜。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  9:52 AM">2019年10月29日 09:52</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414225">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用vi da a mou r的这条留言" onclick="return CommentQuote(&#39;comment-quote-414225&#39;,&#39;vi da a mou r&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414226" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">redford</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414226">
+            <p>最后这些技术游戏行业全部能用上<br>
+哈哈哈哈哈一定要好好锻炼，活到全息游戏上线</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019 10:34 AM">2019年10月29日 10:34</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414226">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用redford的这条留言" onclick="return CommentQuote(&#39;comment-quote-414226&#39;,&#39;redford&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414228" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">DC</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414228">
+            <p>此条评论由 AI 生成</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019 11:20 AM">2019年10月29日 11:20</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414228">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用DC的这条留言" onclick="return CommentQuote(&#39;comment-quote-414228&#39;,&#39;DC&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414229" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">zentby</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414229">
+            <p>人类越来越不容易分辨真实与虚拟，未来了解真相也愈加不易。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019 11:21 AM">2019年10月29日 11:21</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414229">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用zentby的这条留言" onclick="return CommentQuote(&#39;comment-quote-414229&#39;,&#39;zentby&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414230" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">苏耀峰的Blog</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414230">
+            <p>喜欢TensorFlow</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  1:15 PM">2019年10月29日 13:15</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414230">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用苏耀峰的Blog的这条留言" onclick="return CommentQuote(&#39;comment-quote-414230&#39;,&#39;苏耀峰的Blog&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414235" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Sam.Z</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414235">
+            <p>便利的同时也感觉人类（普通人）会越来越难，AI还真是把双刃剑呀。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019  3:37 PM">2019年10月29日 15:37</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414235">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用Sam.Z的这条留言" onclick="return CommentQuote(&#39;comment-quote-414235&#39;,&#39;Sam.Z&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414240" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">翟码农</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414240">
+            <p>人类社会除了往前走，似乎也无路可退。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 29, 2019 10:16 PM">2019年10月29日 22:16</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414240">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用翟码农的这条留言" onclick="return CommentQuote(&#39;comment-quote-414240&#39;,&#39;翟码农&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414242" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">钱铭</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414242">
+            <p>能力如果不能得到很好的管理，带来帮助也将变为伤害</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 30, 2019  9:26 AM">2019年10月30日 09:26</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414242">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用钱铭的这条留言" onclick="return CommentQuote(&#39;comment-quote-414242&#39;,&#39;钱铭&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414243" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">堂</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414243">
+            <p>请问，那个样式转换（梵高画）有没有在线玩的地方？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 30, 2019 10:16 AM">2019年10月30日 10:16</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414243">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用堂的这条留言" onclick="return CommentQuote(&#39;comment-quote-414243&#39;,&#39;堂&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414245" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">snowqinag</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414245">
+            <p>有一天, 所有的摄像头都失去了意义</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 30, 2019 11:17 AM">2019年10月30日 11:17</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414245">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用snowqinag的这条留言" onclick="return CommentQuote(&#39;comment-quote-414245&#39;,&#39;snowqinag&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414246" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">laokaide</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414246">
+            <p>那么问题来了，30岁高龄的普通程序员如何入门AI相关技术和领域</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 30, 2019  1:14 PM">2019年10月30日 13:14</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414246">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用laokaide的这条留言" onclick="return CommentQuote(&#39;comment-quote-414246&#39;,&#39;laokaide&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414248" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">joy</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414248">
+            <p>视频动画在5G时代将会有很大发展</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 30, 2019  2:58 PM">2019年10月30日 14:58</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414248">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用joy的这条留言" onclick="return CommentQuote(&#39;comment-quote-414248&#39;,&#39;joy&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414257" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">展翼骐骥</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414257">
+            <p>敢问博主，AI跟区块链会有怎样的结合？？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019 12:09 AM">2019年10月31日 00:09</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414257">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用展翼骐骥的这条留言" onclick="return CommentQuote(&#39;comment-quote-414257&#39;,&#39;展翼骐骥&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414261" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Orange</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414261">
+            <p>看完这 我发现我做前端都没什么意义了 以后直接生成页面就好了</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019 10:11 AM">2019年10月31日 10:11</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414261">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用Orange的这条留言" onclick="return CommentQuote(&#39;comment-quote-414261&#39;,&#39;Orange&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414262" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">da0</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414262">
+            <p>懂的人看内核的技术, 不懂的人看个热闹</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019 11:24 AM">2019年10月31日 11:24</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414262">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用da0的这条留言" onclick="return CommentQuote(&#39;comment-quote-414262&#39;,&#39;da0&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414265" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">xkloveme</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414265">
+            只想到两个字,可怕
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019  3:16 PM">2019年10月31日 15:16</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414265">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用xkloveme的这条留言" onclick="return CommentQuote(&#39;comment-quote-414265&#39;,&#39;xkloveme&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414268" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">MegaTrends</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414268">
+            <p>假如一台机器有了和人一样的智力，那 “他”能获取一个合法的社会身份吗？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019  4:52 PM">2019年10月31日 16:52</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414268">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用MegaTrends的这条留言" onclick="return CommentQuote(&#39;comment-quote-414268&#39;,&#39;MegaTrends&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414269" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Ashin</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414269">
+            <p>我想知道有些技术发展的初心是什么，似乎早就忘了初心</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 31, 2019  5:03 PM">2019年10月31日 17:03</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414269">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用Ashin的这条留言" onclick="return CommentQuote(&#39;comment-quote-414269&#39;,&#39;Ashin&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414284" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">桥边驿语人</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414284">
+            <p>超乎想象</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  1, 2019 10:05 AM">2019年11月 1日 10:05</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414284">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用桥边驿语人的这条留言" onclick="return CommentQuote(&#39;comment-quote-414284&#39;,&#39;桥边驿语人&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414290" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">little</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414290">
+            <p>好多网站是墙外的，从未敢翻墙过...</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  1, 2019 10:44 AM">2019年11月 1日 10:44</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414290">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用little的这条留言" onclick="return CommentQuote(&#39;comment-quote-414290&#39;,&#39;little&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414295" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">微wx笑</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414295">
+            <p>技术越来越强大，也越来越可怕。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  1, 2019 11:20 AM">2019年11月 1日 11:20</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414295">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用微wx笑的这条留言" onclick="return CommentQuote(&#39;comment-quote-414295&#39;,&#39;微wx笑&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414314" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">fakenew</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414314">
+            <p>没有一条属于“AI”</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  1, 2019  4:39 PM">2019年11月 1日 16:39</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414314">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用fakenew的这条留言" onclick="return CommentQuote(&#39;comment-quote-414314&#39;,&#39;fakenew&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414324" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">又菜又浪</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414324">
+            <p>图像处理而已，也算AI？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  2, 2019 10:36 AM">2019年11月 2日 10:36</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414324">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用又菜又浪的这条留言" onclick="return CommentQuote(&#39;comment-quote-414324&#39;,&#39;又菜又浪&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414341" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">鑫</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414341">
+            <p>有一期再说正在开发脑部神经芯片，如果加上人工智能，未来可能会出现小说里面的游戏仓，而人类就是靠大脑神经去调动躯体工作，如果分离，不靠躯体供应营养，是不是可是永。。。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  4, 2019 10:51 AM">2019年11月 4日 10:51</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414341">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用鑫的这条留言" onclick="return CommentQuote(&#39;comment-quote-414341&#39;,&#39;鑫&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414351" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">老五</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414351">
+            <p>这么说起来，现在使用的人脸解锁还能安全吗？想起上次说的，可以从拍摄的高清照片中提取到指纹，细思极恐！</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  4, 2019  5:50 PM">2019年11月 4日 17:50</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414351">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用老五的这条留言" onclick="return CommentQuote(&#39;comment-quote-414351&#39;,&#39;老五&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414352" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">DHL</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414352">
+            <p>AI，唉.</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  4, 2019  7:23 PM">2019年11月 4日 19:23</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414352">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用DHL的这条留言" onclick="return CommentQuote(&#39;comment-quote-414352&#39;,&#39;DHL&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414365" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">chxuzzu</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414365">
+            <p>以后不用手动抠图去背景了。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  5, 2019  4:13 PM">2019年11月 5日 16:13</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414365">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用chxuzzu的这条留言" onclick="return CommentQuote(&#39;comment-quote-414365&#39;,&#39;chxuzzu&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414379" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">山石松</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414379">
+            <p>2.3的CycleGAN <a href="http://nvidia-research-mingyuliu.com/gaugan/" rel="nofollow">http://nvidia-research-mingyuliu.com/gaugan/</a><br>
+去尝试了一下，没有任何反应，不知道是不是用法不对。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November  6, 2019  2:39 PM">2019年11月 6日 14:39</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414379">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用山石松的这条留言" onclick="return CommentQuote(&#39;comment-quote-414379&#39;,&#39;山石松&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414473" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">cc</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414473">
+            <blockquote>
+<pre>引用muji的发言：</pre>
+
+<p>到最后，ai是否可以取代人类？</p>
+
+</blockquote>
+
+<p>人脑有1千多亿个神经元，比电脑复杂多了</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November 11, 2019  5:08 PM">2019年11月11日 17:08</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414473">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用cc的这条留言" onclick="return CommentQuote(&#39;comment-quote-414473&#39;,&#39;cc&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414727" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">徐彬</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414727">
+            <p>然后就是 terminator 哈哈哈哈</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="November 22, 2019  8:15 PM">2019年11月22日 20:15</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414727">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用徐彬的这条留言" onclick="return CommentQuote(&#39;comment-quote-414727&#39;,&#39;徐彬&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-414985" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">诸葛亮</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-414985">
+            <p>太可怕了</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2019  2:12 PM">2019年12月 9日 14:12</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-414985">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用诸葛亮的这条留言" onclick="return CommentQuote(&#39;comment-quote-414985&#39;,&#39;诸葛亮&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-415626" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">国服第一獭兔</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-415626">
+            <p>这是技术，我觉得这与AI没什么关系，AI应该有自己的思维意识，否则智能根本谈不上</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January  1, 2020  6:14 PM">2020年1月 1日 18:14</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-415626">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用国服第一獭兔的这条留言" onclick="return CommentQuote(&#39;comment-quote-415626&#39;,&#39;国服第一獭兔&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-420186" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">KUKUMUMU</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-420186">
+            <blockquote>
+<pre>引用cc的发言：</pre>
+
+<p></p>
+
+<p>人脑有1千多亿个神经元，比电脑复杂多了</p>
+
+</blockquote>
+
+<p>当然，人是不可能战胜机器的，就像你能跑过汽车吗</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="July  6, 2020  6:29 PM">2020年7月 6日 18:29</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-420186">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用KUKUMUMU的这条留言" onclick="return CommentQuote(&#39;comment-quote-420186&#39;,&#39;KUKUMUMU&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-420354" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">wilon</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-420354">
+            <p>解决了机器人看听说的问题，接下来...</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="July 15, 2020 11:57 AM">2020年7月15日 11:57</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-420354">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用wilon的这条留言" onclick="return CommentQuote(&#39;comment-quote-420354&#39;,&#39;wilon&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-422934" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">杰哥</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-422934">
+            <p>随着科技发展，ai是否有取代人大部分工作的可能性，如果取代了，那替换下来的劳动力该何去何从？<br>
+</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="September 30, 2020 10:09 AM">2020年9月30日 10:09</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-422934">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用杰哥的这条留言" onclick="return CommentQuote(&#39;comment-quote-422934&#39;,&#39;杰哥&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-423007" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">gyh</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-423007">
+            <p>我感觉目前所谓的“人工智能”，只是说，我们让计算机学会了“猜”，猜像素，猜动作，通过“猜”，我们可以让计算机解决一些模糊的问题。至于取代人类，光靠“猜”还不够，还要能“想”，能“认识”。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October  3, 2020 10:51 PM">2020年10月 3日 22:51</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-423007">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用gyh的这条留言" onclick="return CommentQuote(&#39;comment-quote-423007&#39;,&#39;gyh&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-425084" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">iiiiiii</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-425084">
+            <p>“人工智能” 不行啊<br>
+他根本不知道什么时候 需要/不需要 做什么<br>
+就像机器人学会了扫地  但他不知道什么时候扫地<br>
+也就是这个机器人不会主动工作  永远是被动的  所以我根本不知道他在哪里智能了</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January 20, 2021 11:55 AM">2021年1月20日 11:55</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-425084">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用iiiiiii的这条留言" onclick="return CommentQuote(&#39;comment-quote-425084&#39;,&#39;iiiiiii&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-426168" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">东山郎</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-426168">
+            <p>你暴露了我们的实力，我们还需要你们继续努力</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="March 31, 2021  5:43 PM">2021年3月31日 17:43</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-426168">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用东山郎的这条留言" onclick="return CommentQuote(&#39;comment-quote-426168&#39;,&#39;东山郎&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-430214" class="comment">
+    <div id="comment-last" class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">蔡徐坤</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-430214">
+            <p>感觉现实世界就是一台具有人类无法想象的算力的计算机模拟出来的</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="October 24, 2021 12:12 AM">2021年10月24日 00:12</abbr>
+ | <a href="https://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-430214">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2019/10/artificial-intelligenence.html#comment-text" title="引用蔡徐坤的这条留言" onclick="return CommentQuote(&#39;comment-quote-430214&#39;,&#39;蔡徐坤&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">我要发表看法</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="https://www.ruanyifeng.com/cgi-bin/mtos/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return pleaseWait();">
+                <input type="hidden" name="static" value="1">
+                <input type="hidden" name="entry_id" value="2127">
+                <input type="hidden" name="__lang" value="en">
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id">
+                <input type="hidden" name="armor" value="1">
+                <input type="hidden" name="preview" value="">
+                <input type="hidden" name="sid" value="">
+                <div id="comments-open-data">
+            <div id="comments-open-text">
+                    <p><label for="comment-text">您的留言
+                    （HTML标签部分可用）</label></p>
+                    <p><textarea id="comment-text" name="text" rows="10" cols="50"></textarea></p>
+                </div>
+                    <div id="comment-form-name">
+                        <p><label for="comment-author">您的大名：</label></p>
+                        <p><input id="comment-author" name="author" size="30" value="">  <span class="hint"> «-必填</span></p>
+                    </div>
+                    <div id="comment-form-email">
+                        <p><label for="comment-email">电子邮件：</label></p>
+                        <p><input id="comment-email" name="email" size="30" value="">  <span class="hint"> «-必填，不公开</span></p>
+                    </div>
+                    <div id="comment-form-url">
+                        <p><label for="comment-url">个人网址：</label></p>
+                        <p><input id="comment-url" name="url" size="30" value="">  <span class="hint"> «-我信任你，不会填写广告链接</span></p>
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <p>
+                        <label for="comment-bake-cookie">记住个人信息？</label><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="!this.checked?forgetMe(document.comments_form):rememberMe(document.comments_form)" value="1" accesskey="r"></p>
+                    </div>
+                </div>
+                    <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()">
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+<div id="wait" style="display:none;">
+<p><strong>正在发表您的评论，请稍候</strong></p>
+<p>
+<input type="text" name="percent" size="3" style="font-family:Arial; color:black;text-align:center; border-width:medium; border-style:none;">           
+<input type="text" name="chart" size="46" style="font-family:Arial;font-weight:bolder; color:black; padding:0px; border-style:none;">
+</p>
+</div>
+
+                    <p><input type="submit" accesskey="s" name="post" id="comment-submit" value="发表">  <span class="hint"> «- 点击按钮</span></p>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/prism.js.download"></script>
+        <script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/checker.js.download"></script> 
+            <div id="footer">
+<div id="footer-inner">
+  <div id="footer-content">
+
+      
+<!--
+      <section> 
+     </section>
+  <p><a title="Instagram" target="_blank" href="http://instagram.com/ruanyf">Instagram</a></p>
+       <p><a title="订阅" href="https://app.feedblitz.com/f/f.fbz?Sub=348868" target="_blank">邮件订阅</a></p>
+  
+       <h2>Feed</h2>
+       <p><a title="FeedBurner" href="http://feeds.feedburner.com/ruanyifeng" target="_blank">FeedBurner</a></p>
+       <p><a title="atom.xml" href="http://www.ruanyifeng.com/blog/atom.xml" target="_blank">atom.xml</a></p>
+     
+      <p>支付宝：<a title="支付宝" href="alipays://platformapi/startapp?appId=20000067&url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog" target="_blank">yifeng.ruan@gmail.com</a></p>
+-->
+
+     <section>
+<!--
+       <h2>授权方式</h2>
+       <p><a title="许可证" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">自由转载-非商用-非衍生-保持署名</a></p>
+       <h2>微信公号</h2>
+       <h2>社交帐号</h2>
+       <h2>联系方式</h2>
+     -->
+       <p><img src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/bg2020013101.jpg" alt="微信扫描"></p>
+       <p>
+         <a title="微博" href="https://weibo.com/ruanyf" target="_blank">Weibo</a> | 
+         <a title="Twitter" target="_blank" href="https://twitter.com/ruanyf">Twitter</a> |
+         <a title="GitHub" target="_blank" href="https://github.com/ruanyf">GitHub</a>
+       </p>
+     
+     <p>Email: <a title="电子邮件" href="mailto:yifeng.ruan@gmail.com" target="_blank">yifeng.ruan@gmail.com</a></p>
+     </section>
+  
+  
+
+
+  </div>
+</div>
+</div>
+<script>
+function insertLine(e,t){for(var n=0;n<t;n++)e.parentNode.insertBefore(document.createElement("p"),e)}function getImg(){if(!window["main-content"])return!1;for(var e,t=Array.prototype.slice.call(window["main-content"].getElementsByTagName("img")),n=0;n<t.length;n++){if("display: none !important;"===(e=t[n]).getAttribute("style"))return e;if(n===t.length-1)return!1}}function toObjectUrl(e,t){return fetch(e).then(e=>e.blob()).then(e=>{t(URL.createObjectURL(e))})}function toDataURL(e,t){var n=new XMLHttpRequest;n.open("get",e),n.responseType="blob",n.onload=function(){var e=new FileReader;e.onload=function(){t(this.result)},e.readAsDataURL(n.response)},n.send()}setTimeout(function(){var e=getImg();e&&(insertLine(e.parentNode,2),toObjectUrl(e.src,function(t){var n=document.createElement("p"),r=document.createElement("img");r.src=t,n.appendChild(r),e.parentNode.parentNode.insertBefore(n,e.parentNode)}))},3e3);
+</script>                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/stats.js.download"></script>
+<script>
+var supportImg = document.querySelector('#support-img');
+
+if (supportImg && _hmt) {
+  _hmt.push(['_trackEvent', 'banner', 'load']);
+  supportImg.addEventListener('click', function () {
+    _hmt.push(['_trackEvent', 'banner', 'click']);
+  }, false);
+}
+
+var homepageImg = document.querySelector('#homepage_sponsor');
+if (homepageImg && _hmt) {
+  _hmt.push(['_trackEvent', 'homepage-banner', 'load']);
+  homepageImg.addEventListener('click', function () {
+    _hmt.push(['_trackEvent', 'homepage-banner', 'click']);
+  }, false);
+}
+</script>
+
+
+
+        </div>
+    </div>
+<script>(function(){var js = "window['__CF$cv$params']={r:'760966a32f2e0452',m:'rGhiS2Taa2RMEE4hh79yvrBOYghOV9X48wv0FWtnCho-1666852413-0-AXZOs+z6BUBh1p5+A/OZgKXzUQZnAZMAsJBJN6+aZbPvO/NgTYz+qVv3SggnH7DemJmIGzAy2zKFP7zpf76vjWlgj9o7JNYqgcdsIy1lrmbX1IiMP/HqdixtxPVvu7e2uuKDsfh/Zv7tojJ+L52vpg9jG0JkTjD6zkNbNv9ov3zN',s:[0xd4560b185a,0x2fa3b98687],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./你所不知道的 AI 进展 - 阮一峰的网络日志_files/saved_resource.html"></iframe>
+<div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

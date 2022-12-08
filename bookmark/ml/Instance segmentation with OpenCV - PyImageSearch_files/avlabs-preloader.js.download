@@ -1,0 +1,4 @@
+var preloader = jQuery('#loader-wrapper'),
+			loader = preloader.find('.cssload-loading');
+			loader.fadeOut();
+			preloader.delay(400).fadeOut('slow');

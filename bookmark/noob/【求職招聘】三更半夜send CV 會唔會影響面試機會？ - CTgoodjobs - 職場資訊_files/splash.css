@@ -1,0 +1,66 @@
+/* Splash AD
+/*------------------------------------------------------------*/
+.splash {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+  overflow: hidden;
+  display: none;
+}
+
+.splash.on {
+  display: block;
+}
+
+.splash .highlight {
+  color: var(--accent);
+}
+
+
+/* Continue in App */
+.splash--app {
+  font-size: 16px;
+  background: #3684CB url("../../images/splash-app-bg.jpg") top left no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #FFF;
+  padding: 30px;
+}
+
+.splash--app .key-art {
+  width: 50%;
+}
+
+.splash h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.splash .btn {
+  font-size: 16px;
+}
+
+@media (min-width: 320px) {
+  .splash h2 {
+    font-size: 18px;
+  }
+
+  .splash--app .key-art {
+    width: 45%;
+  }
+
+  .splash--app,
+  .splash .btn {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  .splash--app .key-art {
+    width: 240px;
+  }
+}
+

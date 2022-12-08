@@ -1,0 +1,149 @@
+.col-job-list .job__title,
+.col-job-list .job__company {
+    display: block;
+}
+
+.adv-art {
+    display: block;
+}
+
+.adv-art-l {
+    display: none;
+}
+
+.progress-bar div {
+    background-color: var(--highlight) !important;
+}
+
+article img {
+    max-width: 100% !important;
+}
+
+article.mem-only .content {
+    min-height: 400px;
+}
+
+article.mem-only .register a {
+    color: #fff
+}
+
+.right-col {
+    z-index: 9;
+}
+
+.left-col {
+    position: static;
+    z-index: auto;
+}
+
+/* Looking for jobs? */
+.job-search-msg:link,
+.job-search-msg:visited {
+    font-size: 14px;
+    background: #3280b3;
+    color: #FFF;
+    padding: 8px 16px;
+    border-radius: 42px;
+
+    position: fixed;
+    bottom: -48px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    transition: bottom .3s ease-in-out !important;
+
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+
+    display: none;
+    align-items: center;
+    z-index: 10;
+}
+
+.job-search-msg.on {
+    bottom: 15px;
+}
+
+.job-search-msg img {
+    margin-right: 8px;
+}
+
+/* Looking for jobs? v2 */
+.job-search-msg-v2:link,
+.job-search-msg-v2:visited {
+    font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+    font-size: 14px;
+    width: auto;
+    font-weight: 600;
+    background: linear-gradient(270deg, #79d3c3, #41a0dd);
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 42px;
+    position: fixed;
+    bottom: -48px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: bottom .3s ease-in-out !important;
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+}
+
+.job-search-msg-v2.on {
+    bottom: 15px;
+}
+
+.job-search-msg-v2 img {
+    margin-right: 6px;
+}
+
+.job-search-msg-v2 span {
+    white-space: pre;
+}
+
+article .adv--inhouse .adv {
+    background: none;
+}
+
+article hr {
+    margin: 30px auto;
+    width: 25%;
+}
+
+/*fix addthis copy link layout*/
+body.at-expanded-menu-noscroll {
+    position: static;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .job-search-msg:link,
+    .job-search-msg:visited {
+        display: flex;
+    }
+
+    .job-search-msg-v2 .arrow-right {
+        animation: arrow-right-slide 1s ease-in-out infinite;
+        margin-left: 6px;
+    }
+}
+
+@media (min-width: 992px) {
+    .adv-art {
+        display: none;
+    }
+
+    .adv-art-l {
+        display: block;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    article .adv {
+        padding: 5px 0;
+    }
+}

@@ -1,0 +1,19 @@
+.pswp .modal-content.adv {
+    width: auto;
+}
+
+.cus-html.adv .content::before,
+.cus-html.adv .content::after {
+    scroll-snap-align: none;
+}
+
+.cus-html.adv .content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .pswp__caption {
+        margin-bottom: 15px;
+    }
+}

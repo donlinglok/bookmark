@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<!-- saved from url=(0126)https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&utm_medium=email&utm_campaign=starrocket&utm_term=2022-10-12 -->
+<html dir="ltr" lang="zh-TW" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:addthis="https://www.addthis.com/help/api-spec" prefix="og: https://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/fbevents.js.download"></script><script type="text/javascript" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/1.txt"></script><script type="text/javascript" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/moatframe.js.download"></script><script async="" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/universal.js.download"></script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+<!-- Author Meta Tags by Molongui Authorship, visit: https://wordpress.org/plugins/molongui-authorship/ -->
+<meta name="author" content="Julie">
+<!-- /Molongui Authorship -->
+
+<title>最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet | Star Rocket Blog</title><link rel="preload" as="style" href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/css"><link rel="stylesheet" href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/css" media="all" onload="this.media=&#39;all&#39;"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans%3Aregular%2Citalic%2C700%2C700italic&#038;display=swap" /></noscript><link rel="stylesheet" href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/8636e76826c0ebe23282f41abfb8cfe5.css" media="all" data-minify="1">
+
+		<!-- All in One SEO 4.2.6.1 - aioseo.com -->
+		<meta name="robots" content="max-image-preview:large">
+		<meta name="google-site-verification" content="content=&quot;UTUR38Ftr2jjBI6KepLZ_Vgsz5IWv7lx6Uf1ZORBZHg&quot;">
+		<meta name="keywords" content="c+,engineer,google,jon skeet,programming,stack overflow">
+		<link rel="canonical" href="https://blog.starrocket.io/posts/jon-skeet/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.2.6.1 ">
+		<meta property="og:locale" content="zh_TW">
+		<meta property="og:site_name" content="Star Rocket Blog | 關注「科技」和「創新故事」">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet | Star Rocket Blog">
+		<meta property="og:url" content="https://blog.starrocket.io/posts/jon-skeet/">
+		<meta property="og:image" content="https://blog.starrocket.io/wp-content/uploads/2021/08/27894559989_b047b8ee9b_o-scaled.jpg">
+		<meta property="og:image:secure_url" content="https://blog.starrocket.io/wp-content/uploads/2021/08/27894559989_b047b8ee9b_o-scaled.jpg">
+		<meta property="og:image:width" content="2560">
+		<meta property="og:image:height" content="1656">
+		<meta property="article:published_time" content="2021-08-23T07:01:43+00:00">
+		<meta property="article:modified_time" content="2021-10-20T09:16:39+00:00">
+		<meta property="article:publisher" content="https://www.facebook.com/starrocket.io/">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@StarRocket">
+		<meta name="twitter:title" content="最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet | Star Rocket Blog">
+		<meta name="twitter:creator" content="@StarRocket">
+		<meta name="twitter:image" content="https://blog.starrocket.io/wp-content/uploads/2021/08/27894559989_b047b8ee9b_o-scaled.jpg">
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#article","name":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet | Star Rocket Blog","headline":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet","author":{"@id":"https:\/\/blog.starrocket.io\/posts\/author\/julie\/#author"},"publisher":{"@id":"https:\/\/blog.starrocket.io\/#organization"},"image":{"@type":"ImageObject","url":"https:\/\/blog.starrocket.io\/wp-content\/uploads\/2021\/08\/27894559989_b047b8ee9b_o-scaled.jpg","width":2560,"height":1656},"datePublished":"2021-08-23T07:01:43+08:00","dateModified":"2021-08-23T07:01:43+08:00","inLanguage":"zh-TW","mainEntityOfPage":{"@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#webpage"},"isPartOf":{"@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#webpage"},"articleSection":"\u4eba\u7269\u6545\u4e8b, C+, engineer, Google, Jon Skeet, programming, Stack Overflow"},{"@type":"BreadcrumbList","@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/blog.starrocket.io\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/blog.starrocket.io\/","name":"\u4e3b\u9801","description":"\u79d1\u6280\u6025\u901f\u767c\u5c55\u7684\u6642\u4ee3\uff0c\u6c92\u6709\u4eba\u662f\u5c40\u5916\u4eba\u3002\u7ad9\u5728\u4eba\u6587\u8207\u79d1\u6280\u4ea4\u6703\u8655\u7684\u6211\u5011\uff0c\u900f\u904e\u8ffd\u8e64\u3001\u8a18\u9304\u5275\u65b0\u6545\u4e8b\uff0c\u9080\u8acb\u4f60\u8e0f\u5165\u5049\u5927\u822a\u9053\u3002\u6211\u5011\u5beb\u5831\u5c0e\u3001\u88fd\u4f5c podcast\u300a\u661f\u7bad\u5ee3\u64ad\u300b\u3001\u6bcf\u9031\u767c\u9001\u65b0\u77e5\u88dc\u7d66\u7684\u300a\u79d1\u6280\u5275\u696d\u9031\u5831\u300b\uff0c\u8207\u4f60\u4e00\u8d77\u63a2\u7d22\u672a\u4f86\u7684\u53ef\u80fd\u6027\u3002","url":"https:\/\/blog.starrocket.io\/"},"nextItem":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#listItem"},{"@type":"ListItem","@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/","name":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet","url":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/"},"previousItem":"https:\/\/blog.starrocket.io\/#listItem"}]},{"@type":"Organization","@id":"https:\/\/blog.starrocket.io\/#organization","name":"Star Rocket Blog","url":"https:\/\/blog.starrocket.io\/","sameAs":["https:\/\/www.facebook.com\/starrocket.io\/","https:\/\/twitter.com\/StarRocket","https:\/\/www.instagram.com\/starrocket.io\/"]},{"@type":"WebPage","@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#webpage","url":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/","name":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet | Star Rocket Blog","inLanguage":"zh-TW","isPartOf":{"@id":"https:\/\/blog.starrocket.io\/#website"},"breadcrumb":{"@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#breadcrumblist"},"author":"https:\/\/blog.starrocket.io\/posts\/author\/julie\/#author","creator":"https:\/\/blog.starrocket.io\/posts\/author\/julie\/#author","image":{"@type":"ImageObject","url":"https:\/\/blog.starrocket.io\/wp-content\/uploads\/2021\/08\/27894559989_b047b8ee9b_o-scaled.jpg","@id":"https:\/\/blog.starrocket.io\/#mainImage","width":2560,"height":1656},"primaryImageOfPage":{"@id":"https:\/\/blog.starrocket.io\/posts\/jon-skeet\/#mainImage"},"datePublished":"2021-08-23T07:01:43+08:00","dateModified":"2021-10-20T09:16:39+08:00"},{"@type":"WebSite","@id":"https:\/\/blog.starrocket.io\/#website","url":"https:\/\/blog.starrocket.io\/","name":"Star Rocket Blog","description":"\u95dc\u6ce8\u300c\u79d1\u6280\u300d\u548c\u300c\u5275\u65b0\u6545\u4e8b\u300d","inLanguage":"zh-TW","publisher":{"@id":"https:\/\/blog.starrocket.io\/#organization"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><script type="application/javascript">console.log('PixelYourSite Free version 9.2.0');</script>
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+<link rel="dns-prefetch" href="https://s7.addthis.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://maps.gstatic.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://apis.google.com/">
+<link rel="dns-prefetch" href="https://google-analytics.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://ssl.google-analytics.com/">
+<link rel="dns-prefetch" href="https://youtube.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://connect.facebook.net/">
+<link rel="dns-prefetch" href="https://w.sharethis.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s.gravatar.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://stats.wp.com/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="訂閱《Star Rocket Blog》» 資訊提供" href="https://blog.starrocket.io/feed/">
+<link rel="alternate" type="application/rss+xml" title="訂閱《Star Rocket Blog》» 留言的資訊提供" href="https://blog.starrocket.io/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="訂閱《Star Rocket Blog 》»〈最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet〉留言的資訊提供" href="https://blog.starrocket.io/posts/jon-skeet/feed/">
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+<style id="generate-style-inline-css">
+body{background-color:#fbfbfb;color:#41463e;}a{color:#1270fa;}a:hover, a:focus, a:active{color:#232820;}body .grid-container{max-width:1170px;}.wp-block-group__inner-container{max-width:1170px;margin-left:auto;margin-right:auto;}.generate-back-to-top{font-size:20px;border-radius:3px;position:fixed;bottom:30px;right:30px;line-height:40px;width:40px;text-align:center;z-index:10;transition:opacity 300ms ease-in-out;}.navigation-search{position:absolute;left:-99999px;pointer-events:none;visibility:hidden;z-index:20;width:100%;top:0;transition:opacity 100ms ease-in-out;opacity:0;}.navigation-search.nav-search-active{left:0;right:0;pointer-events:auto;visibility:visible;opacity:1;}.navigation-search input[type="search"]{outline:0;border:0;vertical-align:bottom;line-height:1;opacity:0.9;width:100%;z-index:20;border-radius:0;-webkit-appearance:none;height:60px;}.navigation-search input::-ms-clear{display:none;width:0;height:0;}.navigation-search input::-ms-reveal{display:none;width:0;height:0;}.navigation-search input::-webkit-search-decoration, .navigation-search input::-webkit-search-cancel-button, .navigation-search input::-webkit-search-results-button, .navigation-search input::-webkit-search-results-decoration{display:none;}.main-navigation li.search-item{z-index:21;}li.search-item.active{transition:opacity 100ms ease-in-out;}.nav-left-sidebar .main-navigation li.search-item.active,.nav-right-sidebar .main-navigation li.search-item.active{width:auto;display:inline-block;float:right;}.gen-sidebar-nav .navigation-search{top:auto;bottom:0;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}.has-contrast-color{color:#222222;}.has-contrast-background-color{background-color:#222222;}.has-contrast-2-color{color:#575760;}.has-contrast-2-background-color{background-color:#575760;}.has-contrast-3-color{color:#b2b2be;}.has-contrast-3-background-color{background-color:#b2b2be;}.has-base-color{color:#f0f0f0;}.has-base-background-color{background-color:#f0f0f0;}.has-base-2-color{color:#f7f8f9;}.has-base-2-background-color{background-color:#f7f8f9;}.has-base-3-color{color:#ffffff;}.has-base-3-background-color{background-color:#ffffff;}.has-accent-color{color:#1e73be;}.has-accent-background-color{background-color:#1e73be;}body, button, input, select, textarea{font-family:"Noto Sans", sans-serif;font-weight:300;}body{line-height:1.6;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.5em;}.main-title{font-family:"Noto Sans", sans-serif;font-size:45px;}.main-navigation a, .menu-toggle{font-weight:300;font-size:16px;}.main-navigation .main-nav ul ul li a{font-size:15px;}.widget-title{font-family:"Noto Sans", sans-serif;font-weight:700;font-size:18px;}.sidebar .widget, .footer-widgets .widget{font-size:16px;}button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.wp-block-button .wp-block-button__link{font-family:"Noto Sans", sans-serif;font-weight:500;font-size:14px;}h1{font-family:"Noto Sans", sans-serif;font-size:50px;}h2{font-family:"Noto Sans", sans-serif;font-size:22px;line-height:1em;}h3{font-family:"Noto Sans", sans-serif;font-size:24px;}h4{font-weight:700;font-size:18px;}h5{font-family:"Noto Sans", sans-serif;font-size:inherit;}h6{font-family:"Noto Sans", sans-serif;}.site-info{font-family:"Noto Sans", sans-serif;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:24px;}}.top-bar{background-color:#000000;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:rgba(255,255,255,0);color:#41463e;}.site-header a{color:#1270fa;}.main-title a,.main-title a:hover{color:#41463e;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:rgba(34,34,34,0);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:#41463e;}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:#232820;background-color:rgba(255,84,129,0);}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#41463e;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#41463e;background-color:rgba(255,255,255,0);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:#232820;background-color:rgba(255,84,129,0);}.main-navigation ul ul{background-color:#3a3a3a;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover > a,.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"]) > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#fbfbfb;}.entry-title a{color:#000000;}.entry-title a:hover{color:#000000;}.entry-meta{color:#595959;}.entry-meta a{color:#595959;}.entry-meta a:hover{color:#222222;}h2{color:#222222;}.sidebar .widget{background-color:#f4f6f7;}.sidebar .widget .widget-title{color:#3a3a3a;}.footer-widgets{color:#3a3a3a;background-color:#232820;}.footer-widgets a{color:#1270fa;}.footer-widgets a:hover{color:#222222;}.footer-widgets .widget-title{color:#ffffff;}.site-info{color:#bdbfbd;background-color:#232820;}.site-info a{color:#0a0a0a;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#1270fa;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#478dfb;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width: 768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:#41463e;}}.inside-top-bar{padding:10px;}.inside-header{padding:20px 10px 20px 10px;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:0px 0px 60px 0px;}.site-main .wp-block-group__inner-container{padding:0px 0px 60px 0px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-0px;width:calc(100% + 0px);max-width:calc(100% + 0px);}.one-container.right-sidebar .site-main,.one-container.both-right .site-main{margin-right:0px;}.one-container.left-sidebar .site-main,.one-container.both-left .site-main{margin-left:0px;}.one-container.both-sidebars .site-main{margin:0px;}.separate-containers .widget, .separate-containers .site-main > *, .separate-containers .page-header, .widget-area .main-navigation{margin-bottom:30px;}.separate-containers .site-main{margin:30px;}.both-right.separate-containers .inside-left-sidebar{margin-right:15px;}.both-right.separate-containers .inside-right-sidebar{margin-left:15px;}.both-left.separate-containers .inside-left-sidebar{margin-right:15px;}.both-left.separate-containers .inside-right-sidebar{margin-left:15px;}.separate-containers .page-header-image, .separate-containers .page-header-contained, .separate-containers .page-header-image-single, .separate-containers .page-header-content-single{margin-top:30px;}.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar{margin-top:30px;margin-bottom:30px;}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a{line-height:50px;}.navigation-search input[type="search"]{height:50px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.widget-area .widget{padding:15px;}.footer-widgets{padding:40px 100px 40px 100px;}.site-info{padding:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:20px;}.site-main .wp-block-group__inner-container{padding:20px;}.site-info{padding-right:10px;padding-left:10px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-20px;width:calc(100% + 40px);max-width:calc(100% + 40px);}}/* End cached CSS */@media (max-width: 768px){.main-navigation .menu-toggle,.main-navigation .mobile-bar-items,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav{display:none;}[class*="nav-float-"] .site-header .inside-header > *{float:none;clear:both;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+.page-hero{background-image:url(https://blog.starrocket.io/wp-content/uploads/2021/08/27894559989_b047b8ee9b_o-scaled.jpg);background-size:cover;background-position:center center;background-repeat:no-repeat;color:#ffffff;padding-top:28%;padding-right:30px;padding-bottom:60px;padding-left:30px;text-align:center;box-sizing:border-box;}.page-hero h1, .page-hero h2, .page-hero h3, .page-hero h4, .page-hero h5, .page-hero h6{color:#ffffff;}.inside-page-hero > *:last-child{margin-bottom:0px;}.page-hero a, .page-hero a:visited{color:#ffffff;}.page-hero time.updated{display:none;}.page-hero a:hover{color:#ffffff;}@media (max-width:768px){.page-hero{padding-top:70%;padding-bottom:30px;}}
+</style>
+
+
+
+
+<style id="generate-offside-inline-css">
+.slideout-navigation.main-navigation{background-color:#fbfbfb;}.slideout-navigation.main-navigation .main-nav ul li a{color:#3a3a3a;font-weight:200;text-transform:none;}.slideout-navigation.main-navigation.do-overlay .main-nav ul ul li a{font-size:1em;}.slideout-navigation.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .slideout-navigation.main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .slideout-navigation.main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a{color:#fbfbfb;background-color:#3a3a3c;}.slideout-navigation.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#fbfbfb;background-color:#3a3a3c;}.slideout-navigation, .slideout-navigation a{color:#3a3a3a;}.slideout-navigation button.slideout-exit{color:#3a3a3a;padding-left:20px;padding-right:20px;}.slideout-navigation .dropdown-menu-toggle:before{content:"\f107";}.slideout-navigation .sfHover > a .dropdown-menu-toggle:before{content:"\f106";}@media (max-width: 768px){.menu-bar-item.slideout-toggle{display:none;}}
+</style>
+
+<script data-minify="1" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.min.js.download" id="google-hosted-jquery-js" defer=""></script>
+<script data-minify="1" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/addthis_widget.js.download" id="addthis_widget-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.min.js(1).download" id="jquery-core-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery-migrate.min.js.download" id="jquery-migrate-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.bind-first-0.2.3.min.js.download" id="jquery-bind-first-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/js.cookie-2.1.3.min.js.download" id="js-cookie-js" defer=""></script>
+<script id="pys-js-extra">
+var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","name":"PageView","pixelIds":["980358178832027"],"eventID":"bcbbfc67-c680-490d-890e-7121eed8ccaf","params":{"post_category":"\u4eba\u7269\u6545\u4e8b","page_title":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet","post_type":"post","post_id":5407,"plugin":"PixelYourSite","user_role":"guest","event_url":"blog.starrocket.io\/posts\/jon-skeet\/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}]}},"dynamicEvents":[],"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["980358178832027"],"advancedMatching":[],"removeMetadata":false,"contentParams":{"post_type":"post","post_id":5407,"content_name":"\u6700\u6703\u56de\u7b54\u554f\u984c\u7684\u90a3\u500b\u7537\u4eba\uff1aStack Overflow \u50b3\u5947\u4eba\u7269 Jon Skeet","categories":"\u4eba\u7269\u6545\u4e8b","tags":"C+, engineer, Google, Jon Skeet, programming, Stack Overflow"},"commentEventEnabled":true,"wooVariableAsSimple":false,"downloadEnabled":true,"formEventEnabled":true,"ajaxForServerEvent":true,"serverApiEnabled":false,"wooCRSendFromServer":false},"debug":"","siteUrl":"https:\/\/blog.starrocket.io","ajaxUrl":"https:\/\/blog.starrocket.io\/wp-admin\/admin-ajax.php","enable_remove_download_url_param":"1","cookie_duration":"7","last_visit_duration":"60","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"facebook_prior_consent_enabled":true,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_google_ads_consent_category":null,"cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false},"woo":{"enabled":false},"edd":{"enabled":false}};
+</script>
+<script data-minify="1" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/public.js.download" id="pys-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://blog.starrocket.io/wp-json/"><link rel="alternate" type="application/json" href="https://blog.starrocket.io/wp-json/wp/v2/posts/5407"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.starrocket.io/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.starrocket.io/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8.6">
+<link rel="shortlink" href="https://blog.starrocket.io/?p=5407">
+<link rel="alternate" type="application/json+oembed" href="https://blog.starrocket.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://blog.starrocket.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F&amp;format=xml">
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script async="" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-W7TBWQZ8PQ');
+		</script>
+
+	            <!-- MailerLite Universal -->
+            <script>
+                (function (m, a, i, l, e, r) {
+                    m['MailerLiteObject'] = e;
+
+                    function f() {
+                        var c = {a: arguments, q: []};
+                        var r = this.push(c);
+                        return "number" != typeof r ? r : f.bind(c.q);
+                    }
+
+                    f.q = f.q || [];
+                    m[e] = m[e] || f.bind(f.q);
+                    m[e].q = m[e].q || f.q;
+                    r = a.createElement(i);
+                    var _ = a.getElementsByTagName(i)[0];
+                    r.async = 1;
+                    r.src = l + '?' + (~~(new Date().getTime() / 10000000));
+                    _.parentNode.insertBefore(r, _);
+                })(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+                var ml_account = ml('accounts', '1991368', 'f5x5d2d7j9', 'load');
+            </script>
+            <!-- End MailerLite Universal -->
+        		<!-- HappyForms global container -->
+		<script type="text/javascript">HappyForms = {};</script>
+		<!-- End of HappyForms global container -->
+		        <style>
+            .molongui-disabled-link
+            {
+                border-bottom: none !important;
+                text-decoration: none !important;
+                color: inherit !important;
+                cursor: inherit !important;
+            }
+            .molongui-disabled-link:hover,
+            .molongui-disabled-link:hover span
+            {
+                border-bottom: none !important;
+                text-decoration: none !important;
+                color: inherit !important;
+                cursor: inherit !important;
+            }
+        </style>
+        <!-- Analytics by WP Statistics v13.2.6 - https://wp-statistics.com/ -->
+<script>var WP_Statistics_http = new XMLHttpRequest();WP_Statistics_http.open('GET', 'https://blog.starrocket.io/wp-json/wp-statistics/v2/hit?_=1666851647&_wpnonce=5c3f2fa312&wp_statistics_hit_rest=yes&referred=https%3A%2F%2Fblog.starrocket.io&exclusion_match=no&exclusion_reason&track_all=1&current_page_type=post&current_page_id=5407&search_query&page_uri=/posts/jon-skeet/?utm_source=newsletter&utm_medium=email&utm_campaign=starrocket&utm_term=2022-10-12', true);WP_Statistics_http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");WP_Statistics_http.send(null);</script>
+<link rel="pingback" href="https://blog.starrocket.io/xmlrpc.php">
+<script data-cfasync="false" type="text/javascript">if (window.addthis_product === undefined) { window.addthis_product = "wprp"; } if (window.wp_product_version === undefined) { window.wp_product_version = "wprp-2.2.7"; } if (window.addthis_share === undefined) { window.addthis_share = {}; } if (window.addthis_config === undefined) { window.addthis_config = {"data_track_clickback":true,"ignore_server_config":true,"ui_atversion":300}; } if (window.addthis_layers === undefined) { window.addthis_layers = {}; } if (window.addthis_layers_tools === undefined) { window.addthis_layers_tools = []; } else {  } if (window.addthis_plugin_info === undefined) { window.addthis_plugin_info = {"info_status":"enabled","cms_name":"WordPress","plugin_name":"Related Posts by AddThis","plugin_version":"2.2.7","plugin_mode":"WordPress","anonymous_profile_id":"wp-871cc6608f1ff854854541ff7965327a","page_info":{"template":"posts","post_type":""},"sharing_enabled_on_post_via_metabox":false}; } 
+                    (function() {
+                      var first_load_interval_id = setInterval(function () {
+                        if (typeof window.addthis !== 'undefined') {
+                          window.clearInterval(first_load_interval_id);
+                          if (typeof window.addthis_layers !== 'undefined' && Object.getOwnPropertyNames(window.addthis_layers).length > 0) {
+                            window.addthis.layers(window.addthis_layers);
+                          }
+                          if (Array.isArray(window.addthis_layers_tools)) {
+                            for (i = 0; i < window.addthis_layers_tools.length; i++) {
+                              window.addthis.layers(window.addthis_layers_tools[i]);
+                            }
+                          }
+                        }
+                     },1000)
+                    }());
+                </script><style id="uagb-style-conditional-extension">@media (min-width: 1025px){body .uag-hide-desktop.uagb-google-map__wrap,body .uag-hide-desktop{display:none !important}}@media (min-width: 768px) and (max-width: 1024px){body .uag-hide-tab.uagb-google-map__wrap,body .uag-hide-tab{display:none !important}}@media (max-width: 767px){body .uag-hide-mob.uagb-google-map__wrap,body .uag-hide-mob{display:none !important}}</style><link rel="icon" href="https://blog.starrocket.io/wp-content/uploads/2020/04/cropped-favicon-512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://blog.starrocket.io/wp-content/uploads/2020/04/cropped-favicon-512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://blog.starrocket.io/wp-content/uploads/2020/04/cropped-favicon-512-180x180.png">
+<meta name="msapplication-TileImage" content="https://blog.starrocket.io/wp-content/uploads/2020/04/cropped-favicon-512-270x270.png">
+		<style id="wp-custom-css">
+			body{
+	font-size: 1.2rem;
+	line-height: 1.8;
+	letter-spacing: .4px;
+}
+
+.wp-embedded-content{
+	width: 100%;
+}
+
+#mlb2-2119240.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody, #mlb2-2119240.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{
+	padding: 0px !important;
+}
+
+.featured-image{
+	display: none;
+}
+
+
+
+table{
+	border-width: 0 !important;
+}
+
+.wp-block-image figcaption {
+	text-align: center;
+}
+
+.inside-article .entry-title{
+	margin: 0 !important;
+}
+
+.inside-article .entry-title a{
+	color: #1270fa;
+}
+
+.inside-article .entry-title a:hover{
+	color: #232820;
+}
+
+.archive .page-hero h1{
+	margin: 0;
+}
+
+.wp-block-quote{
+	font-size: 1.2rem;
+}
+
+.twitter-tweet{
+	margin: auto;
+}
+
+figcaption {
+	font-size: 14px;
+}
+
+.uagb-toc__wrap{
+	border: none !important;
+	padding: 40px !important;
+}
+
+.page-hero h1 {
+	max-width: 720px;
+	margin: auto;
+	padding-bottom: 20px;
+	font-size: 48px;
+}
+
+.page-hero{
+	padding-bottom: 30px !important;
+}
+
+td {
+	border: none !important;
+}
+
+body .page .site-content{
+	max-width: 680px !important;
+}
+
+
+.inside-page-hero .wp-show-posts-entry-summary{
+	display: none;
+}
+
+.wp-show-posts-entry-header{
+	margin: 0;
+}
+
+.wp-show-posts-entry-summary{
+	font-size: 16px;
+}
+
+.wp-block-spacer{
+	height: 10px !important;
+}
+
+.wpsp-read-more{
+	display: none;
+}
+
+.textwidget a{
+	color: #bdbfbd !important;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	line-height: 2rem;
+}
+
+h2 {
+	margin: 3rem 0 1.5rem 0;
+	font-weight: 600;
+	}
+
+h3 {
+	font-size: 20px;
+}
+
+.site-footer{
+	margin: 0 -30px;
+}
+
+blockquote {
+	font-style: normal;
+}
+
+.button{
+	border: none !important;
+	letter-spacing: 0.5px;
+	border-radius: 4px;
+}
+
+.vcard{
+	padding-left: 30px;
+}
+
+.footnote{
+	position: relative;
+	top: -.15em;
+	vertical-align: top;
+	font-size: .9rem;
+}
+
+sup .footnote{
+	top: 0;
+	font-size: 1rem;
+	vertical-align: 0;
+	padding-right: 5px;
+}
+
+/* GeneratePress Site CSS */ /* Colors */
+.main-navigation ul li:after {
+    background-color: #000;
+}
+
+.main-navigation .inside-navigation {
+    border-top: 0.5px solid #d4d7d8;
+}
+
+.wpsp-card, .wpsp-card a, .wpsp-card .wp-show-posts-meta a, .wpsp-card .wp-show-posts-meta a:visited {
+    color: #fff;
+}
+.navigation-search.nav-search-active {
+	background-color: rgba(255,255,255,0.95);
+	top: 100%;
+}
+
+/* Theme Global */
+@media (min-width: 769px) {
+    body {
+        margin: 0 30px;
+    }
+}
+
+body.single-post.no-sidebar .site-content {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navigation */
+.second-nav.grid-container {
+    padding: 0;
+}
+
+@media (min-width: 769px) {
+    .main-navigation ul li {
+        position: relative;
+    }
+
+    .main-navigation ul li:after {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        filter: hue-rotation(90deg);
+        -webkit-filter: hue-rotation(90deg);
+        -webkit-transition: height 0.35s ease;
+        transition: height 0.35s ease;
+    }
+
+    .main-navigation ul li:hover:after, .main-navigation ul li.current-menu-item:after {
+        height: 6px;
+    }
+}
+
+/* Widgets */
+.widget-title {
+    margin: 1em 0;
+    font-size: 1em !Important;
+}
+
+.widget .wp-show-posts article {
+    margin-bottom: 0.5em !important;
+}
+
+.zero-padding {
+    padding: 0 !important;
+}
+
+.widget.no-background {
+    background-color: transparent;
+}
+
+/* Buttons */
+button, html input[type="button"], input[type="reset"], input[type="submit"], a.button, a.button:visited, a.wp-block-button__link:not(.has-background) {
+    pointer-events: initial !important;
+    border-color: inherit;
+    border-radius: 1px;
+}
+
+/* Page Heros */
+.page-hero.overlay {
+    -webkit-box-shadow: inset 0px -360px 83px -15px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px -360px 83px -15px rgba(0, 0, 0, 0.75);
+}
+
+.gradient-overlay {
+    position: relative;
+    z-index: -1;
+}
+
+.gradient-overlay:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(3, 89, 155, .5)), to(rgba(14, 161, 234, .6)));
+    background: linear-gradient(rgba(3, 89, 155, .5), rgba(14, 161, 234, .6));
+    z-index: -1;
+}
+
+/* Blog */
+.generate-columns .inside-article {
+    padding: 0 0 15px;
+}
+
+@media (max-width: 768px) {
+    .generate-columns .inside-article>*:not(.post-image) {
+        padding: 0 15px;
+    }
+}
+
+.generate-columns-container article .inside-article .post-image {
+    margin-bottom: 0.5em;
+}
+
+.generate-columns-container article .inside-article .entry-summary {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+}
+
+.generate-columns-container article .entry-header, .wp-show-posts-entry-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+.generate-columns-container article .entry-header .entry-title, .wp-show-posts article .wp-show-posts-entry-title {
+    line-height: 2.5ex;
+    height: 7.5ex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+}
+
+.wp-show-posts .wp-show-posts-inner {
+    overflow: hidden;
+}
+
+@media (min-width: 420px) {
+.wpsp-align .wp-show-posts-image {
+    margin-bottom: 0;
+}
+}
+.wpsp-align .wp-show-posts-image a, .wpsp-align .wp-show-posts-image img {
+    height: 100%;
+}
+
+.generate-columns-container article .inside-article img, .wp-show-posts-image img {
+    -o-object-fit: cover !important;
+    object-fit: cover !important;
+}
+
+/* WPSP Grids */
+/* Single column align side image */
+/* Add wpsp-align class to to WPSP List shortcode wrapper */
+@media (min-width: 420px) {
+    .wpsp-align .wp-show-posts-inner {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .wpsp-align .wp-show-posts-inner>div {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 420px) {
+    .wpsp-align .wp-show-posts-inner .wp-show-posts-image {
+        margin-right: 1.5em;
+    }
+}
+
+/* magazine Grid Golden Ratio 5 block standard */
+/* Add wpsp-grid class to WPSP List shortcode wrapper */
+@media (min-width: 600px) {
+    .wpsp-grid .wp-show-posts {
+        display: grid;
+    }
+}
+
+@media (min-width: 900px) {
+    .wpsp-grid .wp-show-posts {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr auto;
+    }
+
+    .wpsp-grid .wp-show-posts article:first-child {
+        grid-column: 1 / 5;
+        grid-row: 1 / 4;
+    }
+
+    .wpsp-grid .wp-show-posts article:nth-child(2) {
+        grid-column: 5 / end;
+        grid-row: 1 / 2;
+    }
+
+    .wpsp-grid .wp-show-posts article:nth-child(3) {
+        grid-column: 5 / 7;
+        grid-row: 2 / 4;
+    }
+
+    .wpsp-grid .wp-show-posts article:nth-child(4) {
+        grid-column: 7 / end;
+        grid-row: 2 / 4;
+    }
+}
+
+@media (max-width: 899px) and (min-width: 600px) {
+    .wpsp-grid .wp-show-posts article {
+        grid-column: span 4;
+    }
+
+    .wpsp-grid .wp-show-posts article:nth-child(3), .wpsp-grid .wp-show-posts article:nth-child(4) {
+        grid-row: 3;
+        grid-column: span 2;
+    }
+}
+
+.wpsp-grid article:not(:first-child) .wp-show-posts-image a img {
+    height: 250px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.wpsp-grid article:first-child .wp-show-posts-image a img {
+    height: 500px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.wpsp-grid article:not(:first-child) .wp-show-posts-entry-summary, .wpsp-grid article:not(:first-child) .wp-show-posts-entry-meta-below-post, .wpsp-grid article:not(:first-child) .wpsp-read-more {
+    display: none;
+}
+
+/* WPSP Card Styling */
+/* Add wpsp-card class to WPSP List shortcode wrapper */
+.wpsp-card .wp-show-posts-meta a, .wpsp-card .wp-show-posts-meta a:visited {
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+:not(.widget).wpsp-card .wp-show-posts article, .wpsp-card .wp-show-posts-image {
+    margin-bottom: 0 !important;
+}
+
+.wpsp-card .wp-show-posts-inner {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wpsp-card .wpsp-content-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5% 8%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.35);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.wpsp-card article {
+    position: relative;
+    overflow: hidden;
+}
+
+.wpsp-card article, .wpsp-card article .wp-show-posts-image img {
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.wpsp-card article:hover .wp-show-posts-image img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+/* Post Navigation */
+#post-nav a {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    #post-nav a {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+        flex: 1 0 100%;
+    }
+}
+
+#post-nav, #post-nav .post-nav-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#post-nav {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+#post-nav .post-nav-wrap {
+    background-size: cover !important;
+    background-position: center center !important;
+    min-height: 120px;
+    height: 100%;
+    padding: calc(6% + 1em) 5%;
+    -webkit-box-shadow: inset 0 -50px 70px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 -50px 70px 20px rgba(0, 0, 0, 0.5);
+    -webkit-transition: -webkit-box-shadow 500ms;
+    transition: -webkit-box-shadow 500ms;
+    transition: box-shadow 500ms;
+    transition: box-shadow 500ms, -webkit-box-shadow 500ms;
+    position: relative;
+	box-sizing: border-box;
+}
+
+#post-nav .post-nav-wrap:hover {
+    -webkit-box-shadow: inset 0 -90px 70px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 -90px 70px 20px rgba(0, 0, 0, 0.5);
+}
+
+.post-nav-wrap>* {
+    color: #fff;
+}
+
+.post-nav-date {
+    font-size: 0.9em;
+}
+
+.post-nav-title {
+    margin: 5px 0 !important;
+}
+
+.post-nav {
+    min-width: 60px;
+    position: absolute;
+    top: 0;
+    border-radius: 0 0 2px 0;
+}
+
+.post-nav:first-child {
+    left: 0;
+}
+
+.post-nav:last-child {
+    right: 0;
+}
+
+.post-nav {
+    padding: 6px 12px;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    background-color: #1270FA;
+    color: #fff !important;
+}
+
+.header-widget .lsi-social-icons li {
+	margin-bottom: 0 !important;
+}
+
+body .happyforms-flex {
+	padding: 0;
+} /* End GeneratePress Site CSS */		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/addthis_widget.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.min.js(1).download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery-migrate.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.bind-first-0.2.3.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/js.cookie-2.1.3.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/public.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/offside.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/menu.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/navigation-search.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/back-to-top.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/comment-reply.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.validate.min.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/socialsnap.js.download" rel="preload" as="script"><link href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/js" rel="preload" as="script"><link href="https://www.googletagmanager.com/" rel="preconnect"><style>@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap);</style><style>.MuiTooltip-popper{z-index:10000000 !important}
+</style><style>@font-face {
+	font-family: "wticons";
+	src: url("data:font/woff2;charset=utf-8;base64,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") format("woff2");
+}
+
+.wticons {
+	line-height: 1;
+}
+
+.wticons:before {
+	font-family: wticons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.wticon-account:before {
+	content: "\f101";
+}
+.wticon-add:before {
+	content: "\f102";
+}
+.wticon-cardResizeDrag:before {
+	content: "\f103";
+}
+.wticon-casual:before {
+	content: "\f104";
+}
+.wticon-check:before {
+	content: "\f105";
+}
+.wticon-checkSmall:before {
+	content: "\f106";
+}
+.wticon-chevron:before {
+	content: "\f107";
+}
+.wticon-copy:before {
+	content: "\f108";
+}
+.wticon-copySmall:before {
+	content: "\f109";
+}
+.wticon-dismiss:before {
+	content: "\f10a";
+}
+.wticon-downChevron:before {
+	content: "\f10b";
+}
+.wticon-error:before {
+	content: "\f10c";
+}
+.wticon-expand:before {
+	content: "\f10d";
+}
+.wticon-feedback:before {
+	content: "\f10e";
+}
+.wticon-filledDownArrow:before {
+	content: "\f10f";
+}
+.wticon-find:before {
+	content: "\f110";
+}
+.wticon-formal:before {
+	content: "\f111";
+}
+.wticon-gift:before {
+	content: "\f112";
+}
+.wticon-grayLogo:before {
+	content: "\f113";
+}
+.wticon-ignore:before {
+	content: "\f114";
+}
+.wticon-info:before {
+	content: "\f115";
+}
+.wticon-leftChevron:before {
+	content: "\f116";
+}
+.wticon-logo:before {
+	content: "\f117";
+}
+.wticon-love:before {
+	content: "\f118";
+}
+.wticon-noRecommendations:before {
+	content: "\f119";
+}
+.wticon-paragraphRewrite:before {
+	content: "\f11a";
+}
+.wticon-paste:before {
+	content: "\f11b";
+}
+.wticon-pin:before {
+	content: "\f11c";
+}
+.wticon-premium:before {
+	content: "\f11d";
+}
+.wticon-premiumDetail:before {
+	content: "\f11e";
+}
+.wticon-premiumFull:before {
+	content: "\f11f";
+}
+.wticon-recommendationLight:before {
+	content: "\f120";
+}
+.wticon-recommendationLightCard:before {
+	content: "\f121";
+}
+.wticon-recommendationLightNoSuggestions:before {
+	content: "\f122";
+}
+.wticon-refine:before {
+	content: "\f123";
+}
+.wticon-rewrite:before {
+	content: "\f124";
+}
+.wticon-rightChevron:before {
+	content: "\f125";
+}
+.wticon-rocket:before {
+	content: "\f126";
+}
+.wticon-sentenceExamples:before {
+	content: "\f127";
+}
+.wticon-settings:before {
+	content: "\f128";
+}
+.wticon-shorten:before {
+	content: "\f129";
+}
+.wticon-tutorial:before {
+	content: "\f12a";
+}
+.wticon-unlock:before {
+	content: "\f12b";
+}
+.wticon-warn:before {
+	content: "\f12c";
+}
+.wticon-WordtuneButton:before {
+	content: "\f12d";
+}
+.wticon-x:before {
+	content: "\f12e";
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvc2hhcmVkL0ljb25zLmZvbnQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxzQkFBc0I7Q0FDdEIsNjNTQUE2M1M7QUFDOTNTOztBQUVBO0NBQ0MsY0FBYztBQUNmOztBQUVBO0NBQ0MsK0JBQStCO0NBQy9CLGtCQUFrQjtDQUNsQiw4QkFBOEI7Q0FDOUIsbUJBQW1CO0FBQ3BCOztBQUVBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCIiwic291cmNlc0NvbnRlbnQiOlsiQGZvbnQtZmFjZSB7XG5cdGZvbnQtZmFtaWx5OiBcInd0aWNvbnNcIjtcblx0c3JjOiB1cmwoXCJkYXRhOmZvbnQvd29mZjI7Y2hhcnNldD11dGYtODtiYXNlNjQsZDA5R01nQUJBQUFBQUJ2c0FBc0FBQUFBUVdRQUFCdVpBQUVBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUhJa1lCbFlBakJBSzJ3akpKUUUyQWlRRGduQUxnVG9BQkNBRmhBb0hobWtiL3paVkliQnhBSkF3blJKUmxLeE5TUGIvbHdSdFNxZ3NIdEoyTDJqR3JDRGJLWHNSaVRUNlZLUkYwSWQyR2ZrS0hxTjkxVVdhTVRSYVhGdC85UlVxeUYxUHlTL3ZxRy9jVUVwNC9wbXI5d1lHbHBBU25pVERXQ0JXZTc2dUZJQkNWdGxYSUFDdWVaL2k3NHNDcWFaWjRlalI1aW44Z01NMVRUOEFobWliQjArWTBJb05Jb0lWSUFJU0VqWkttY0dpYkZ3YXhTck1yVjJwbTR2V1pUdHhsUzdhaFM2U283VTJ0bnBpZXkvaVJEeFR5Wjh5TVJLYXRrYklIZ0dEODBJZWNSQ0RPVFdwT1pTY1lhQTA0TkNBV1ZDRWpaL2tBK3Z1SjkzOUhLY0VhUnNhTUJ2MmwrcHZPLzE3K25DeFcvZlkyeGpqVEVBUUdwQjRRc1JORVRhMU9hNVRPbGw5S2dpRHpiZldyOTdlVjBOTUxwSEZ2QlRTN054OS9zN083UmZmSGN6dUw3Ym9IU2FXUk93RWMyODhraVdUMXozVElkRXNVZ3FsV0szUWlNQkQzS3VhTWUwSFBNOGVZa2pHbkpaWVd1cUZZZzNXNmlYcWxSWk5JSzBZVjdmYVRkK0JtN2tpcEoreDJlK0IwN3UyR3BreUxFVE01ZjNjRVJRdzdKSkRIYVNMVGNiejE3LzZoR1U2czE4RlNkMUsvdjY3cjVNMC9PZ2x6b3JrV1J3Znc2UjlvYi81S1ZiS0pxNVVJZTNWSHJwSTc5aVZUN3hmTEZERnpWTWxtRXdXbThPbDBYZzhDWlBPaGJyZTg0MFhzWEVHWDM4UlV3S2hTRm9ndzJmSVNocVdGekFWRkpVWWNuTEdETEZVVkVreUxNR2tXK2F6T09LV2FBalpaYVVTWWsyVUdLRno2aXAwZCtJY0ExdDBTSWlicGxpQ0FDemZVbElTY0hnTXJxaFpITEx3dDVLZnRib3N2cWlEbTFmRnJac3d3bExqcUFzVGZWeENoRXNlRHBWd3A5YTl1QlhjK1ZHeDJaMm1MWkw5ak83cXNuaGIxdW83RUFvMDZDY1d1TG02c2dmOXlBeHIzeGRHK1pxUmh6b25nWnIwMFYyQnM0VUhHaUtPd0tXNFNrbkFWWXlwV2RQaW5sUVlIWW1UWXZ4UDB6NU4wakhMbFVreHNPdFJwcW1lSjRhU2lweTA1RnF5TWV4MklXYUZibWEraE1YblVIVkRMWk1zaDJZcXNFTG5hTEJLeEVWTGtpdHMrVlZ0bGl6TElsMmtzVkliVE5wMGJOV0lMTTJWR2Erdkg4aU9ONkwxS3d2RWpidFU5SmF2UEdjbUZVd01XWTlVNU5kVFUyb2krOFpFYXJBa1lpdkp5RU1aSStjY0dxR1REbnVGVTN2TjBNaU9HTlRxQ3V6U1ZGR3JRbmRQNzFoMDZJWVZDa0JtVFRSYlowN0FrMW1mWEV2MTRXcG00SUJPbW93WncvTnp4L243Qzg4cEJ1S0VGYnBINDhUajdtNFNHT3dFYUJDSElqbG43bnZzaVdzZDJyR3NuSXFhaGo0bC9IOFpKQmlMMWQ4QVB3WTNYdmxBTXdoQkZZc3dONk42aU43aUw3cWxQLzhCL2VqdGRXdkJBREdnZ2ROcm1yL2FvWlpUYXFCRjRpbk44TWYrMFFNVm1EVkpvMHNyS212b2VOOW5maWo5Ly8veGRhcWU4T3MrOUVVSmE2NHBLbWF0VzlUbS9ybGt5SU9XZ2JxTW5vNjJycFNpUGtPVHlWdFRLS3NyUkFweVNrUkxoVCtUcG0xbE5VK3EwaFRCM21HT1NVZ2FNbUxVdUFtVHBzeVlOV2ZlZ2lYTFZxeGFzMkhUbG0yNzl1dzdjT1RZcVRQbkxseTZjdTNHclR2M0hqeEJTVEZOdERiMVRLOERNRVFKcEJid1dnenBHR3UrSjIxazgvRFBQeTA1VmdYNEE5Y3VxNTZxQ3FET1VZRDJnS28xNER0VHRFQ0tBUWlvZzVBTWlPaUJOQjFRcEEzSzdTNXZBVWlCUnJ2SVhnRDY0SFVNOEFaTjhDWW1lQXNQdkUwQTNxRUIzaVVMM2lNUDNpY0NIMUlBSDVFREgxTUNuK0NBVDdIQVoxVEFGL2pnUzBMd0ZTNzRHaHQ4UXhsOFN3MTh4eFA0bmlyNEladUdZSU9nUlFBYUJIUUl4Q0FpQWRFaUNURmlDR0xGQ01TSlVZZ1g0NUJJVEVCaU1RbEp4QlFrRlRPUVRNeENjakVIS2NROHBCUUxrRW9zUVlKWWh0UmlCZElRcTVDbVdJTzB4QWFrTFRZaEhiRUY2WXB0U0Uvc1F2cGlEeklRKzVDaE9JQ014QkZrTEk0aEUzRUttWW96eUV5Y1ErYmlBcklRbDVDbHVJS3N4RFZrTFc0Z0czRUwyWW83eUU3Y1EvYmlBWElvcnAwbHZPUjk4Qk4rTTM0RTRlVXptQ01zZ3VLVDZaRVJzZUpZSWd2UlhCQnFLalFuQnBZcHhkUm15QWhiWUNpeE5TbGI0Q3c0YlVXNzVnYnYyMXpVdmNRK2kydVJvV2puMURWYXVWeFFQOWJVV2QzdjhSZHA2cDNuVVQxWStWbFJHV090LzNiemc1UFNGWTBrYnJiYnhucFZPWC9HWGpkZnhIN05qanExbGp3UElSMkdJTlZ4d1RIclhmc0F2YVp3NGZzQ0c5OHU4Y0wzQTN4Q1IxSGxxMjczWVorNDNpZ1NQYXAzM3Z6UTlpRWVJTG9rTmdPRE9vSGlYaUNZKzMrdE5yZm0vb3JicjVmZFhIVTNjdG1GZ3I4NDZDbjZhYk1EREx0SjNQaWlQajB6bm42VW42OXozaUVBQVF3d3hFMEVHd3o2YkQ4OS9XWHJIK0RuQjF4SlBtNnlmLzBiL1BYblgvQnZ2WWtKMkpaRE1oMHdPd0RvNWtPZ0d0ZmU0WW5LODZCd0NVR2NCZWVzYmtHbkowZ0x3b2tGbS9ta25SMmk3VWNtdE00YlRrWW9pZklYZFQvUWlwQlBQR25VWkEwZlBNSis5UVQ2eE9NS3plZlh5YWV3ejA5UDVON2k5Mm56YzBkSWE3ZkpZVTZQc25QeEE5NDhLaGNqMWVEZmVlZXFjVVF1Um1tbnk3a1dueDhhRHZOeDhydjRnZjJzYTUxZmVmTXEyTnBpcGllZG1MVzFwNjVYSGcwT1JNaDQ5YzM0aWpRNkVvODArK0ZaRGtManBBalN1ZlJsaUUva0pkcjhMRkNOREZONWtaTVpJNHVaa2JtZEUzbVZKZmtabmFSY1p5KzRCMlhENEdnVUsrOGd6YXA0U2x3VXNyT3FnRFdBbFV4SGxWTVNDTzRQaGprTmhnK0c1ektPSVlPSWNBUVlBb3QweFBxZXV3aEorMms1UWZMalV3QW1neGdncUFIajJhZUo5dm55UWtUKytlY3pPb1cxVzlxNS9KWFM3cjRROWxNa0hla29EbGlocmxEdXN4c3hlNHFOa3V6Mlc4dXhtbmVuS1Rubkh1MHF2WDUvTGxvNTIvVGNiRVlDbVhKdmJhb3NCWVVWc2hCTXQrQWlKSE93cWxZQmFNMDEveW1nd1VvTWpBeEN2ZzRNbTRHT2NwdDJsblNYOVh2VHVxclJza0loMDJ4RzZaNXltM1E4Wm5GSG9CQUp6c3hPYzIzbWhrSldhTFEwRk1pc21tMEd6UFRvYUM1bm9LdTBxNng3RmkrRDRreHZHU2hrWW4yWkJEVE5rQlh1N3IvU1REaHNVMEZwTXRoWkFscWsvMldDbmNFa0xCdXJ0V1B4Y0todmFwODNyWDloZHpobGNTTnN0T0VEbmtVbzMyTW5BbGtnZU5KbkxPNlpMTHZCUFFiN1NqOHpGeTBEOWgrTi9YL3E0ZHJRYVJEaUFxNUFWYll6cnF3K09sd3N2ZUVwWi9FMVk5RlZXN3BMbmtPLytDNi9HdCtjSCsxa0ZNbEVBWUI4R054WW0xZk4rQ2NFTTZ0dUloYjJPbzlCckpiZml4SngvYjE4ZTNYelM5U0hHODBBN1dXNG8zZ00vS05iQnZhc3Vsc1Y4ZlNHR05Fc1Z2RThQQXNRRkxFY2twRk12V3ZUSGMvUEc4UEtPYTMxZnNMcVE1d1c3T3BxdDFmUytkZkFNK3Y3WEhFUjVmb0d0QTZCOGZEWVJqZWtVZXd2MHFxTHNBODdMYjRDZHJEbHF1Zkg4WFZ4QnFpNm5iVzA4cE96bkp2ZFhsa0thVG5vSzUyV21td2E2dEk4TGMwY3BYbDN4N3RhV296SXZhOFRDV1hhNC9Jck1LN056NjdQSGc2R2Y4U2Z4Sy9jZ09JN2ttOGppUVc1OTBSNEhsYnZvdmtQV0RrT01CS0ZkVlRJSERwMDVIdnM4WUt1TGpQT0VuUVRLMkRoR1VFK294MzIzMlhEL3RmMndocFpoTGJIbXNiL05LNytRaXhUSmdscE1nZEJkcXZPa2lXV0JNMTlaaEp2WDJ3b3lJK21MRUtZWlFZSUlYMG9IYUEzNTlEUmpVSWdMZWRhTFpaNW9oNDE3Qm9mb0JzQzlyTXJFZmR6Z3p6VXQ2VjhVZTNaY21BVlJFMmtsYVJib2VIL1NCVUNtQUUvaEJyd016VVBBd1R4eURzNk44NDFHN1l0WFJlT0k5T2d2cmlIYnpRSUhaSGJJcndUSXYySlpYbkFzSmZaWkpMTGJydFF2UGhDQ0lYSXBWdlYwTjYwM09WUDMxN25xRjRJenVmaHhOM0lvQWt5VjgrN0grRHg2bDZRWnUxSVM4YU90ZVdHZERWYkJkdXQ3cjBLQ1hUYmtrR3E1aWhhVW9WbkhYeWVub1h0K2VFWXMwYlJPSGt6UURwS09rdUNyVmxWWDhSWjhhS2FqU3pHS2c4aHFyL2ZsbnkySHhUUVZ4dlZ2VmlqWTRET0FOT3VoVUpDRDdIVC9EQ3BnYWdTcWhzMytEQ0hkOTF5NkRrUjRIdFhmV1c4U3ZqbWJKL3JqNityMzQrSFY4R3pzeDNVMGpwNmJWMjVLZ1N1ZWJ6ZytZZHlJelc2cVhDT01Dc2RxRkNteTFpNG1tMVhjUE5XZUllcVp5THdkQU5mY25qSDJraHJDejBwVjkxZGwwbDQxTnRhK1NEK1pPRVYrSEdYUTA2T2JuOUNxUGNpUWxGSzVHTVBMUjNiUWhxSlBWeVZtZDBkdjdJeFZvWFhwVDBNM3RudEpEV2FuU1BoSnh0L0FIRmpJRjEzZlBFTzZFWXhUU1lEeEVReXhES3ppV0VpSkswUXV4M0xJNnZuTzlBbHlwaGxoWGtLcXlETnorT3BGTVlxQ1ZxM29vQ1N3OXpiblVTRXB2SUZaRTF1N2dxR3lMSjBaQlZMMFBJT28yUUttYzlYWitjc3A1aXZISXV2cFF2WnRHN1dHNG5oT01yejJsOEhZanhTVDhSaitWQnZNV2ViTWpTYWUzSTAweXpIcjlrRmplZUhoeDYvZmhsb2FVM09TV0kxTHpWdjdMZjB1V3k4K2dIRjVmZDZBd1dOelpEZkJRMGp3bmdsWVpEeWN3ZytuWVVnYVFPOC82VUFKRE5BbldYS1AyQ2Z5TjB2NStrYWlFRVZ3UER4eHp6V25yVG1FQzVya2ZiUnBkQzNESVJDc3JiMVgzNzB2NW1vdytvY1ZZRFN6MDhab0RvdTRGRXIvVlFCeDRrMXIwWk5HUmIvMU8rZThGTThQS1hMUlJjUXp4QW5qb3NaN2JFVzQ0a01jWHlBaTY3c0llMUhUV1FOV29yMlB1c2ZvTlpxdFgyTEZpbFFkM2g5SCsyMloyb0diNGhHQUw1YzBFSHcwZFE3MEhCL09nekt6S1FDY09rYVFzS2tkYXhxczc2NExmUTRmZHoxakpBYUdqMHJLbXBXZEZyK3dvdk8vZjN6SGp5NGtIaVY4OXdLcXE3ZUVZbzBJSk1lUkd0Q3VMZWtUcjFqeDVFM2I4YkdPa0JsK3FKRm53WUdWcXo4RDd5cVJndUwyTTlvUTBPOGRQeEtkalkvdTUzWDdvQy9WaTZoNENraFM5R1lqcjZiN0ljazdSTEFMR05uVS9BTzdieU83QlJlYVJHbm1pUWRPaDl2Tmo5NTh2U0pBYXlmR2tERjMvejBLZGhiZTl5bTU5Y2dnN0dXeVJINGZRcm9GWk5pWXRabXhnMHVscncvM2J4bnI5bGtzdkx1MUhSNGgxcWY5K3o1N09Oa1BocUtBOGFIcFZqRzV2UUIzYU5tSHlld2NTTjR4QksrUTEzak0vNnhHemRoQWIraDB4bHFvSXZSUmJadzRUdWZLVzBEb2tNWDVQSVdqQXp6N2lEekRjbFpRZXBoV29xOXhESi9ZbTl1UDdOY3o1Q0VHRWladlNSQVZ3eWFXd3lFVHd2N0I0N1lSem9vb2l2NFJlRUZlZUY2d2FjaWZqNlhtODhycXFySUxRM1B6K1BwK1laNG8vL2MvbjUzVDhJamIwN2VyVFNmT08vb2FPODRuNzBDOXZhTzN1M2YrN3BINWhmTllhaG1KT3Nha3BOalp5UlZGdWxtNit4VWsrbzlVR2lDRkkyYTQ0TnNTV21kSmFQUmk0RTgrTkpwbTNrVEJtVjA1a1htN1QwNFlhM0xhWTh6QW8vQzNZWDNVajVudjM3bklUampzUldqM3VqcXFDdkJsT0pPNFVveHRpVytvT3R1cmhFQis5WGRJbnNoOEQxdG5pWEZOeWtpMnFKQlIvOTd1UDJaWlA3RTNGbFVVMWxTeEJUTG1Xb0wzY29QQ3dKaHVLT0ZSUlk0UW5DTDg1SVpqU3JzMU4rNUdWYm9ITmxsUEFoYzNQYVJOVUMrU3VaZHc1THZlMWcxdTcrRjBtcldIbUQ1NFR2NnpBWllyZjN1SUxZdnFINWZqbzJ5a1NzS0RuVGZJTWJTQ0RCL0N0OGpCRmVRdXdTT3BzZFphVW5SbDAvRmJWKzFOR3J4MEVlY1kwTFJ0dnJUWjg2MStIN3RBLytEdWZ0TE54WHVidE5NVGZOTmNvQ1FMa21XOFU1b0lvOGhRNmxVQlljZTlReWlXZ0V4bDZhMkt4eVNEVDc3VTM3KzVjbmkwakp0KzdReVN5dWtSWEtDTFFsTEVOaW5WZFNoSElJSHUzdGp2ODJhQU5NYWR4QU9QdTVzdmZlbDFuMVZrVmJIbnBUQWN3cWhFTzNZUjlwb2NhcEZrOWYwYm8xVTc4bGRWckx2N3J6cE81Zk1XZjZla0VDYmI3VU9Sc2crSkNNcHlISEdNbWx4WkdTeHRBd240R3JGa1dWU0hMR0Z4aXlxemsyelVnSEFJOVdydG1XN1BwbW9JZW83dDljbXdwUGdoYUh3eEM5eWJHaGkyRXlGWjJQMVkwOG5jbWRlYXpjZ1NWTFFrL1JQZWFOcDRJbFo2UlJmcHdiMFhrdGRZZWl1eklCN3Y5WTBQVEFzTTdDVk5TTFBzSnl3M1RjYmJ1N080WVF4aGNWS2FEMTF4RGZjenhReDdNL3pHNzcvTlNzOTNoQ3Z6Rkt1TnF6dXIrcXVraDlvQ1dHb2t5ZUIzTGVHNXdFTEp0QThXOTZHVmxOVDF2UDFTMW4xaS8zRTBHMklYbEFRZE5ob3ozTDBVS3RGRFIzZTFINk9USDZueUk4cjBYTjVSZlZqUTNyT3JFTDJvRW1FTXdSNFRFM3NPbXNFekRNKyt0TjZvNUtxL0ttZ1hxTnluUWU2eVJRZnp3V04zTENHUmxGalhLT3dFYmhKN3lzOVhabDF0UW9Zejcrb2FZUFBZL1M4V1RsVnB3am1hZ0R2ZDgyY2Q3OE1FMmtqRFZXZmJiOU9VQVRnZ1Q4cW5rN0hGU1FaNFdSOGpGVVNVWGI0Wkh4TGZiVnM2bzFIV010NGVXdnAzbjFuRzMxR2RzSSswaWhkREkyalVUSWxXaUNtd0JETzJWYkpFT0NScFVtcUE0ZXU5dlFoS21Ed3ZPV2tXREFZMmZmc1hmbkJtN0s4SlRkUHk3ZXdndENhV0dzU0JpYndqQ2s4VzBEQkh6ZDI4c1p0RTJDcXBnNzg1c2Z6bSs2TzFMaVhGMnBsNXdnS2VJN0I5Z1J5NkxaVmJ0R2loWk1YcnQ0U25MOHhhVm5lM292VE05Y3NubE56a1JEalZtL1pDc2RsTlVxSWtjVG8ydW5pS1VMaEZQRjB1SUFyVHhGT0YwUEFrNG42YTBHcW04cFZXUjM1bS84UE5LbVA4R2RQd0tpL1M4K2VKWWNmdnJwOCtkWEQ3ZXYyZExyNGovbzdvcUE5cHlEVTBOU1FRSTAyTUlSNmEyWDlMVnFJSmpCUUUrTEhSMUZPZi9qdzB6VHljMHp0WmFINHFJNkF4LzR1bmZ4VkpPeGZVZzZ0ckk5ZlNBQmYvOEc0Y1RPM1lIdnJYLzh4TThzOFo0Nk56ZWlyYzUybEYyeXR0YVZqaG0xRGJBR21vdzlqNkpnbWpiVnRDQWFRZTkwYVE3Zjk2Q3BCSk1LUWtHV2NIZ2ZCR3d4d0pOeFd1aEVIdFN6V28yZ0Y4Rnc0MXFBVDBNaFFLc29qTlJPT05Da3pZYThCUjJJWnlmMjNNa1Q1MjUza2JwYWF2VnhjaFNhM01EZFRoR3Y3aU93QTNrZ0lJeGp4ZTRJemE1VjhaNlNiU2VqNjFuNk5WZkE2OG00VTVVUmRickNYdU1tS3U0aTBET0hXdlhoMlNEaWpOaFB0TWhHT1JtRG14b3Z3U0dvaWlwcEpRQ0VJMHpVcW1xYzZ1U3VzNis3VUxtd1gwTjhBYkxQT1VVa1A2QXFnSzN1Z05YcWRYOERqRlZRQm1LMklCQUVRR0d1V09JZVVXckk0aWFsaFpjL0k0bVN3UXpNNDJROFRKUGpBM3ZJWjJScFdFck5rTVNuMXJhZGVxZmNFR3JxY1lZcWord3NVOSt6N3VXWFVCSG1rN3drVS92UTRVK3hJSE4waEF2OVp4d2hpWi9nSTQ5YlRFaDNwL0pIWUVUN2RTVWxiTDR6TDhHRUg2UmlmOFJFTzlMZ1JpZnZEakZjWitDYkM4ajdMQUU1YXQzOTNKSmxIa3B4bzJCa09pZlZyTmh1alFQdm10ZnBFRHVETVJqTU5VQTFFV0ZZVVE3TUxuSVQybVF3VlF3N1YwN01JbnI5RFU1RE9PamdLc3AwUUhZSkhVT09Rcm5HM2g3ZCtmTG95RWsrUzMxdkpnZ1hDTFdRd0FNR0pFaGdFTzhvSEVEaXpBQnc4N2g1bHQrMSszMzg4QzQvdDYzcjJ6Y3IrRlAzMEVaMHdzVjUwK1laMlJybkVPSmRnSk5TZ3RmSzVQZm1IU3M2U01wbFNsbHdWN1NlYi9UZXZDTjJHR3ZQK3p2YVRSYXV3TktaVXlwU3pRUEFLZmJteS9GR0Nhek00YU9SZHJscWxWNmxRamlwZmU3dllzOU1UbDR4VDV0ckV6L1RYdWtzazdscC9rWEN5VW83VDR6b1AzbkxscWxIazc2NlZTTFM1eEVHMXMwVERkcXZxYVJZMjkxUzVzZkdKTzZ0cmI5MFNMNW40SUNhL0pqL204d05hRUkrYmx4OWVMdUM5elF1aVBRQmIzNWduTmIrWU9BdW03ODJPUW1YeEEzejZvekFZT3RUcTFXbGROdGlSdk5tS3ZRNWhnM1E0YnR3QStwQ0xyY01YZVN3alU3ZXRPc2E5TUwvbm9sbFZpQm9FWWRtRUpSRmhDdHAzeXI2cEtjNmlNWU1Xd0hDYW4wd2NoZWw5dTEwcnRIaUV6M2pvaVVPSFdydzVWWmdEeHNadWZiNzB2TnZnZVFDeVp6Q1diOEwzdzZUQkNpWkZITFhvSHE0WDcwUHhiUGpKakFxV0JodHgrTXJjY0UwZ1B6a2tocUl4R0ZLY29vTjEvRUJWV0hZRm5JQmZmOGZlN0dkZE5uYXZkNnVnU0piTWl4SkowR3B2NU5uWnlQVHVVb3EzZ2hVSkpRTGl2bzRJUFordmo1REhGOThqWjJMS0xUWE82UW1yTklkZkhrdUxGUlE2WmJucTUwUUk5RVg4MUNyeXQ1U1ZMTUoxKzdlZExzNVpMbnVBcjlmelFlRFFPSTZrakpENmNtSnJZcXlod0V6R2p3K1lmUFIyZEN1NkhmWHF0NzJkeWFBaXJHTmlhemkrVXZpU3FHd1orTEZ0VU8yWjJJNWUwMWlzclV0c1RQaU9aSGVIcEpuVk5wbWh0cGt6SmhVN2JLMDFNZUd4QkJ3eHhsMnRTYUdIcTA0cm9laGZHOE9OeFY5YjV5VmpNbVZxZ2ZCU1IySlppOXVBMERJTklvYk12dzA4OXRqa3U1YzAraXRQT1BOeGg5Yk82cEhFMjlHY2RTcU5Bbi9OV1phanQzbmc2TURBS0dtdkhkWnVjL3F2T2x0ck1sbDdkWHM3L2VNQjZyQmk5ZE1XMVRQa0V0U1NaN0VzS001M3JYbWhwYlZnWVBsQVVYL1JJZ0Z2QVZpZTZKanB3ZC9ud1kwVGM5alVVOUpIdE15UGRxTjJhSEl6Z3NlYmpNWVNnSnUwcFNTWG04M2haSE56UndRTVByRGJQL0o2blozRkdxMUdzLzYzOXZjemVNWU9ibmVFVUJuUGFyV0JyOXVnOEM1MjRZWnRtcW5SRVNvS0hHV2JheG1QZ1RUMm5PYUFiTE81SVMvZlNsWGprSFhiZEZ0cmhCTVpFK0ZKeDJxZXZhNjU2TjQrcXcxcEtOVEs1WW5NV3JUNllIQit0cW1lQnMwUE9NazFGM1dQZXQ1QXMyNE53R0EydjVuaDhBNkd5MU1oZFpDTTJReXlHM3FycEpFcXlBWmNyZUFuQ3NEZDhGa0FQWVRZRUlsR0lZd2Z2QjdVbWk2R3NWK2c1eWdDcXlGcU9Ub0hqd2JYZjlCSU9ia0gzY3IyR3dNMUlnNHBxbnRUWllrTUhZU0tmQVI2aHBWQWxzTy9BL2RXQnJkT2VGYy96dEE1aUNDTjBNSUZxSDZvMi93UGdIU3pEaU9yb0swUWthblF4aHpYUW0vY2FlWG9JUFFBQ1JiUUpSRWk0amgwa0tGUmlja2VxQU81NWtOVEk5cXAwRjIvSG1qT3l0RUZLRERMdEZBcGcvcnRISGlJemxEUy9iL3NOdzA4aWEvTXljRUt2bGxZUTI4QXdIVEw1OGRyQWlpK1haQUtGc0QxOG9BQWlEbkxvYzc4Ny84L1NQK25TSDd1U2h3ZDM4bzQrMzVtTTZnTFhuOUtCWmg0UUZ2ZDRPOFdRYkdzajNoQ1cxK2hxMUNYS0pzZ2g4MW0zRXhUYWlvWWxSRUExRU1BNUtqNUgzOHpUWGhBeUNnQTRxNWtGZGpMVDMvYkozNGd2MmFEWmFyeTk0UFpJQUlBWjloS2dBRU5BUURlS2dYZ0gwcms0UHdjbFVDQVp1YmdmOHBVQ2NVV0dFb3N5TEVWc0FiT3NUVkFBMlpzRDN5QS84b2pRQVJwQUFJd2hDV0FBUXlZZXFEZ0ZyTW95TUpJSVN4YVl5T0JIZGdjR3dVd29EKzJGVWdHRnpmR0duZ1dLUDhHOFpvdzM0QXJRYkhoN2kvc0FUaDd3cWJ2Tm9pVGNRZ0lyQVJNTTU0M2VlWTJSV3hqbVdKelFDZ1FBaldKNlFtMGRCT1J0TFcrYm1sUFhhY3BMZ3ppTldHK0FWZUNZbnB6TXRJSDRJeWhQbWtOUFIwYjVkUWhScGI0bFlEaHgzTlBOOC9jSm1MeHRuRWFaSW9OQjN5UUVRV002QU1udXVZSk5DWWRFdzVOMm1MZGFwOWx4VjNIWE55L2VHVzAwRngreDFsRlJrR0ZHZzFhZFA5NTlXT05NY0VVTTh3QlJKaFF4b1ZVMmxqbmd6Q0trelRMaTdLcW03YnJoM0dhbDNYYmovTzZuL2Y3L1ZRUVJ1bE1OcGN2RkV2bFNyVldielJiN1U2MzF4Kzg5TEp4VmgxYlUwRlpDM2FzN1pmVlk5N3BZSE1EMmIvQUhpdFg2Y2hGaFpIV1lOdXY2Z042K2txVDNFWVZRaDFYblRIaEdxNnY3VmQwcC9tYXF6enA5VHFxc2UxclV6bXE5dnphOUlDN2xWZXdDc1BFRmZ4Sm9SbjVhOVAySTV0Z3hrcFAzOXNLQWN3ZW9PMUtCb1lWVzJncTI5eFlUU3V1ckZRdWpUZmVqWnFma2FQS3YwZ01LLzVhZWgzU1NoZStLK0VFeEhULzFqNzBERDRpM1lDbUdBR05FaytZUHlRMVhLRGxwc2tORE93RlZsTmtnZHFqeDJhaHFiQk9BOUdYK0Rhb2N3OUUrZkE2TStKQkNlR3RQbXpiZitiNkordk11NGw4SjlHdXdqdm1KdzJnUTgxbkF4ZDBXNXlETERSZmNhcWtPTlQ4NGZlRytWU0QxbHR4NnluSWh3d29XbXNOKzg4cXBnQjVsRlBFbzh0MVBzVEZoa2Z5Q2JGWG9TbzNzTjhkSzBNd3ZudHNObElRZG9vSTRZZjBPZFQyaTg4VWpSUklHT3dHeUx3WGU1eGdZdXBXTkpQTURYWlpZOXZPSExpdzc5SE9XZ0FBQUFBPVwiKSBmb3JtYXQoXCJ3b2ZmMlwiKTtcbn1cblxuLnd0aWNvbnMge1xuXHRsaW5lLWhlaWdodDogMTtcbn1cblxuLnd0aWNvbnM6YmVmb3JlIHtcblx0Zm9udC1mYW1pbHk6IHd0aWNvbnMgIWltcG9ydGFudDtcblx0Zm9udC1zdHlsZTogbm9ybWFsO1xuXHRmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XG5cdHZlcnRpY2FsLWFsaWduOiB0b3A7XG59XG5cbi53dGljb24tYWNjb3VudDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwMVwiO1xufVxuLnd0aWNvbi1hZGQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDJcIjtcbn1cbi53dGljb24tY2FyZFJlc2l6ZURyYWc6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDNcIjtcbn1cbi53dGljb24tY2FzdWFsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA0XCI7XG59XG4ud3RpY29uLWNoZWNrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA1XCI7XG59XG4ud3RpY29uLWNoZWNrU21hbGw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDZcIjtcbn1cbi53dGljb24tY2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwN1wiO1xufVxuLnd0aWNvbi1jb3B5OmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA4XCI7XG59XG4ud3RpY29uLWNvcHlTbWFsbDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwOVwiO1xufVxuLnd0aWNvbi1kaXNtaXNzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBhXCI7XG59XG4ud3RpY29uLWRvd25DaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBiXCI7XG59XG4ud3RpY29uLWVycm9yOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBjXCI7XG59XG4ud3RpY29uLWV4cGFuZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZFwiO1xufVxuLnd0aWNvbi1mZWVkYmFjazpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZVwiO1xufVxuLnd0aWNvbi1maWxsZWREb3duQXJyb3c6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMGZcIjtcbn1cbi53dGljb24tZmluZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMFwiO1xufVxuLnd0aWNvbi1mb3JtYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTFcIjtcbn1cbi53dGljb24tZ2lmdDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMlwiO1xufVxuLnd0aWNvbi1ncmF5TG9nbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExM1wiO1xufVxuLnd0aWNvbi1pZ25vcmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTRcIjtcbn1cbi53dGljb24taW5mbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNVwiO1xufVxuLnd0aWNvbi1sZWZ0Q2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNlwiO1xufVxuLnd0aWNvbi1sb2dvOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTE3XCI7XG59XG4ud3RpY29uLWxvdmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMThcIjtcbn1cbi53dGljb24tbm9SZWNvbW1lbmRhdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTlcIjtcbn1cbi53dGljb24tcGFyYWdyYXBoUmV3cml0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYVwiO1xufVxuLnd0aWNvbi1wYXN0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYlwiO1xufVxuLnd0aWNvbi1waW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMWNcIjtcbn1cbi53dGljb24tcHJlbWl1bTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExZFwiO1xufVxuLnd0aWNvbi1wcmVtaXVtRGV0YWlsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFlXCI7XG59XG4ud3RpY29uLXByZW1pdW1GdWxsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFmXCI7XG59XG4ud3RpY29uLXJlY29tbWVuZGF0aW9uTGlnaHQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjBcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodENhcmQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjFcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodE5vU3VnZ2VzdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjJcIjtcbn1cbi53dGljb24tcmVmaW5lOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTIzXCI7XG59XG4ud3RpY29uLXJld3JpdGU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjRcIjtcbn1cbi53dGljb24tcmlnaHRDaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI1XCI7XG59XG4ud3RpY29uLXJvY2tldDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyNlwiO1xufVxuLnd0aWNvbi1zZW50ZW5jZUV4YW1wbGVzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI3XCI7XG59XG4ud3RpY29uLXNldHRpbmdzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI4XCI7XG59XG4ud3RpY29uLXNob3J0ZW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjlcIjtcbn1cbi53dGljb24tdHV0b3JpYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmFcIjtcbn1cbi53dGljb24tdW5sb2NrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTJiXCI7XG59XG4ud3RpY29uLXdhcm46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmNcIjtcbn1cbi53dGljb24tV29yZHR1bmVCdXR0b246YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmRcIjtcbn1cbi53dGljb24teDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyZVwiO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon{margin-right:5px}html>body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{width:1px!important;height:1px!important;border:0!important}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style><link rel="stylesheet" type="text/css" href="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/universal.css" media="all"><script type="text/javascript" async="" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/f5x5d2d7j9_popups.js.download"></script><style data-jss="" data-meta="MuiSnackbar">
+.MuiSnackbar-root {
+  left: 8px;
+  right: 8px;
+  display: flex;
+  z-index: 1400;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+.MuiSnackbar-anchorOriginTopCenter {
+  top: 8px;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginTopCenter {
+    top: 24px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+.MuiSnackbar-anchorOriginBottomCenter {
+  bottom: 8px;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginBottomCenter {
+    left: 50%;
+    right: auto;
+    bottom: 24px;
+    transform: translateX(-50%);
+  }
+}
+.MuiSnackbar-anchorOriginTopRight {
+  top: 8px;
+  justify-content: flex-end;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginTopRight {
+    top: 24px;
+    left: auto;
+    right: 24px;
+  }
+}
+.MuiSnackbar-anchorOriginBottomRight {
+  bottom: 8px;
+  justify-content: flex-end;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginBottomRight {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+  }
+}
+.MuiSnackbar-anchorOriginTopLeft {
+  top: 8px;
+  justify-content: flex-start;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginTopLeft {
+    top: 24px;
+    left: 24px;
+    right: auto;
+  }
+}
+.MuiSnackbar-anchorOriginBottomLeft {
+  bottom: 8px;
+  justify-content: flex-start;
+}
+@media (min-width:600px) {
+  .MuiSnackbar-anchorOriginBottomLeft {
+    left: 24px;
+    right: auto;
+    bottom: 24px;
+  }
+}
+</style><style data-emotion="css" data-s=""></style></head>
+
+<body class="post-template-default single single-post postid-5407 single-format-standard wp-embed-responsive post-image-above-header post-image-aligned-center slideout-enabled slideout-mobile sticky-menu-fade no-sidebar nav-below-header separate-containers contained-header active-footer-widgets-3 nav-search-enabled nav-aligned-left header-aligned-left dropdown-hover featured-image-active offside-js--init" itemtype="https://schema.org/Blog" itemscope="" data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="" style="">
+	<a class="screen-reader-text skip-link" href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#content" title="跳至主要內容">跳至主要內容</a>		<header class="site-header grid-container grid-parent" id="masthead" aria-label="Site" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header grid-container grid-parent">
+							<div class="header-widget">
+				<aside id="lsi_widget-1" class="widget-odd widget-last widget-first widget-1 hide-on-mobile hide-on-tablet widget inner-padding widget_lsi_widget"><ul class="lsi-social-icons icon-set-lsi_widget-1" style="text-align: left"><li class="lsi-social-facebook"><a class="" rel="nofollow noopener noreferrer" title="Facebook" aria-label="Facebook" href="https://facebook.com/starrocket.io" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="" rel="nofollow noopener noreferrer" title="Twitter" aria-label="Twitter" href="https://twitter.com/starrocket" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li><li class="lsi-social-github"><a class="" rel="nofollow noopener noreferrer" title="Github" aria-label="Github" href="https://github.com/starrocket" target="_blank"><i class="lsicon lsicon-github"></i></a></li></ul></aside>			</div>
+			<div class="site-branding">
+						<p class="main-title" itemprop="headline">
+					<a href="https://blog.starrocket.io/" rel="home">
+						Star Rocket Blog
+					</a>
+				</p>
+						
+					</div>			</div>
+		</header>
+				<nav class="main-navigation grid-container grid-parent sub-menu-right" id="site-navigation" aria-label="Primary" itemtype="https://schema.org/SiteNavigationElement" itemscope="">
+			<div class="inside-navigation grid-container grid-parent">
+				<form method="get" class="search-form navigation-search" action="https://blog.starrocket.io/">
+					<input type="search" class="search-field" value="" name="s" title="搜尋">
+				</form>		<div class="mobile-bar-items">
+						<span class="search-item">
+				<a aria-label="開啟搜尋列" href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#">
+									</a>
+			</span>
+		</div>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="mobile-menu">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-category" class=" menu sf-menu"><li id="menu-item-1796" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1796"><a href="https://blog.starrocket.io/blog/">所有文章</a></li>
+<li id="menu-item-1667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1667"><a href="https://blog.starrocket.io/posts/category/books/">好書共讀</a></li>
+<li id="menu-item-1669" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1669"><a href="https://blog.starrocket.io/posts/category/trend/">科技趨勢</a></li>
+<li id="menu-item-1670" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1670"><a href="https://blog.starrocket.io/posts/category/logbook/">星箭日誌</a></li>
+<li id="menu-item-1672" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1672"><a href="https://blog.starrocket.io/posts/category/product-stories/">產品故事</a></li>
+<li id="menu-item-1673" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1673"><a href="https://blog.starrocket.io/posts/category/people-story/">人物故事</a></li>
+<li id="menu-item-3430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430"><a href="https://blog.starrocket.io/star-rocket-newsletter/">電子報</a></li>
+<li class="search-item menu-item-align-right"><a aria-label="開啟搜尋列" href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#"></a></li></ul></div>			</div>
+		</nav>
+		<div class="page-hero grid-container grid-parent overlay">
+					<div class="inside-page-hero grid-container grid-parent">
+						<h1>
+	最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet
+</h1>	
+	<p>
+		<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"><a class="url fn n" href="https://blog.starrocket.io/posts/author/julie/" title="View all posts by Julie" rel="author" itemprop="url"><span class="author-name" itemprop="name">Julie</span></a></span> | <time class="updated" datetime="2021-10-20T17:16:39+08:00" itemprop="dateModified">2021 年 10 月 20 日</time><time class="entry-date published" datetime="2021-08-23T15:01:43+08:00" itemprop="datePublished">2021 年 8 月 23 日</time> | <a href="https://blog.starrocket.io/posts/category/people-story/" rel="tag">人物故事</a>
+	</p>
+
+
+					</div>
+				</div>
+	<div class="site grid-container container hfeed grid-parent" id="page">
+				<div class="site-content" id="content">
+			
+	<div class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-5407" class="post-5407 post type-post status-publish format-standard has-post-thumbnail category-people-story tag-c-2 tag-engineer tag-google tag-jon-skeet tag-programming tag-stack-overflow infinite-scroll-item" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article">
+					<header class="entry-header" aria-label="內容">
+						<div class="entry-meta">
+					</div>
+					</header>
+			
+		<div class="entry-content" itemprop="text">
+					<div class="ss-inline-share-wrapper ss-left-inline-content ss-small-icons ss-with-spacing ss-rounded-icons">
+
+							<p class="ss-social-share-label">
+					<span>立即分享到：</span>
+				</p>
+			
+			<div class="ss-inline-share-content">
+
+								
+		<ul class="ss-social-icons-container">
+
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.facebook.com/sharer.php?t=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;u=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F" class="ss-facebook-color" rel="nofollow noopener" data-ss-ss-network-id="facebook" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share" data-has-api="true">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M32 16.098C32 7.208 24.837 0 16 0S0 7.207 0 16.098C0 24.133 5.851 30.792 13.5 32V20.751H9.437v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653H18.5V32C26.149 30.792 32 24.133 32 16.098z"></path></svg></i>
+
+							
+																<span class="ss-network-label">Facebook</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://twitter.com/intent/tweet?text=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack+Overflow+%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9+Jon+Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F" class="ss-twitter-color" rel="nofollow noopener" data-ss-ss-network-id="twitter" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M28.75 9.5c0 0.25 0 0.563 0 0.813 0 8.688-6.625 18.688-18.688 18.688-3.688 0-7.188-1.063-10.063-2.938 0.5 0.063 1.063 0.063 1.563 0.063 3.063 0 5.938-1 8.188-2.813-2.875 0-5.313-1.938-6.188-4.563 0.438 0.125 0.813 0.125 1.25 0.125 0.625 0 1.188-0.063 1.75-0.188-3-0.625-5.25-3.313-5.25-6.438 0-0.063 0-0.063 0-0.125 0.875 0.5 1.875 0.813 2.938 0.813-1.75-1.125-2.938-3.188-2.938-5.438 0-1.188 0.375-2.313 0.938-3.313 3.188 4 8.063 6.625 13.5 6.875-0.125-0.5-0.188-1-0.188-1.5 0-3.625 2.938-6.563 6.563-6.563 1.938 0 3.625 0.813 4.813 2.063 1.5-0.313 2.938-0.813 4.188-1.563-0.5 1.5-1.563 2.813-2.875 3.625 1.313-0.188 2.563-0.5 3.75-1.063-0.875 1.313-2 2.5-3.25 3.438z"></path></svg></i>
+
+							
+																<span class="ss-network-label">Twitter</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.linkedin.com/shareArticle?title=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F&amp;mini=true" class="ss-linkedin-color" rel="nofollow noopener" data-ss-ss-network-id="linkedin" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M29.632 0C30.939 0 32 1.032 32 2.307v27.384C32 30.966 30.939 32 29.632 32H2.36C1.058 32 0 30.966 0 29.69V2.308C0 1.032 1.058 0 2.36 0h27.272zM9.149 11.638h-4.77V27h4.77V11.638zm12.133-.382c-2.318 0-3.874 1.273-4.509 2.48h-.066v-2.098H12.14V27h4.76v-7.599c0-2.004.378-3.946 2.858-3.946 2.447 0 2.475 2.29 2.475 4.072V27H27v-8.423c0-4.138-.893-7.32-5.718-7.32v-.001zM6.764 4A2.766 2.766 0 004 6.769a2.765 2.765 0 105.528 0A2.767 2.767 0 006.765 4h-.001z"></path></svg></i>
+
+							
+																<span class="ss-network-label">LinkedIn</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+			
+			
+				<li>
+					<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="ss-share-all ss-shareall-color" rel="nofollow noopener">
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M25.333 15.333h-8v-8c0-0.733-0.6-1.333-1.333-1.333s-1.333 0.6-1.333 1.333v8h-8c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h8v8c0 0.733 0.6 1.333 1.333 1.333s1.333-0.6 1.333-1.333v-8h8c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333z"></path></svg></i>
+
+														<span class="ss-reveal-label-wrap">
+																			<span class="ss-network-label">更多</span>
+																	</span>
+													</span>
+					</a>
+
+					
+				</li>
+					</ul>
+		
+			</div><!-- END .ss-inline-share-content -->
+		</div><!-- END .ss-inline-share-wrapper -->
+		<p>求解！寫程式遇到問題的你在搜尋欄輸入關鍵字，或許因此造訪過 Stack Overflow 這個專為程式開發相關問題所設計的問答網站（欲知詳情歡迎收聽<a href="https://bit.ly/3At49Ch">《星箭廣播》102 集——傳說中，工程師沒有這個網站就不會寫程式（ft. Richard）</a>），那我大膽推測，你有滿高的機率會被 Jon Skeet 的回答所拯救。</p>
+<p>2018 年 1 月 14 日，<a href="https://stackoverflow.com/users/22656/jon-skeet">Jon Skeet</a> 在 Stack Overflow 的 reputation 超過百萬大關，這個成績是前無古人後無來者。他在十年間回答超過三萬個問題，最高峰時每個月平均回答將近 800 個問題。他還被封為 Chuck Norris of programming，在工程師圈內的影響力無庸置疑。<sup id="fnref1"><a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#fn1" rel="footnote">1</a></sup></p>
+<figure id="attachment_5411" aria-describedby="caption-attachment-5411" style="width: 890px" class="wp-caption alignnone"><img class="size-full wp-image-5411 entered lazyloaded" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/answers-1-900x675-1.png" alt="Jon Skeet 在 2008 年 9 月註冊成為 Stack Overflow 使用者，在 2018 年 1 月 14 日 reputation 破百萬大關，十年間回答了超過三萬個問題。（來源： Stack Overflow ）" width="900" height="675" data-lazy-srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-768x576.png 768w" data-lazy-sizes="(max-width: 900px) 100vw, 900px" data-lazy-src="https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1.png" data-ll-status="loaded" sizes="(max-width: 900px) 100vw, 900px" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-768x576.png 768w"><noscript><img class="size-full wp-image-5411" src="https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1.png" alt="Jon Skeet 在 2008 年 9 月註冊成為 Stack Overflow 使用者，在 2018 年 1 月 14 日 reputation 破百萬大關，十年間回答了超過三萬個問題。（來源： Stack Overflow ）" width="900" height="675" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/answers-1-900x675-1-768x576.png 768w" sizes="(max-width: 900px) 100vw, 900px" /></noscript><figcaption id="caption-attachment-5411" class="wp-caption-text">Jon Skeet 在 2008 年 9 月註冊成為 Stack Overflow 使用者，在 2018 年 1 月 14 日 reputation 破百萬大關，十年間回答了超過三萬個問題。（來源： Stack Overflow ）</figcaption></figure>
+<p>除了持續在 Stack Overflow 回答問題，他堪稱「時間管理大師」（當然不是貶義啦）的斜槓生活也是話題——正職是英國 Google 的資深軟體工程師，資歷近 14 年；出版過好幾本 C# 著作；經營部落格並持續活躍於技術社群。</p>
+<h2 id="toc_0">打電動的孩子不會變壞：被遊戲領進門的 coding 人生</h2>
+<p>儘管今年 45 歲的 Jon Skeet 不缺值得說嘴的事蹟，但他 10、11 歲那時候為家中電腦寫出程式語言 Logo 的解釋器（interpreter）卻是他 coding 路上最自豪的紀錄。</p>
+<figure id="attachment_5412" aria-describedby="caption-attachment-5412" style="width: 1014px" class="wp-caption alignnone"><img class="size-large wp-image-5412 entered lazyloaded" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/ZXSpectrum48k-1024x752.jpg" alt="Jon Skeet 的第一台電腦：ZX Spectrum 48k。" width="1024" height="752" data-lazy-srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1024x752.jpg 1024w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-300x220.jpg 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-768x564.jpg 768w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1536x1129.jpg 1536w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-2048x1505.jpg 2048w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1024x752.jpg" data-ll-status="loaded" sizes="(max-width: 1024px) 100vw, 1024px" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1024x752.jpg 1024w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-300x220.jpg 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-768x564.jpg 768w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1536x1129.jpg 1536w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-2048x1505.jpg 2048w"><noscript><img class="size-large wp-image-5412" src="https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1024x752.jpg" alt="Jon Skeet 的第一台電腦：ZX Spectrum 48k。" width="1024" height="752" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1024x752.jpg 1024w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-300x220.jpg 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-768x564.jpg 768w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-1536x1129.jpg 1536w, https://blog.starrocket.io/wp-content/uploads/2021/08/ZXSpectrum48k-2048x1505.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript><figcaption id="caption-attachment-5412" class="wp-caption-text">Jon Skeet 的第一台電腦：ZX Spectrum 48k。（來源：By Bill Bertram – Own work, CC BY-SA 2.5, ）</figcaption></figure>
+<p>Sinclair 的 ZX Spectrum 是他的第一台電腦，而第一次寫程式的 Jon Skeet 才七歲，自己鑽研電腦使用手冊寫出射擊遊戲，玩家可以上下移動飛行器攻擊隨機出現的外星人。現在回頭看遊戲設計非常陽春，但 Jon Skeet 回憶，「你控制那艘小小的宇宙飛船，電腦對你輸入的程式碼做出反應，當時對我來說就是件大事，真的太神奇了。」</p>
+<p>寫出遊戲後，或許是「無知即無畏」，他接著想在家裡的 Spectrum 電腦重現 Logo ，但他完全沒有意識到這個難度跟遊戲是天差地別，需要大量活用海龜繪圖（Turtle Graphics），非常考驗他對三角幾何學的理解，遠遠超前學校的授課進度，後來他又再次靠著電腦的使用手冊成功做到。</p>
+<p>而這種自學成才的能力，可能是「內建」的—— Jon Skeet 主修動物學的老爸當時擔任健保單位的主管，竟也自學寫出一個符合醫療人員使用需求的資料庫，所以兒子把他現在的能力歸功於自家「無極限的好奇寶寶」基因，加上對於越級打怪都沒有想太多（直接一點說，是沒什麼概念），沒有心魔的干擾更容易達成目標。</p>
+<h2 id="toc_1">「我沒那麼神，但我也不是冒牌貨。」</h2>
+<p>跟玩遊戲有點像，Jon Skeet 的信仰是有趣（fun）至上，對於影響力更大、但不那麼有興趣的任務能免則免。這也反映在其職涯——大學主修數學還以為自己會一路深造，但發現自己不是這塊料，並沒有擅長到能讀博士，才改攻讀電腦科學碩士學位。他不諱言自己一向隨心所欲，不想為五斗米而寫程式，所以在 Google 待了 14 年的他沒有擔任主管職，而是以 IC（individual contributor，獨立貢獻者）的角色持續產出。</p>
+<p>其實他接過半年的管理職，但發現坐在這個位置上拿捏同理心的分寸並不容易，後來就退回原位。「我覺得不應該要求工程師在某個階段就得成為管理者，有些人單純做個工程師會快樂很多、效率也更高，但很多公司在升遷制度上還是犯了這個錯。」Jon Skeet 認為，隨著歷練越深，在比別人更擅長或更有經驗的領域，不論是寫程式或寫文件都助於解決問題。</p>
+<p>身為公認的頂尖工程師，Jon Skeet 也曾踩過時區差異的坑，害單元測試失敗，不過這倒是催生他開發 .NET 的日期和時間 API 替代方案 <a href="https://nodatime.org/">Noda Time</a>，彌補原有的缺陷並降低使用複雜度。所以當外界總是聚焦他一長串的吸睛成就，他也不厭其煩地強調，大家太強化這些浮誇的光環了。</p>
+<p>雖然別人的盛讚（而不是那些開玩笑的神化）一度讓 Jon Skeet 「自我感覺良好」，但又明白自己真的沒有這麼神，於是在矛盾的情緒中來回掙扎；不過後來他釋懷了，畢竟自己確實激勵許多人對程式的熱忱，而他分享那份出於喜歡，在大小事都秉持全心投入並享受其中的態度，才是「神話」背後最為日常且真實的。像是他 2019 年開始學打鼓，即便自認打得很差，但一邊為電子鼓組寫 code 也獲得很多樂趣；而且他發現接觸鼓之後，聽音樂比以前更常辨識出鼓聲的段落。</p>
+<p>曾經因為在 Google 工作陷入自我懷疑的 Jon Skeet ，條理清晰的剖析他的「冒牌者症候群」疑似症狀後，確定了自己並不是冒牌貨，便開始學著不把成就歸於運氣，坦然說出他是有意識的努力，這讓大神形象又親民生動許多。</p>
+<h2 id="toc_2">跟解答之神學提問</h2>
+<p>Jon Skeet 之所以堅持在 Stack Overflow 解答，是因為他發現問答性質很適合自己的寫作風格，而且回答問題也有助於精進自己作為工程師的專業能力。他在多個訪談中反覆強調，「溝通」是軟體開發過程中最難卻最關鍵的技能，尤其佔據資深軟體工程師工作的很大一部分，「就像 coding 本身也是在溝通，只是對象除了電腦，還有之後檢視程式碼的所有人。」所以他提醒開發者不要過度專注在技術，卻丟失了對文字或與人交流的熱忱。</p>
+<p>如果還不熟悉一門程式語言，他建議先從像是 console apps 入門，而非 web 或 mobile apps。他理解在如今快速變化的趨勢下很容易一頭扎入摸索全新的技術，自己也不例外，不過一旦發現卡關，他會選擇先抽離做其他嘗試。因為長遠來看，他發現在軟體開發領域，「先學會走路再跑步」的生產力會更高，他也提醒要保持「滾動式調整」，觀察自己的產出和效率運用，找到進步的關鍵。</p>
+<figure id="attachment_5410" aria-describedby="caption-attachment-5410" style="width: 890px" class="wp-caption alignnone"><img class="size-full wp-image-5410 entered lazyloaded" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/account_age-1-900x675-1.png" alt="根據統計，Jon Skeet 的回答對菜鳥的幫助最大。（來源： Stack Overflow ）" width="900" height="675" data-lazy-srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-768x576.png 768w" data-lazy-sizes="(max-width: 900px) 100vw, 900px" data-lazy-src="https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1.png" data-ll-status="loaded" sizes="(max-width: 900px) 100vw, 900px" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-768x576.png 768w"><noscript><img class="size-full wp-image-5410" src="https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1.png" alt="根據統計，Jon Skeet 的回答對菜鳥的幫助最大。（來源： Stack Overflow ）" width="900" height="675" srcset="https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1.png 900w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-300x225.png 300w, https://blog.starrocket.io/wp-content/uploads/2021/08/account_age-1-900x675-1-768x576.png 768w" sizes="(max-width: 900px) 100vw, 900px" /></noscript><figcaption id="caption-attachment-5410" class="wp-caption-text">根據統計，Jon Skeet 的回答對菜鳥的幫助最大。（來源： Stack Overflow ）</figcaption></figure>
+<p>對於剛開始接觸程式語言而受挫的新手，Jon Skeet 的建議是，如果興趣不減或是越挫越勇，那就向外求解吧，不論是看技術部落格或是請其他人指點都好，有時候透過局外人的眼睛能找到癥結點。當然，換個程式語言試試也是一個方法。</p>
+<p>但求解的藝術也很重要，Jon Skeet 認為提不出一個好問題的原因在於只考量自身的需求，卻忽略了怎麼提問既能幫助自己，又能幫助有相同困擾的人；那該如何提出一個好問題呢？他寫的<a href="https://codeblog.jonskeet.uk/2010/08/29/writing-the-perfect-question/">〈WRITING THE PERFECT QUESTION〉</a>提供了滿滿的實用建議。畢竟，沒人能比他更有說服力了吧？</p>
+<p>資料來源：<br><a href="https://www.theedgemarkets.com/article/cover-story-chuck-norris-programming">Cover Story: The chuck norris of programming</a><br><a href="https://stackoverflow.blog/2018/01/15/thanks-million-jon-skeet/">Thanks a Million, Jon Skeet!</a><br><a href="https://meta.stackexchange.com/questions/9134/jon-skeet-facts">Jon Skeet Facts</a><br><a href="https://www.bbc.com/news/uk-england-34596634">Jon Skeet: The ‘Chuck Norris’ of programming</a><br><a href="https://stackoverflow.blog/2018/03/14/podcast-123-jon-skeet-wants-you-to-be-a-feminist/">Podcast #123 – Jon Skeet Wants You To Be a Feminist</a><br><a href="https://devskiller.com/jon-skeet-yellow-duck-podcast/">A Conversation with Jon Skeet: The Chuck Norris of Programming, on the Yellow Duck Podcast</a><br><a href="https://dotnetcore.show/episode-40-noda-time-with-jon-skeet/">Episode 40 – Noda Time with Jon Skeet</a><br><a href="https://developeronfire.com/podcast/episode-170-jon-skeet-awesome-humble-and-human#!">Episode 170 | Jon Skeet – Awesome, Humble, and Human</a><br><a href="https://www.madetech.com/resources/podcasts/episode-3-jon-skeet/">Coding for fun with Jon Skeet</a><br><a href="https://codeblog.jonskeet.uk/2017/06/16/imposter-syndrome-part-1/">IMPOSTER SYNDROME (PART 1)</a></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn1">
+<p>老牌動作演員 Chuck Norris 是歐美知名的網路哏，而鄉民也類比 Jon Skeet 為工程師界的 Chuck Norris ，對其大神地位有很多浮誇又搞笑的形容，像是這篇〈<a href="https://www.freecodecamp.org/news/jon-skeet-the-chuck-norris-of-programming-ee5781c7e18a/">Jon Skeet — The Chuck Norris of Programming</a>〉就提到：Jon Skeet 可以除以零；當 Jon Skeet 的程式碼無法編譯時，編譯器會道歉；世界上只有兩種類型的工程師——優秀的工程師和 Jon Skeet 以外的工程師。&nbsp;<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#fnref1" rev="footnote">↩</a></p>
+</li>
+</ol>
+</div>
+
+
+<p>（文章代表圖：<a href="https://www.flickr.com/photos/akrabat/">Rob Allen</a> via <a href="https://www.flickr.com/photos/akrabat/27894559989">Flickr</a>）</p>
+
+
+
+<pre class="wp-block-preformatted">本文依 CC 創用姓名標示 - 非商業性 - 相同方式分享 4.0 國際釋出</pre>
+<!-- AddThis Advanced Settings above via filter on the_content --><!-- AddThis Advanced Settings below via filter on the_content --><!-- AddThis Advanced Settings generic via filter on the_content --><!-- AddThis Related Posts below via filter on the_content --><div class="at-below-post-recommended addthis_tool"></div><!-- AddThis Related Posts generic via filter on the_content -->		<div class="ss-inline-share-wrapper ss-left-inline-content ss-small-icons ss-with-spacing ss-rounded-icons">
+
+							<p class="ss-social-share-label">
+					<span>立即分享到：</span>
+				</p>
+			
+			<div class="ss-inline-share-content">
+
+								
+		<ul class="ss-social-icons-container">
+
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.facebook.com/sharer.php?t=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;u=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F" class="ss-facebook-color" rel="nofollow noopener" data-ss-ss-network-id="facebook" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share" data-has-api="true">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M32 16.098C32 7.208 24.837 0 16 0S0 7.207 0 16.098C0 24.133 5.851 30.792 13.5 32V20.751H9.437v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653H18.5V32C26.149 30.792 32 24.133 32 16.098z"></path></svg></i>
+
+							
+																<span class="ss-network-label">Facebook</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://twitter.com/intent/tweet?text=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack+Overflow+%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9+Jon+Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F" class="ss-twitter-color" rel="nofollow noopener" data-ss-ss-network-id="twitter" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M28.75 9.5c0 0.25 0 0.563 0 0.813 0 8.688-6.625 18.688-18.688 18.688-3.688 0-7.188-1.063-10.063-2.938 0.5 0.063 1.063 0.063 1.563 0.063 3.063 0 5.938-1 8.188-2.813-2.875 0-5.313-1.938-6.188-4.563 0.438 0.125 0.813 0.125 1.25 0.125 0.625 0 1.188-0.063 1.75-0.188-3-0.625-5.25-3.313-5.25-6.438 0-0.063 0-0.063 0-0.125 0.875 0.5 1.875 0.813 2.938 0.813-1.75-1.125-2.938-3.188-2.938-5.438 0-1.188 0.375-2.313 0.938-3.313 3.188 4 8.063 6.625 13.5 6.875-0.125-0.5-0.188-1-0.188-1.5 0-3.625 2.938-6.563 6.563-6.563 1.938 0 3.625 0.813 4.813 2.063 1.5-0.313 2.938-0.813 4.188-1.563-0.5 1.5-1.563 2.813-2.875 3.625 1.313-0.188 2.563-0.5 3.75-1.063-0.875 1.313-2 2.5-3.25 3.438z"></path></svg></i>
+
+							
+																<span class="ss-network-label">Twitter</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+							<li class="">
+
+					
+						
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.linkedin.com/shareArticle?title=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F&amp;mini=true" class="ss-linkedin-color" rel="nofollow noopener" data-ss-ss-network-id="linkedin" data-ss-ss-post-id="5407" data-ss-ss-location="inline_content" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/" data-ss-ss-type="share">
+					
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M29.632 0C30.939 0 32 1.032 32 2.307v27.384C32 30.966 30.939 32 29.632 32H2.36C1.058 32 0 30.966 0 29.69V2.308C0 1.032 1.058 0 2.36 0h27.272zM9.149 11.638h-4.77V27h4.77V11.638zm12.133-.382c-2.318 0-3.874 1.273-4.509 2.48h-.066v-2.098H12.14V27h4.76v-7.599c0-2.004.378-3.946 2.858-3.946 2.447 0 2.475 2.29 2.475 4.072V27H27v-8.423c0-4.138-.893-7.32-5.718-7.32v-.001zM6.764 4A2.766 2.766 0 004 6.769a2.765 2.765 0 105.528 0A2.767 2.767 0 006.765 4h-.001z"></path></svg></i>
+
+							
+																<span class="ss-network-label">LinkedIn</span>
+									
+						</span>
+
+											</a>
+					
+									</li>
+			
+			
+				<li>
+					<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="ss-share-all ss-shareall-color" rel="nofollow noopener">
+						<span class="ss-share-network-content">
+							<i class="ss-network-icon"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M25.333 15.333h-8v-8c0-0.733-0.6-1.333-1.333-1.333s-1.333 0.6-1.333 1.333v8h-8c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h8v8c0 0.733 0.6 1.333 1.333 1.333s1.333-0.6 1.333-1.333v-8h8c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333z"></path></svg></i>
+
+														<span class="ss-reveal-label-wrap">
+																			<span class="ss-network-label">更多</span>
+																	</span>
+													</span>
+					</a>
+
+					
+				</li>
+					</ul>
+		
+			</div><!-- END .ss-inline-share-content -->
+		</div><!-- END .ss-inline-share-wrapper -->
+				</div>
+
+				<footer class="entry-meta" aria-label="Entry meta">
+			<span class="tags-links"><span class="screen-reader-text">標籤 </span><a href="https://blog.starrocket.io/posts/tag/c-2/" rel="tag">C+</a>、<a href="https://blog.starrocket.io/posts/tag/engineer/" rel="tag">engineer</a>、<a href="https://blog.starrocket.io/posts/tag/google/" rel="tag">Google</a>、<a href="https://blog.starrocket.io/posts/tag/jon-skeet/" rel="tag">Jon Skeet</a>、<a href="https://blog.starrocket.io/posts/tag/programming/" rel="tag">programming</a>、<a href="https://blog.starrocket.io/posts/tag/stack-overflow/" rel="tag">Stack Overflow</a></span> 		</footer>
+		<div id="post-nav">
+	        <a class="post-previous" href="https://blog.starrocket.io/posts/newsletter-2021-08-19/">
+				<div class="post-nav-wrap" style="background: linear-gradient(0deg,rgba(52,62,71,0.1),rgba(52,62,71,0.3)),url(&#39;https://blog.starrocket.io/wp-content/uploads/2021/08/kaitlyn-baker-vZJdYl5JVXY-unsplash-scaled.jpg&#39;);">
+            <div class="post-nav">Previous</div>
+            <h3 class="post-nav-title">科技創業週報 #298：寫十年部落格和技術文章的心得</h3>
+        </div></a>
+            <a class="post-next" href="https://blog.starrocket.io/posts/star-rocket-podcast-ep122-jpay/">
+        <div class="post-nav-wrap" style="background: linear-gradient(0deg,rgba(52,62,71,0.6),rgba(52,62,71,0.3)),url(&#39;https://blog.starrocket.io/wp-content/uploads/2021/08/MV5BMTc2NDM4MzYzNV5BMl5BanBnXkFtZTgwNjA5MzIxMjE@._V1_FMjpg_UX1280_.jpg&#39;);">
+            <h3 class="post-nav-title">《星箭廣播》122 集——你坐牢，我發大財？美國監獄的科技生活，是有一張價目表的</h3>
+            <div class="post-nav">Next</div>					
+        </div></a>
+    </div>	</div>
+</article>
+
+			<div class="comments-area">
+				<div id="comments">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">發佈留言 <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#respond" style="display:none;">取消回覆</a></small></h3><form action="https://blog.starrocket.io/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-form-comment"><label for="comment" class="screen-reader-text">留言</label><textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea></p><label for="author" class="screen-reader-text">留言者名稱</label><input placeholder="留言者名稱 *" id="author" name="author" type="text" value="" size="30" required="">
+<label for="email" class="screen-reader-text">電子郵件地址</label><input placeholder="電子郵件地址 *" id="email" name="email" type="email" value="" size="30" required="">
+<label for="url" class="screen-reader-text">個人網站網址</label><input placeholder="個人網站網址" id="url" name="url" type="url" value="" size="30">
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">在<strong>瀏覽器</strong>中儲存顯示名稱、電子郵件地址及個人網站網址，以供下次發佈留言時使用。</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="發佈留言"> <input type="hidden" name="comment_post_ID" value="5407" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+			</div>
+
+					</main>
+	</div>
+
+	
+	</div>
+</div>
+
+
+<div class="site-footer">
+				<div id="footer-widgets" class="site footer-widgets">
+				<div class="footer-widgets-container">
+					<div class="inside-footer-widgets">
+							<div class="footer-widget-1 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+		<aside id="text-10" class="widget-odd widget-last widget-first widget-1 widget inner-padding widget_text"><h2 class="widget-title">Star Rocket</h2>			<div class="textwidget"><p><a href="https://www.starrocket.io/course_list" target="_blank" rel="noopener">課程活動</a><br>
+<a href="https://www.starrocket.io/workSpace" target="_blank" rel="noopener">尋找工作空間</a><br>
+<a href="https://www.starrocket.io/eventSpace" target="_blank" rel="noopener">尋找活動場地</a><br>
+<a href="https://www.starrocket.io/register" target="_blank" rel="noopener">加入會員</a></p>
+</div>
+		</aside>	</div>
+		<div class="footer-widget-2 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+		<aside id="text-11" class="widget-odd widget-last widget-first widget-1 widget inner-padding widget_text"><h2 class="widget-title">About</h2>			<div class="textwidget"><p><a href="https://www.starrocket.io/about" target="_blank" rel="noopener">關於我們</a><br>
+<a href="https://www.starrocket.io/news_list" target="_blank" rel="noopener">最新消息</a></p>
+</div>
+		</aside>	</div>
+		<div class="footer-widget-3 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+		<aside id="text-12" class="widget-odd widget-last widget-first widget-1 widget inner-padding widget_text"><h2 class="widget-title">Connect</h2>			<div class="textwidget"><p><a href="https://blog.starrocket.io/star-rocket-newsletter/" target="_blank" rel="noopener">電子報</a><br>
+<a href="https://blog.starrocket.io/">部落格</a><br>
+<a href="http://podcast.starrocket.io/" target="_blank" rel="noopener">Podcast</a><br>
+<a href="https://twitter.com/starrocket" target="_blank" rel="noopener">Twitter</a><br>
+<a href="https://facebook.com/starrocket.io" target="_blank" rel="noopener">Facebook</a></p>
+</div>
+		</aside>	</div>
+						</div>
+				</div>
+			</div>
+					<footer class="site-info" aria-label="Site" itemtype="https://schema.org/WPFooter" itemscope="">
+			<div class="inside-site-info">
+								<div class="copyright-bar">
+					
+Made with ♥ in Taiwan. Built with WordPress.				</div>
+			</div>
+		</footer>
+		</div>
+
+<a title="捲動返回頂端" aria-label="捲動返回頂端" rel="nofollow" href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="generate-back-to-top" style="opacity: 1; visibility: visible;" data-scroll-speed="400" data-start-scroll="300">
+					
+				</a>		<nav id="generate-slideout-menu" class="main-navigation slideout-navigation offside offside--left" itemtype="https://schema.org/SiteNavigationElement" itemscope="" style="">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="main-nav"><ul id="menu-category-1" class=" slideout-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1796"><a href="https://blog.starrocket.io/blog/">所有文章</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1667"><a href="https://blog.starrocket.io/posts/category/books/">好書共讀</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1669"><a href="https://blog.starrocket.io/posts/category/trend/">科技趨勢</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1670"><a href="https://blog.starrocket.io/posts/category/logbook/">星箭日誌</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1672"><a href="https://blog.starrocket.io/posts/category/product-stories/">產品故事</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1673"><a href="https://blog.starrocket.io/posts/category/people-story/">人物故事</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3430"><a href="https://blog.starrocket.io/star-rocket-newsletter/">電子報</a></li>
+</ul></div><aside id="lsi_widget-2" class="widget-odd widget-last widget-first widget-1 slideout-widget widget_lsi_widget"><h2 class="widget-title">Follow us</h2><ul class="lsi-social-icons icon-set-lsi_widget-2" style="text-align: center"><li class="lsi-social-facebook"><a class="" rel="nofollow noopener noreferrer" title="Facebook" aria-label="Facebook" href="https://facebook.com/starrocket.io" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="" rel="nofollow noopener noreferrer" title="Twitter" aria-label="Twitter" href="https://twitter.com/starrocket" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li><li class="lsi-social-github"><a class="" rel="nofollow noopener noreferrer" title="Github" aria-label="Github" href="https://github.com/starrocket" target="_blank"><i class="lsicon lsicon-github"></i></a></li></ul></aside>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+
+					<div class="slideout-overlay">
+									<button class="slideout-exit ">
+												<span class="screen-reader-text">Close</span>
+					</button>
+							</div>
+			<script id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=980358178832027&ev=PageView&noscript=1&cd%5Bpost_category%5D=%E4%BA%BA%E7%89%A9%E6%95%85%E4%BA%8B&cd%5Bpage_title%5D=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack+Overflow+%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9+Jon+Skeet&cd%5Bpost_type%5D=post&cd%5Bpost_id%5D=5407&cd%5Bplugin%5D=PixelYourSite&cd%5Buser_role%5D=guest&cd%5Bevent_url%5D=blog.starrocket.io%2Fposts%2Fjon-skeet%2F" alt=""></noscript>
+
+<style id="lsi-style-inline-css">
+.icon-set-lsi_widget-1 a,
+			.icon-set-lsi_widget-1 a:visited,
+			.icon-set-lsi_widget-1 a:focus {
+				border-radius: 2px;
+				background: #fbfbfb !important;
+				color: #3a3a3c !important;
+				font-size: 15px !important;
+			}
+
+			.icon-set-lsi_widget-1 a:hover {
+				background: #fbfbfb !important;
+				color: #1270fa !important;
+			}
+.icon-set-lsi_widget-2 a,
+			.icon-set-lsi_widget-2 a:visited,
+			.icon-set-lsi_widget-2 a:focus {
+				border-radius: 2px;
+				background: #fbfbfb !important;
+				color: #3a3a3c !important;
+				font-size: 20px !important;
+			}
+
+			.icon-set-lsi_widget-2 a:hover {
+				background: #fbfbfb !important;
+				color: #1270fa !important;
+			}
+</style>
+
+<script id="generate-offside-js-extra">
+var offSide = {"side":"left"};
+</script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/offside.min.js.download" id="generate-offside-js" defer=""></script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/blog.starrocket.io","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<!--[if lte IE 11]>
+<script src='https://blog.starrocket.io/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.1.3' id='generate-classlist-js'></script>
+<![endif]-->
+<script id="generate-menu-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"\u958b\u555f\u5b50\u9078\u55ae","closeSubMenuLabel":"\u95dc\u9589\u5b50\u9078\u55ae"};
+</script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/menu.min.js.download" id="generate-menu-js" defer=""></script>
+<script id="generate-navigation-search-js-extra">
+var generatepressNavSearch = {"open":"\u958b\u555f\u641c\u5c0b\u5217","close":"\u95dc\u9589\u641c\u5c0b\u5217"};
+</script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/navigation-search.min.js.download" id="generate-navigation-search-js" defer=""></script>
+<script id="generate-back-to-top-js-extra">
+var generatepressBackToTop = {"smooth":"1"};
+</script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/back-to-top.min.js.download" id="generate-back-to-top-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/comment-reply.min.js.download" id="comment-reply-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/jquery.validate.min.js.download" id="jquery-validation-plugin-js" defer=""></script>
+<script src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/wp-embed.min.js.download" id="wp-embed-js" defer=""></script>
+<script id="socialsnap-js-js-extra">
+var socialsnap_script = {"ajaxurl":"https:\/\/blog.starrocket.io\/wp-admin\/admin-ajax.php","on_media_width":"250","on_media_height":"250","nonce":"b7e01afeeb","post_id":"5407"};
+</script>
+<script data-minify="1" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/socialsnap.js.download" id="socialsnap-js-js" defer=""></script>
+<script id="molongui-authorship-front-inline-js-extra">var molongui_authorship_front_params = {"byline_prefix":"","byline_suffix":"","byline_separator":", ","byline_last_separator":" and ","byline_link_title":"View all posts by","byline_dom_tree":""};</script><script id="molongui-authorship-front-inline-js" type="text/javascript" data-file="front.16cd.min.js" data-version="4.6.12">var addBylineModifiers=function(){var r="?m_bm=true",e=document.querySelectorAll('a[href$="'+r+'"]');Array.prototype.forEach.call(e,function(e,t){e.setAttribute("href",decodeURIComponent(e.getAttribute("href")).replace(r,"")),e.insertAdjacentHTML("beforebegin",molongui_authorship_front_params.byline_prefix+" "),e.insertAdjacentHTML("afterend"," "+molongui_authorship_front_params.byline_suffix)})},decodeMultiAuthorBylines=function(){var e=document.querySelectorAll('a[href*="molongui_byline=true"]');Array.prototype.forEach.call(e,function(e,t){var r=e.getAttribute("href"),i=new URL(decodeURIComponent(r)),n=new URLSearchParams(i.search),a=i.origin,o=i.pathname,r="";if(!n.has("molongui_byline"))return!1;if(n.has("lang")&&(r="?lang="+n.get("lang")),""===e.innerText)return n.has("m_main_disabled")?e.removeAttribute("href"):e.setAttribute("href",a+o+r),!1;var l,s=[molongui_authorship_front_params.byline_separator,molongui_authorship_front_params.byline_last_separator],u=e.innerText.split(new RegExp(s.join("|"),"gi"));n.has("m_main_disabled")?(l=n.getAll("mca")).unshift("molongui-disabled-link"):(i=o.replace(/^\/|\/$/g,"").split("/").pop(),o.replace(/\/$/g,"").replace(i,""),(l=n.getAll("mca")).unshift(a+o+r));var d="",m=u.length,n=e.getAttribute("class"),a=e.getAttribute("target"),o=e.getAttribute("rel"),r=e.getAttribute("itemprop"),c=n?'class="'+n+'"':"",h=a?'target="'+a+'"':"",p=o?'rel="'+o+'"':"",f=r?'itemprop="'+r+'"':"";for(j=0;j<m;j++){var _=u[j].trim(),b="",b=""!==molongui_authorship_front_params.byline_dom_tree?molongui_authorship_front_params.byline_dom_tree.replace("{%ma_authorName}",_):_;"molongui-disabled-link"===l[j]||j>=l.length?d+=b:d+='<a href="'+l[j]+'" '+c+" "+p+" "+f+" "+h+' title="'+molongui_authorship_front_params.byline_link_title+" "+_+'">'+b+"</a>",j<m-1-1?d+=s[0]:j<m-1&&(d+=s[1])}e.insertAdjacentHTML("afterend",d),e.parentNode.removeChild(e)})},disableEmptyLinks=function(){var e=document.querySelectorAll('a[href="#molongui-disabled-link"]');Array.prototype.forEach.call(e,function(e,t){e.classList.add("molongui-disabled-link"),e.removeAttribute("href")})},initBylines=function(){addBylineModifiers(),decodeMultiAuthorBylines(),disableEmptyLinks()};document.addEventListener("DOMContentLoaded",function(){initBylines();var e=document.body;new MutationObserver(function(e){Array.prototype.forEach.call(e,function(e,t){initBylines()})}).observe(e,{attributes:!0,childList:!0,subtree:!0,characterData:!0})});</script>
+		<div id="ss-all-networks-popup" class="ss-popup-overlay" data-nonce="cc33ed8658">
+			<div class="ss-popup">
+
+				<div class="ss-popup-heading">
+					<span>Share via</span>
+					<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="ss-close-modal" rel="nofollow noopener">
+						<svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.883 16.667l7.058-7.058c0.517-0.517 0.517-1.367 0-1.883s-1.367-0.517-1.883 0l-7.058 7.058-7.058-7.058c-0.517-0.517-1.367-0.517-1.883 0s-0.517 1.367 0 1.883l7.058 7.058-7.058 7.058c-0.517 0.517-0.517 1.367 0 1.883 0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392l7.058-7.058 7.058 7.058c0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392c0.517-0.517 0.517-1.367 0-1.883l-7.058-7.058z"></path></svg>					</a>
+				</div><!-- END .ss-popup-heading -->
+
+				<div class="ss-popup-content">
+					<div class="ss-popup-networks ss-clearfix">
+						
+							<div class="ss-popup-network ss-popup-facebook">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.facebook.com/sharer.php?t=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;u=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F%3Futm_term%3D2022-10-12" data-id="facebook" class="ss-facebook-color" data-ss-ss-network-id="facebook" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" data-has-api="true" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M32 16.098C32 7.208 24.837 0 16 0S0 7.207 0 16.098C0 24.133 5.851 30.792 13.5 32V20.751H9.437v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653H18.5V32C26.149 30.792 32 24.133 32 16.098z"></path></svg></span>
+									<span>Facebook</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-twitter">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://twitter.com/intent/tweet?text=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack+Overflow+%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9+Jon+Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F%3Futm_term%3D2022-10-12" data-id="twitter" class="ss-twitter-color" data-ss-ss-network-id="twitter" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M28.75 9.5c0 0.25 0 0.563 0 0.813 0 8.688-6.625 18.688-18.688 18.688-3.688 0-7.188-1.063-10.063-2.938 0.5 0.063 1.063 0.063 1.563 0.063 3.063 0 5.938-1 8.188-2.813-2.875 0-5.313-1.938-6.188-4.563 0.438 0.125 0.813 0.125 1.25 0.125 0.625 0 1.188-0.063 1.75-0.188-3-0.625-5.25-3.313-5.25-6.438 0-0.063 0-0.063 0-0.125 0.875 0.5 1.875 0.813 2.938 0.813-1.75-1.125-2.938-3.188-2.938-5.438 0-1.188 0.375-2.313 0.938-3.313 3.188 4 8.063 6.625 13.5 6.875-0.125-0.5-0.188-1-0.188-1.5 0-3.625 2.938-6.563 6.563-6.563 1.938 0 3.625 0.813 4.813 2.063 1.5-0.313 2.938-0.813 4.188-1.563-0.5 1.5-1.563 2.813-2.875 3.625 1.313-0.188 2.563-0.5 3.75-1.063-0.875 1.313-2 2.5-3.25 3.438z"></path></svg></span>
+									<span>Twitter</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-linkedin">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://www.linkedin.com/shareArticle?title=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet&amp;url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F%3Futm_term%3D2022-10-12&amp;mini=true" data-id="linkedin" class="ss-linkedin-color" data-ss-ss-network-id="linkedin" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M29.632 0C30.939 0 32 1.032 32 2.307v27.384C32 30.966 30.939 32 29.632 32H2.36C1.058 32 0 30.966 0 29.69V2.308C0 1.032 1.058 0 2.36 0h27.272zM9.149 11.638h-4.77V27h4.77V11.638zm12.133-.382c-2.318 0-3.874 1.273-4.509 2.48h-.066v-2.098H12.14V27h4.76v-7.599c0-2.004.378-3.946 2.858-3.946 2.447 0 2.475 2.29 2.475 4.072V27H27v-8.423c0-4.138-.893-7.32-5.718-7.32v-.001zM6.764 4A2.766 2.766 0 004 6.769a2.765 2.765 0 105.528 0A2.767 2.767 0 006.765 4h-.001z"></path></svg></span>
+									<span>LinkedIn</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-mix">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://mix.com/add?url=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F%3Futm_term%3D2022-10-12" data-id="mix" class="ss-mix-color" data-ss-ss-network-id="mix" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="28" height="32" viewBox="0 0 28 32" xmlns="http://www.w3.org/2000/svg"><path d="M0 4v21.806c0 3.512 5.5 3.631 5.5 0v-14.912c0.494-3.306 5.5-3.15 5.5 0.406v10.956c0 3.619 6 3.625 6 0v-7.256c0.331-3.419 5.5-3.281 5.5 0.269v1.487c0 3.744 5.5 3.538 5.5 0v-12.756h-28z"></path></svg></span>
+									<span>Mix</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-envelope">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="mailto:?body=https%3A%2F%2Fblog.starrocket.io%2Fposts%2Fjon-skeet%2F%3Futm_term%3D2022-10-12&amp;subject=%E6%9C%80%E6%9C%83%E5%9B%9E%E7%AD%94%E5%95%8F%E9%A1%8C%E7%9A%84%E9%82%A3%E5%80%8B%E7%94%B7%E4%BA%BA%EF%BC%9AStack%20Overflow%20%E5%82%B3%E5%A5%87%E4%BA%BA%E7%89%A9%20Jon%20Skeet" data-id="envelope" class="ss-envelope-color" data-ss-ss-network-id="envelope" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M32 12.964v14.179c0 1.571-1.286 2.857-2.857 2.857h-26.286c-1.571 0-2.857-1.286-2.857-2.857v-14.179c0.536 0.589 1.143 1.107 1.804 1.554 2.964 2.018 5.964 4.036 8.875 6.161 1.5 1.107 3.357 2.464 5.304 2.464h0.036c1.946 0 3.804-1.357 5.304-2.464 2.911-2.107 5.911-4.143 8.893-6.161 0.643-0.446 1.25-0.964 1.786-1.554zM32 7.714c0 2-1.482 3.804-3.054 4.893-2.786 1.929-5.589 3.857-8.357 5.804-1.161 0.804-3.125 2.446-4.571 2.446h-0.036c-1.446 0-3.411-1.643-4.571-2.446-2.768-1.946-5.571-3.875-8.339-5.804-1.268-0.857-3.071-2.875-3.071-4.5 0-1.75 0.946-3.25 2.857-3.25h26.286c1.554 0 2.857 1.286 2.857 2.857z"></path></svg></span>
+									<span>Email</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-print">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="#" data-id="print" class="ss-print-color" data-ss-ss-network-id="print" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="30" height="32" viewBox="0 0 30 32" xmlns="http://www.w3.org/2000/svg"><path d="M6.857 27.714h16v-4.571h-16v4.571zM6.857 16.286h16v-6.857h-2.857c-0.946 0-1.714-0.768-1.714-1.714v-2.857h-11.429v11.429zM27.429 17.429c0-0.625-0.518-1.143-1.143-1.143s-1.143 0.518-1.143 1.143 0.518 1.143 1.143 1.143 1.143-0.518 1.143-1.143zM29.714 17.429v7.429c0 0.304-0.268 0.571-0.571 0.571h-4v2.857c0 0.946-0.768 1.714-1.714 1.714h-17.143c-0.946 0-1.714-0.768-1.714-1.714v-2.857h-4c-0.304 0-0.571-0.268-0.571-0.571v-7.429c0-1.875 1.554-3.429 3.429-3.429h1.143v-9.714c0-0.946 0.768-1.714 1.714-1.714h12c0.946 0 2.25 0.536 2.929 1.214l2.714 2.714c0.679 0.679 1.214 1.982 1.214 2.929v4.571h1.143c1.875 0 3.429 1.554 3.429 3.429z"></path></svg></span>
+									<span>Print</span>
+								</a>
+							</div>
+
+						
+							<div class="ss-popup-network ss-popup-copy">
+								<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" data-ss-ss-link="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-id="copy" class="ss-copy-color" data-ss-ss-network-id="copy" data-ss-ss-post-id="5407" data-ss-ss-location="popup" data-ss-ss-permalink="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" data-ss-ss-type="share" rel="nofollow noopener">
+									<span><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M25.313 28v-18.688h-14.625v18.688h14.625zM25.313 6.688c1.438 0 2.688 1.188 2.688 2.625v18.688c0 1.438-1.25 2.688-2.688 2.688h-14.625c-1.438 0-2.688-1.25-2.688-2.688v-18.688c0-1.438 1.25-2.625 2.688-2.625h14.625zM21.313 1.313v2.688h-16v18.688h-2.625v-18.688c0-1.438 1.188-2.688 2.625-2.688h16z"></path></svg></span>
+									<span>Copy Link</span>
+								</a>
+							</div>
+
+											</div><!-- END .ss-popup-networks -->
+
+					<div class="ss-powered-by">Powered by <a href="https://socialsnap.com/?utm_source=WordPress&amp;utm_medium=link&amp;utm_campaign=inthewild" target="_blank" rel="nofollow noopener"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="30" height="32" viewBox="0 0 30 32" xmlns="http://www.w3.org/2000/svg"><path d="M22.293 0.146l7.602 4.172c0.386 0.201 0.386 0.541 0 0.757l-16.688 9.147c-1.684 0.943-2.241 2.271-1.669 3.461 0 0.093 0 0.201-0.201 0.263-0.207 0.088-0.441 0.088-0.649 0l-10.399-5.702c-0.386-0.201-0.386-0.541 0-0.757l20.628-11.311c0.428-0.225 0.937-0.236 1.375-0.031zM7.892 31.854l-7.602-4.172c-0.386-0.201-0.386-0.541 0-0.757l16.688-9.147c1.684-0.943 2.241-2.271 1.669-3.461 0-0.093 0-0.201 0.201-0.263 0.207-0.088 0.442-0.088 0.649 0l10.399 5.702c0.386 0.201 0.386 0.541 0 0.757l-20.628 11.311c-0.428 0.225-0.937 0.237-1.375 0.031z"></path></svg>Social Snap</a></div><!-- END .ss-powered-by -->
+				</div><!-- END .ss-popup-content -->
+			</div><!-- END .ss-popup -->
+		</div><!-- END #ss-all-networks-popup -->
+
+		
+		<div id="ss-copy-popup" class="ss-popup-overlay">
+			<div class="ss-popup">
+
+				<div class="ss-popup-heading">
+					<span>Copy link</span>
+					<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="ss-close-modal" rel="nofollow noopener">
+						<svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.883 16.667l7.058-7.058c0.517-0.517 0.517-1.367 0-1.883s-1.367-0.517-1.883 0l-7.058 7.058-7.058-7.058c-0.517-0.517-1.367-0.517-1.883 0s-0.517 1.367 0 1.883l7.058 7.058-7.058 7.058c-0.517 0.517-0.517 1.367 0 1.883 0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392l7.058-7.058 7.058 7.058c0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392c0.517-0.517 0.517-1.367 0-1.883l-7.058-7.058z"></path></svg>					</a>
+				</div><!-- END .ss-popup-heading -->
+
+				<div class="ss-popup-content">
+
+					<div class="ss-copy-action">
+						<input type="text" readonly="readonly" value="https://blog.starrocket.io/posts/jon-skeet/?utm_term=2022-10-12" class="ss-copy-action-field" aria-label="Copy">
+						<a href="https://blog.starrocket.io/posts/jon-skeet/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=starrocket&amp;utm_term=2022-10-12#" class="ss-button" rel="nofollow noopener">Copy<span class="ss-share-network-tooltip">Copied</span></a>
+						<svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M25.313 28v-18.688h-14.625v18.688h14.625zM25.313 6.688c1.438 0 2.688 1.188 2.688 2.625v18.688c0 1.438-1.25 2.688-2.688 2.688h-14.625c-1.438 0-2.688-1.25-2.688-2.688v-18.688c0-1.438 1.25-2.625 2.688-2.625h14.625zM21.313 1.313v2.688h-16v18.688h-2.625v-18.688c0-1.438 1.188-2.688 2.625-2.688h16z"></path></svg>					</div><!-- END .ss-copy-action -->
+
+					<div class="ss-powered-by">Powered by <a href="https://socialsnap.com/?utm_source=WordPress&amp;utm_medium=link&amp;utm_campaign=inthewild" target="_blank" rel="nofollow noopener"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="30" height="32" viewBox="0 0 30 32" xmlns="http://www.w3.org/2000/svg"><path d="M22.293 0.146l7.602 4.172c0.386 0.201 0.386 0.541 0 0.757l-16.688 9.147c-1.684 0.943-2.241 2.271-1.669 3.461 0 0.093 0 0.201-0.201 0.263-0.207 0.088-0.441 0.088-0.649 0l-10.399-5.702c-0.386-0.201-0.386-0.541 0-0.757l20.628-11.311c0.428-0.225 0.937-0.236 1.375-0.031zM7.892 31.854l-7.602-4.172c-0.386-0.201-0.386-0.541 0-0.757l16.688-9.147c1.684-0.943 2.241-2.271 1.669-3.461 0-0.093 0-0.201 0.201-0.263 0.207-0.088 0.442-0.088 0.649 0l10.399 5.702c0.386 0.201 0.386 0.541 0 0.757l-20.628 11.311c-0.428 0.225-0.937 0.237-1.375 0.031z"></path></svg>Social Snap</a></div><!-- END .ss-powered-by -->
+				</div><!-- END .ss-popup-content -->
+			</div><!-- END .ss-popup -->
+		</div><!-- END #ss-copy-popup -->
+
+		<div data-m-brand="Molongui" data-m-id="Authorship" data-m-license="Lite" data-m-version="4.6.12" data-m-link="https://www.molongui.com/authorship/"></div><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/lazyload.min.js.download"></script>
+
+
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh348" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;" src="./最會回答問題的那個男人：Stack Overflow 傳奇人物 Jon Skeet _ Star Rocket Blog_files/sh.f48a1a04fe8dbf021b4cda1d.html" c9gk0y9ju=""></iframe></div><style id="service-icons-0"></style><div></div><div id="otherside-root"><div><div id="windows"><div><div style="all: unset;"></div></div></div><div class="css-34tvdx e1gj4xli0"></div></div></div><div id="hyperwrite-login-notification" style="display: none;"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
